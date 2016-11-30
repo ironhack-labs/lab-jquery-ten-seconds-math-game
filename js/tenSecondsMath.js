@@ -8,7 +8,7 @@ var TenSecondsMathGame = function(options) {
 // Returns a random integer between [1..numberLimit]
 TenSecondsMathGame.prototype._getRandomInt = function() {
   return Math.floor(Math.random() * this.numberLimit) + 1;
-}
+};
 
 // Returns an object with {question, answer}
 TenSecondsMathGame.prototype.newQuestion = function(){
@@ -18,23 +18,23 @@ TenSecondsMathGame.prototype.newQuestion = function(){
 
   switch (randomOp){
     case 'addition':
-      while (a===b && a-b<3) { b = this._getRandomInt() }
+      while (a===b && a-b<3) { b = this._getRandomInt(); }
       this.question = a + ' + ' + b;
-      this.solution = a + b;;
+      this.solution = a + b;
       break;
     case 'substraction':
-      while (a===b && a-b<3) { b = this._getRandomInt() }
-      if (a<b) { temp=a; a=b; b=temp }
+      while (a===b && a-b<3) { b = this._getRandomInt(); }
+      if (a<b) { temp=a; a=b; b=temp; }
       this.question = a + ' - ' + b;
-      this.solution = a - b;;
+      this.solution = a - b;
       break;
     case 'multiplication':
-      while (a===b && a-b<3) { b = this._getRandomInt() }
+      while (a===b && a-b<3) { b = this._getRandomInt(); }
       this.question = a + ' x ' + b;
       this.solution = a * b;
       break;
     case 'division':
-      while (b===1) { b = this._getRandomInt() }
+      while (b===1) { b = this._getRandomInt(); }
       this.solution = b;
       this.question = (b*a) + ' / ' + a;
       break;
@@ -58,7 +58,7 @@ TenSecondsMathGame.prototype.isCorrectAnswer = function(answer){
 
 TenSecondsMathGame.prototype._startTimer = function(){
   var self = this;
-  this.timer = setInterval(function() { self._checkTimer() }, 1000)
+  this.timer = setInterval(function() { self._checkTimer(); }, 1000);
 };
 
 TenSecondsMathGame.prototype._checkTimer = function(){
