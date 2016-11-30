@@ -19,6 +19,16 @@ h2 {
   margin-top: 5px;
 }
 
+label[for="number-limit-range"] {
+  font-weight: bold;
+  margin-right: 20px;
+}
+
+#number-limit {
+  margin-left: 10px;
+  font-size: 30px;
+}
+
 .centered-box {
   margin: 0 auto;
   text-align: center;
@@ -30,7 +40,7 @@ h2 {
 
 #game-container {
   background-color: rgba(255, 255, 255, 0.8);
-  width: 40%;
+  width: 50%;
   min-width: 300px;
   margin: 100px auto 0;
   border-radius: 10px;
@@ -43,11 +53,38 @@ h2 {
   background-color: white;
 }
 
-#game-options:nth-child(2) {
+#operators-container {
+  width: 50%;
+  margin: 0 auto;
+}
 
+.operator-box {
+  display: inline-block;
+  margin: 5px;
+  border: solid 2px black;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.math-op-icon {
+  width: 20px;
+  height: 20px;
+  margin: 0 5px;
+}
+
+#start {
+  border: 1px solid transparent;
+  padding: .5rem 1rem;
+  font-size: 1rem;
+  border-radius: .25rem;
+  color: white;
+  background-color: #3071A9;
 }
 
 #game-board {
+  width: 50%;
+  padding: 30px;
+  background-color: white;
   display: none;
 }
 
@@ -61,3 +98,101 @@ h2 {
   height: 50px;
   position: absolute;
 }
+
+#clock {
+  margin-left: 10px;
+  font-size: 30px;
+}
+
+
+/* Range input styles */
+
+input[type=range] {
+  -webkit-appearance: none;
+  margin: 10px 0;
+  width: 50%;
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 50%;
+  height: 10px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 1px 1px 1px #000000;
+  background: #3071A9;
+  border-radius: 5px;
+  border: 1px solid #000000;
+}
+input[type=range]::-webkit-slider-thumb {
+  box-shadow: 1px 1px 1px #000000;
+  border: 1px solid #000000;
+  height: 30px;
+  width: 15px;
+  border-radius: 5px;
+  background: #FFFFFF;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -11px;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #3071A9;
+}
+input[type=range]::-moz-range-track {
+  width: 50%;
+  height: 10px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 1px 1px 1px #000000;
+  background: #3071A9;
+  border-radius: 5px;
+  border: 1px solid #000000;
+}
+input[type=range]::-moz-range-thumb {
+  box-shadow: 1px 1px 1px #000000;
+  border: 1px solid #000000;
+  height: 30px;
+  width: 15px;
+  border-radius: 5px;
+  background: #FFFFFF;
+  cursor: pointer;
+}
+input[type=range]::-ms-track {
+  width: 50%;
+  height: 10px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+  background: #3071A9;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px #000000;
+}
+input[type=range]::-ms-fill-upper {
+  background: #3071A9;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px #000000;
+}
+input[type=range]::-ms-thumb {
+  box-shadow: 1px 1px 1px #000000;
+  border: 1px solid #000000;
+  height: 30px;
+  width: 15px;
+  border-radius: 5px;
+  background: #FFFFFF;
+  cursor: pointer;
+}
+input[type=range]:focus::-ms-fill-lower {
+  background: #3071A9;
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: #3071A9;
+}
+
+/* End range styles */

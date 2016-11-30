@@ -1,3 +1,15 @@
+//Initialize ion library
+// ion.sound({
+//   sounds: [
+//     {
+//       name: "cash-register"
+//     }
+//   ],
+//   volume: 1,
+//   path: "audios/",
+//   preload: true
+// });
+
 var options = {
   ops: ['addition'],
   numberLimit: 10
@@ -40,9 +52,9 @@ $(document).ready(function(){
         correctAnswer();
       } else {
         $('#answer').addClass('answer-wrong');
-      };
+      }
     }
-  };
+  }
 
   function correctAnswer() {
     $('#answer').val('');
@@ -56,8 +68,9 @@ $(document).ready(function(){
     btc.show(400);
     btc.css('left', Math.floor(Math.random() * 80 + 10) + '%');
     btc.css('top',  Math.floor(Math.random() * 80 + 10) + '%');
-    setTimeout(function(){ btc.hide(1000) }, 1500);
-  };
+    //ion.sound.play("cash-register");
+    setTimeout(function(){ btc.hide(1000); }, 1500);
+  }
 
   function checkTimer(){
     if (game.secondsLeft >= 0){
@@ -65,7 +78,7 @@ $(document).ready(function(){
     } else {
       clearInterval(timer);
       $('#answer').attr('disabled', true);
-      alert('game over!')
+      alert('game over!');
     }
-  };
+  }
 });

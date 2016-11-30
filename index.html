@@ -8,6 +8,7 @@
 
     <!--  Added Libraries -->
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="js/ion.sound.min.js"></script>
     <link  href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet">
 
     <!-- Custon CSS -->
@@ -17,7 +18,7 @@
     <div id="game-container">
       <h1>Ten Seconds Math Game</h1>
 
-      <section id="game-board">
+      <section id="game-board" class="centered-box">
         <div> <span id="clock">10</span> seconds left</div>
         <div> <span id="question"></span></div>
         <div> <input id="answer" placeholder="answer" ></div>
@@ -26,17 +27,25 @@
       <section id="game-options" class="centered-box">
         <h2>Game Options</h2>
         <div class="centered-box separator">
-          <label>Number Limit: <span id="number-limit">10</span></label>
+          <label for="number-limit-range">Number Limit: <span id="number-limit">10</span></label>
           <input id="number-limit-range" type="range" min="10" max="100" value="10" step="10" />
         </div>
 
         <div class="centered-box separator">
-          <div>Operators</div>
-          <div>
-            <input type="checkbox" class="option-box" id="addition" checked="true"> +
-            <input type="checkbox" class="option-box" id="subtraction"> -
-            <input type="checkbox" class="option-box" id="multiplication"> x
-            <input type="checkbox" class="option-box" id="division"> /
+          <h3>Operators</h3>
+          <div id="operators-container">
+            <div class="operator-box">
+              <input type="checkbox" class="option-box" id="addition" checked="true"> <img class="math-op-icon" src="images/add.jpg" alt="">
+            </div>
+            <div class="operator-box">
+              <input type="checkbox" class="option-box" id="subtraction"> <img class="math-op-icon" src="images/substract.jpg" alt="">
+            </div>
+            <div class="operator-box">
+              <input type="checkbox" class="option-box" id="multiplication"> <img class="math-op-icon" src="images/multiply.jpg" alt="">
+            </div>
+            <div class="operator-box">
+              <input type="checkbox" class="option-box" id="division"> <img class="math-op-icon" src="images/divide.jpg" alt="">
+            </div>
           </div>
         </div>
         <div class="centered-box separator">
