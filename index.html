@@ -10,40 +10,45 @@
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 
     <!-- Custon CSS/JavaScript -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <link href="css/custom.css" rel="stylesheet">
     <script src="js/tenSecondsMath.js"></script>
     <script src="js/application.js"></script>
   </head>
   <body>
-    <div>
-      <div>
-        <section id="game-board">
-          <div> <span id="clock">10</span> seconds left</div>
-          <div> <span id="question"></span></div>
-          <div> <input id="answer" placeholder="answer" ></div>
-        </section>
+    <div id="game-container">
+      <h1>Ten Seconds Math Game</h1>
 
-        <section id="game-options">
+      <section id="game-board">
+        <div> <span id="clock">10</span> seconds left</div>
+        <div> <span id="question"></span></div>
+        <div> <input id="answer" placeholder="answer" ></div>
+      </section>
+
+      <section id="game-options" class="centered-box">
+        <h2>Game Options</h2>
+        <div class="centered-box separator">
+          <label>Number Limit: <span id="number-limit">10</span></label>
+          <input id="number-limit-range" type="range" min="10" max="100" value="10" step="10" />
+        </div>
+
+        <div class="centered-box separator">
+          <div>Operators</div>
           <div>
-            <label>Number Limit: <span id="number-limit"></span></label>
-            <input id="slider-number-range" type="range"/>
+            <input type="checkbox" class="option-box" id="addition" checked="true"> +
+            <input type="checkbox" class="option-box" id="subtraction"> -
+            <input type="checkbox" class="option-box" id="multiplication"> x
+            <input type="checkbox" class="option-box" id="division"> /
           </div>
+        </div>
+        <div class="centered-box separator">
+          <button>Start Game</button>
+        </div>
+      </section>
 
-          <div>
-            <div>Options</div>
-            <div>
-              <input type="checkbox" class="option-box" id="addition" checked="true"> +
-              <input type="checkbox" class="option-box" id="subtraction"> -
-              <input type="checkbox" class="option-box" id="multiplication"> x
-              <input type="checkbox" class="option-box" id="division"> /
-            </div>
-          </div>
-        </section>
-
-        <section id="btc-reward">
-          <img src="https://en.bitcoin.it/w/images/en/5/50/Bitcoin.png" class="img-responsive">
-        </section>
-      </div>
+      <section id="btc-reward">
+        <img src="https://en.bitcoin.it/w/images/en/5/50/Bitcoin.png" class="img-responsive">
+      </section>
     </div>
   </body>
 </html>

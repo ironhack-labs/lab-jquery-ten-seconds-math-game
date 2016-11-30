@@ -1,4 +1,56 @@
+html {
+  background: url('../images/board.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 body {
-  background-color: #fff;
+  background-color: transparent;
   color: #333330;
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  margin-top: 5px;
+}
+
+.centered-box {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.separator {
+  margin-top: 20px;
+}
+
+#game-container {
+  background-color: rgba(255, 255, 255, 0.8);
+  width: 40%;
+  min-width: 300px;
+  margin: 100px auto 0;
+  border-radius: 10px;
+  padding: 30px;
+}
+
+#game-options {
+  width: 50%;
+  padding: 30px;
+  background-color: white;
+}
+
+#game-options:nth-child(2) {
+
+}
+
+#game-board {
+  display: none;
+}
+
+#btc-reward {
+  display: none;
 }
