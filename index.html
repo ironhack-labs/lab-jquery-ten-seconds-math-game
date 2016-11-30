@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--  jQuery -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+    <!-- Custon CSS/JavaScript -->
+    <link href="css/custom.css" rel="stylesheet">
+    <script src="js/tenSecondsMath.js"></script>
+    <script src="js/application.js"></script>
+  </head>
+  <body>
+    <div>
+      <div>
+        <section id="game-board">
+          <div> <span id="clock">10</span> seconds left</div>
+          <div> <span id="question"></span></div>
+          <div> <input id="answer" placeholder="answer" ></div>
+        </section>
+
+        <section id="game-options">
+          <div>
+            <label>Number Limit: <span id="number-limit"></span></label>
+            <input id="slider-number-range" type="range"/>
+          </div>
+
+          <div>
+            <div>Options</div>
+            <div>
+              <input type="checkbox" class="option-box" id="addition" checked="true"> +
+              <input type="checkbox" class="option-box" id="subtraction"> -
+              <input type="checkbox" class="option-box" id="multiplication"> x
+              <input type="checkbox" class="option-box" id="division"> /
+            </div>
+          </div>
+        </section>
+
+        <section id="btc-reward">
+          <img src="https://en.bitcoin.it/w/images/en/5/50/Bitcoin.png" class="img-responsive">
+        </section>
+      </div>
+    </div>
+  </body>
+</html>
