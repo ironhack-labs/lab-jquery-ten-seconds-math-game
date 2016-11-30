@@ -51,6 +51,13 @@ h2 {
   display: none;
 }
 
+.answer-wrong {
+  border: solid 1px red;
+}
+
 #btc-reward {
   display: none;
+  width: 50px;
+  height: 50px;
+  position: absolute;
 }

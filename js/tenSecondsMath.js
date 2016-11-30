@@ -1,6 +1,7 @@
 var TenSecondsMathGame = function(options) {
-  this.secondsLeft = 0;
-  this.operators   = options.operators;
+  this.secondsIncrement = 10;
+  this.secondsLeft = 10;
+  this.operators   = options.ops;
   this.numberLimit = options.numberLimit;
   this.started     = false;
 };
@@ -50,8 +51,10 @@ TenSecondsMathGame.prototype.isCorrectAnswer = function(answer){
     if (!this.started) {
       this._startTimer();
       this.started = true;
+      this.secondsLeft = this.secondsIncrement;
+    } else {
+      this.secondsLeft += this.secondsIncrement;
     }
-    this.secondsLeft += 10;
     return true;
   }
 };
@@ -64,9 +67,9 @@ TenSecondsMathGame.prototype._startTimer = function(){
 TenSecondsMathGame.prototype._checkTimer = function(){
   if (this.secondsLeft > 0) {
     this.secondsLeft--;
-    console.log(this.secondsLeft);
+    // console.log(this.secondsLeft);
   } else {
     clearInterval(this.timer);
-    console.log("You lost!");
+    // console.log("You lost!");
   }
 };
