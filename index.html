@@ -19,15 +19,17 @@
       <h1>Ten Seconds Math Game</h1>
 
       <section id="game-board" class="centered-box">
-        <div> <span id="clock">10</span> seconds left</div>
-        <div> <span id="question"></span></div>
-        <div> <input id="answer" placeholder="answer" ></div>
+        <div class="separator"> <span id="clock">10</span> seconds left</div>
+        <div><img id="game-over-img" src="images/gameover.jpg" alt=""></div>
+        <div class="separator align-box"> <span class="highlight-span" id="question"></span></div>
+        <div class="separator align-box"> <input id="answer" placeholder="answer" ></div>
+        <div class="separator"><button id="restart" class="btn">Restart</button></div>
       </section>
 
       <section id="game-options" class="centered-box">
         <h2>Game Options</h2>
         <div class="centered-box separator">
-          <label for="number-limit-range">Number Limit: <span id="number-limit">10</span></label>
+          <label for="number-limit-range">Number Limit: <span class="highlight-span" id="number-limit">10</span></label>
           <input id="number-limit-range" type="range" min="10" max="100" value="10" step="10" />
         </div>
 
@@ -38,7 +40,7 @@
               <input type="checkbox" class="option-box" id="addition" checked="true"> <img class="math-op-icon" src="images/add.jpg" alt="">
             </div>
             <div class="operator-box">
-              <input type="checkbox" class="option-box" id="subtraction"> <img class="math-op-icon" src="images/substract.jpg" alt="">
+              <input type="checkbox" class="option-box" id="substraction"> <img class="math-op-icon" src="images/substract.jpg" alt="">
             </div>
             <div class="operator-box">
               <input type="checkbox" class="option-box" id="multiplication"> <img class="math-op-icon" src="images/multiply.jpg" alt="">
@@ -49,7 +51,7 @@
           </div>
         </div>
         <div class="centered-box separator">
-          <button id="start">Start Game</button>
+          <button id="start" class="btn">Start Game</button>
         </div>
       </section>
 

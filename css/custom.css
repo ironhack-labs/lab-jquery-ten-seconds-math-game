@@ -26,6 +26,9 @@ label[for="number-limit-range"] {
 
 #number-limit {
   margin-left: 10px;
+}
+
+.highlight-span {
   font-size: 30px;
 }
 
@@ -72,7 +75,7 @@ label[for="number-limit-range"] {
   margin: 0 5px;
 }
 
-#start {
+.btn {
   border: 1px solid transparent;
   padding: .5rem 1rem;
   font-size: 1rem;
@@ -85,25 +88,35 @@ label[for="number-limit-range"] {
   width: 50%;
   padding: 30px;
   background-color: white;
-  display: none;
 }
 
 .answer-wrong {
-  border: solid 1px red;
+  border: solid 3px red;
+}
+
+.align-box {
+  display: inline-block;
+  margin-left: 30px;
 }
 
 #btc-reward {
-  display: none;
   width: 50px;
   height: 50px;
   position: absolute;
 }
 
 #clock {
-  margin-left: 10px;
-  font-size: 30px;
+  font-size: 50px;
 }
 
+#game-over-img {
+  width: 50%;
+  height: auto;
+}
+
+#restart, #game-over-img, #btc-reward, #game-board {
+  display: none;
+}
 
 /* Range input styles */
 

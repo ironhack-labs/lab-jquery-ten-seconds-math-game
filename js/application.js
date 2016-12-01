@@ -1,14 +1,14 @@
 //Initialize ion library
-// ion.sound({
-//   sounds: [
-//     {
-//       name: "cash-register"
-//     }
-//   ],
-//   volume: 1,
-//   path: "audios/",
-//   preload: true
-// });
+ion.sound({
+  sounds: [
+    {
+      name: "cash-register"
+    }
+  ],
+  volume: 1,
+  path: "audios/",
+  preload: true
+});
 
 var options = {
   ops: ['addition'],
@@ -45,6 +45,15 @@ $(document).ready(function(){
     timer = setInterval(checkTimer, 500);
   });
 
+  $("#restart").on('click', function(){
+    $('#game-options').show();
+    $('#game-board').hide();
+    $("#restart").hide();
+    $("#game-over-img").hide();
+    $("#game-board div:nth-child(1)").show();
+    $('#answer').removeAttr('disabled');
+  });
+
   function checkAnswer(){
     if ($(this).val() !== '') {
       var answer = parseInt($(this).val());
@@ -68,7 +77,7 @@ $(document).ready(function(){
     btc.show(400);
     btc.css('left', Math.floor(Math.random() * 80 + 10) + '%');
     btc.css('top',  Math.floor(Math.random() * 80 + 10) + '%');
-    //ion.sound.play("cash-register");
+    ion.sound.play("cash-register");
     setTimeout(function(){ btc.hide(1000); }, 1500);
   }
 
@@ -78,7 +87,13 @@ $(document).ready(function(){
     } else {
       clearInterval(timer);
       $('#answer').attr('disabled', true);
-      alert('game over!');
+      $("#restart").show();
+      gameOver();
     }
+  }
+
+  function gameOver(){
+    $("#game-board div:nth-child(1)").hide();
+    $("#game-over-img").show();
   }
 });

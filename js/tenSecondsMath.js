@@ -65,7 +65,7 @@ TenSecondsMathGame.prototype._startTimer = function(){
 };
 
 TenSecondsMathGame.prototype._checkTimer = function(){
-  if (this.secondsLeft > 0) {
+  if (this.secondsLeft >= 0) {
     this.secondsLeft--;
     // console.log(this.secondsLeft);
   } else {
