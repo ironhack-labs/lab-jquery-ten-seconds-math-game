@@ -5,15 +5,74 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!--  Added Libraries -->
-
-    <!-- Custon CSS -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+    integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/range-style.css">
   </head>
   <body>
-
-
-    <!-- Custon JavaScript -->
-
+    <!-- <img src="images/board.jpg" class="img-responsive" alt="Responsive image"> -->
+    <div class="container transparent-background">
+      <div class="centered-box">
+        <div class="title">
+          <h2>Ten Seconds Math Game</h2>
+        </div>
+        <div class="container white-box" id="whiteBox">
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+          <div class="container centered-box" id="hideMe">
+            <div class="container title">
+              <h3>Game Options</h3>
+            </div>
+            <div class="container number-limit">
+              Number Limit: <span id="number">10</span>
+              <input type="range" id="rangeBarInput" oninput="assignNumberInput()" min="1" max="10">
+            </div>
+            <div class="operator">
+              Operator
+            </div>
+            <div class="container selectors">
+              <div class="operationSelector">
+                <input type="checkbox" class="checks" id="sum">
+                <img src="images/add.jpg" class="mathImg">
+              </div>
+              <div class="operationSelector">
+                <input type="checkbox" class="checks" id="minus">
+                <img src="images/substract.jpg" class="mathImg">
+              </div>
+              <div class="operationSelector">
+                <input type="checkbox" class="checks" id="product">
+                <img src="images/multiply.jpg" class="mathImg">
+              </div>
+              <div class="operationSelector">
+                <input type="checkbox" class="checks" id="division">
+                <img src="images/divide.jpg" class="mathImg">
+              </div>
+            </div>
+            <button type="button" class="btn btn-primary" id="startButton" onclick="mathQuestionGenerator()">Start Game</button>
+          </div>
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+          <!-- <div class="container newCenteredBox" id="box1">
+            <span id="countdown">10</span><span>Seconds left...</span>
+          </div>
+          <div class="container newCenteredBox" id="box2">
+            <div class="container operation">
+              <span id="firstNumber">3 </span id="operator"><span> - </span><span id="seconNumber"> 4</span>
+            </div>
+            <div class="container inputContainer">
+              <input id="inputBox" placeholder="answer" type="number">
+            </div>
+          </div> -->
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+        </div>
+      </div>
+    </div>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/application.js"></script>
+    <script type="text/javascript" src="js/tenSecondsMath.js"></script>
   </body>
 </html>
