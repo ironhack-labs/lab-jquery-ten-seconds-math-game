@@ -6,14 +6,149 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+
     <!--  Added Libraries -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <!-- Custon CSS -->
+
+    <link rel="stylesheet" href="css/custom.css">
   </head>
   <body>
 
+<div class="container">
 
+   <div class="row">
+      <div class="col-md-12 text-center ten-seconds">
+
+        <h1 class="text-center">Ten Seconds Math Game</h1>
+
+        <div class="row">
+
+            <div class="col-md-3"> </div>
+            <div id="game" class="col-md-6 game-options layer">
+                <div class="row">  <h2>Game Options</h2>   </div>
+
+
+
+
+<!-- SLIDER -->
+                <div class="row slider">
+                  <div class="col-md-3"> </div>
+
+                  <div class="col-md-6">
+                  <h5>Number Limit:  </h5> <h4 id="range-value"></h4> <input type="range" min="10" max="40" id="number-range">
+
+                  </div>
+
+                <div class="col-md-3"> </div>
+                </div>
+
+<!-- OPERATORS-TEXT -->
+              <div class="row"> <h4>Operators</h4>  </div>
+
+<!-- ICONS -->
+
+              <div class="row">
+              <div class="col-md-3"> </div>
+
+              <div class="col-md-6">
+                     <div class="row">
+                        <div class="col-md-6">
+
+                          <!-- ADD OPERATOR -->
+                          <div class="operator-box">
+                            <input type="checkbox" id="add">
+                            <img src="images/add.jpg" alt="" class="operators">
+
+                          </div>
+
+                          <!-- MULTIPLY OPERATOR -->
+                          <div class="operator-box">
+                            <input type="checkbox" id="multiply">
+                            <img src="images/multiply.jpg" alt="" class="operators">
+
+                          </div>
+
+
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                          <!-- SUBTRACT OPERATOR -->
+                          <div class="operator-box">
+                            <input type="checkbox" id="subtract" >
+                            <img src="images/substract.jpg" alt="" class="operators">
+
+                          </div>
+
+                          <!-- DIVIDE OPERATOR -->
+                          <div class="operator-box">
+                            <input type="checkbox" id="divide">
+                            <img src="images/divide.jpg" alt="" class="operators">
+
+                          </div>
+
+
+                            </div>
+
+                     </div>
+
+                      <!-- START GAME ROW -->
+                     <div class="row">
+
+                        <div class="col-md-12">
+                          <button class="btn btn-info" onclick="startGame()">Start Game</button>
+                        </div>
+
+                     </div>
+              </div>
+
+            <div class="col-md-3"> </div>
+            </div>
+
+
+<!-- <input type="range" name="points" min="0" max="10"> -->
+
+            </div>
+
+
+
+            <div class="col-md-3"> </div>
+
+            <div id="hidden" class="operations hidden">
+            <h4 id="random-operation"></h4>  <input id="user-answer" type="text" onkeydown="compareNumbers()"> 
+            <!-- <button id="check" class="btn btn-success" >CHECK</button> -->
+            </div>
+
+
+
+        </div>
+
+      </div>
+
+
+
+
+
+  </div>
+
+
+
+
+
+</div>
     <!-- Custon JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- <script src="js/tenSecondsMath.js"></script> -->
+    <script src="js/application.js"></script>
+
+
+
 
   </body>
 </html>
