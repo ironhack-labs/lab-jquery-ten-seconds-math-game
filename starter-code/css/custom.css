@@ -1,1 +1,64 @@
 /*Use this file to add your styles -there are some cool img in the images path*/
+h1 {
+  color: black;
+}
+
+body {
+  background-image: url("../images/board.jpg");
+  background-size: cover;
+}
+
+.ten-seconds {
+  background-color: rgba(255, 255, 255, 0.8);
+  height: 75vh;
+  margin-top: 7%;
+
+
+}
+
+
+.container {
+  width: 80%;
+
+}
+
+.game-options {
+  width: 50%;
+  border: solid black 1px;
+  background-color: white;
+  height: 60vh;
+  z-index: 10;
+}
+
+.operators {
+  width: 18px;
+  height: 16px;
+}
+
+.operator-box {
+  width: 50px;
+  height: 25px;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+/*.slider {
+  width: 40%;
+  height: 200px;
+}*/
+
+.operations {
+  width: 40%;
+  position: fixed;
+  border: solid black 1px;
+  background-color: white;
+  height: 61vh;
+  z-index: 20;
+  left: 30%;
+  top: 29%;
+
+}
+
+.hidden {
+  display: none;
+}
