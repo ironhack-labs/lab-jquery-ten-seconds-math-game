@@ -1,4 +1,4 @@
-var userOperator, userTopLimit = 10, game;
+var userOperator, possibleOperators = [], userTopLimit = 10, game;
 
 function startGame(){
   var numberOfCheckboxes = document.getElementsByClassName("userOperator").length;
@@ -11,25 +11,33 @@ function startGame(){
       switch(checkboxes[i].id){
         case "addCheck":
           userOperator = "+";
+          possibleOperators.push(userOperator);
           break;
         case "minusCheck":
           userOperator = "-";
+          possibleOperators.push(userOperator);
           break;
         case "multCheck":
           userOperator = "*";
+          possibleOperators.push(userOperator);
           break;
         case "divideCheck":
           userOperator = "/";
+          possibleOperators.push(userOperator);
           break;
       }
     }
   }
 
+  console.log(possibleOperators);
+
   //Assign limit based on what user has selected on sliding scale
 
 //Generate new game based on user operator and limit selected
 
-game = new TenSecondsMathGame(userOperator,userTopLimit);
+game = new TenSecondsMathGame(possibleOperators,userTopLimit);
+
+console.log(game);
 //Function to start first game, HTML not shown until start game button is clicked
 game.newQuestion();
 }

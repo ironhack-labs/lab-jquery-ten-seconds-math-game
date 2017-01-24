@@ -1,7 +1,7 @@
 // New game constructor
 
-function TenSecondsMathGame(operation, topLimit) {
-    this.userOperation = operation;
+function TenSecondsMathGame(operations, topLimit) {
+    this.userOperations = operations;
     this.userTopLimit = topLimit;
     this.newQuestion = questionGen;
     this.isCorrectAnswer = isCorrectAnswer;
@@ -17,6 +17,7 @@ function questionGen() {
   randomGen = function() {
     random1 = Math.floor(Math.random() * (game.userTopLimit - 1)) +1;
     random2 = Math.floor(Math.random() * (game.userTopLimit - 1)) +1;
+    randomOperator = game.userOperations[Math.floor(Math.random() * game.userOperations.length)];
   };
 
   randomGen();
@@ -30,7 +31,7 @@ function questionGen() {
 
   //Generates correct answer to question generated
 
-  switch(this.userOperation) {
+  switch(randomOperator) {
     case '+':
       reRunRandom();
       answer = random1 + random2;
@@ -55,11 +56,11 @@ function questionGen() {
 
   //Shows which operator has been selected in HTML
 
-  document.getElementById("operation").innerHTML = this.userOperation;
+  document.getElementById("operation").innerHTML = randomOperator;
 
   //Switched HTML numbers depending on which is bigger
 
-  if (random1 > random2 || game.userOperation == "/"){
+  if (random1 > random2 || randomOperator == "/"){
     document.getElementById("random1").innerHTML = random1;
     document.getElementById("random2").innerHTML = random2;
   } else if (random2 > random1) {
