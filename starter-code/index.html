@@ -9,25 +9,28 @@
     <!--  Added Libraries -->
 
     <!-- Custon CSS -->
+    <link rel="stylesheet" href="css/custom.css">
   </head>
   <body>
     <div>
-      <div>
-        <input type="checkbox" id="checkbox-addition"> Add
-        <input type="checkbox" id="checkbox-subtract"> Subtract
-        <input type="checkbox" id="checkbox-multiply"> Multiply
-        <input type="checkbox" id="checkbox-divide"> Divide
+      <div class="checkboxes__wrapper">
+        <div class="checkbox__wrapper"><input type="checkbox" id="checkbox-addition"> + </div>
+        <div class="checkbox__wrapper"><input type="checkbox" id="checkbox-subtract"> - </div>
+        <div class="checkbox__wrapper"><input type="checkbox" id="checkbox-multiply"> x </div>
+        <div class="checkbox__wrapper"><input type="checkbox" id="checkbox-divide"> % </div>
+        <button class="btn-start" id="btn-start">Start Game</button>
       </div>
-      <button id="btn-start">Start Game</button>
     </div>
 
-    <div>
+    <div class="math-equation">
       <span id="number-first"></span>
-      <span id="operator"></span>
+      <span id="operator">?</span>
       <span id="number-second"></span>
       <span>=</span>
+      <input type="text" id="input1" class="input--number">
     </div>
-    <input type="text" id="input1">
+
+    <div class="countdown-clock">Time Remaining: <span id="countdown"></span></div>
     <!--<button id="submit-button">Submit</button>-->
 
 

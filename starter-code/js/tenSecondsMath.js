@@ -9,28 +9,9 @@ var TenSecondsMathGame = function(options) {
 };
 
 
-// var userSelectNumber = times;
-
-// function runTheGame() {
-//   for(i=0;i<=10;i++){
-//     compare(subtract(numArray), 1);
-//   }
-// }
-//
-// runTheGame();
-
-// var submitButton = document.getElementById('submit-button');
-// var inputQty = document.getElementById('input1').value;
-//
 var calculateButton = document.getElementById('submit-button');
 var inputQty = 0;
 
-// calculateButton.onclick = function(){
-//   var inputQty = document.getElementById('input1').value;
-//   console.log(inputQty);
-//   return inputQty;
-//   runTheGame(add);
-// };
 
 // GRABBING THE CHECKBOX NODES & start button
 
@@ -63,15 +44,18 @@ var userSelect = function() {
   }
 };
 
-// TIMER COUNTDOWN
+// TIMER COUNTDOWN ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+
+var countown = document.getElementById('countdown');
+
 var i = 10;
 
 var intervalId = function() { setInterval(function() {
   if (i > 0) {
-    console.log(i);
+    countdown.innerHTML = i;
   }
   else if (i === 0) {
-    console.log("Game over!");
+    countdown.innerHTML = "GAME OVER!";
     clearInterval(intervalId);
   }
 	i--;
