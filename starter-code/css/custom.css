@@ -1,1 +1,75 @@
 /*Use this file to add your styles -there are some cool img in the images path*/
+
+.display-none {
+  display: none;
+}
+
+.display {
+  display: block;
+}
+
+img {
+  position: relative;
+  width: 80%;
+  opacity: 0.25;
+}
+
+section {
+  position: absolute;
+  left: 20%;
+  top: 15%;
+  background-color: white;
+  padding: 0 10% 5%;
+  text-align: center;
+  min-height: 300px;
+}
+
+body > h1 {
+  position: absolute;
+  top: 5%;
+  left: 22.5%;
+}
+
+.operator {
+width: 30px;
+height: 30px;
+}
+
+input[type="range"] {
+  float:left;
+  margin-bottom: 30px;
+}
+
+input[type="checkbox"] {
+  float: left;
+}
+
+.options {
+  display: inline;
+  float: left;
+  overflow: hidden;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 3px;
+}
+
+.options:first-of-type, .options:nth-of-type(3){
+  clear: left;
+}
+
+#start {
+  clear: left;
+  float: left;
+  background-color: blue;
+  padding: 7px 14px;
+  margin-top: 20px;
+  transform: translateX(10px);
+  font-size: 20px;
+  color: white;
+}
+
+#answer {
+  display: block;
+  margin: 50px;
+}
