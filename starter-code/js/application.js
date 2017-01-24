@@ -1,15 +1,6 @@
-// Use this file to write the interactions between your game and the user
-
-//Initialize ion library
-
-
-// window.onload = function(){
-//
-// };
-
 var userOperator, game;
 
-function getUserOperator(){
+function startGame(){
   var numberOfCheckboxes = document.getElementsByClassName("userOperator").length;
   var checkboxes = document.getElementsByClassName("userOperator");
 
@@ -43,8 +34,19 @@ game = new TenSecondsMathGame(userOperator,10);
 game.newQuestion();
 }
 
-document.getElementById("start").onclick = function(){
-  getUserOperator();
+//USER CLICK SECTION
+
+//When start button is clicked
+document.getElementById("start").onclick = function go(){
+  startGame();
+  //switch screens from start-screen to game-screen
   document.getElementById("game-started").setAttribute("class", "display");
   document.getElementById("start-screen").setAttribute("class", "display-none");
+};
+
+//When submit button is clicked
+
+document.getElementById("submit").onclick = function checkAnswer() {
+  var userAnswer = document.getElementById('answer').value;
+  isCorrectAnswer(userAnswer);
 };

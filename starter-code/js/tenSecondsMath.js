@@ -1,7 +1,3 @@
-// Use this file to write the logic of your game, the needed attrs and functions
-
-var userOperation, userTopLimit;
-
 // New game constructor
 
 function TenSecondsMathGame(operation, topLimit) {
@@ -11,12 +7,11 @@ function TenSecondsMathGame(operation, topLimit) {
     this.isCorrectAnswer = isCorrectAnswer;
 }
 
-var randomGen, answer;
-
 //Generates new game, run in function newGame();
 
-function questionGen() {
+var randomGen, answer;
 
+function questionGen() {
   //Generates random numbers for game
   var random1, random2;
   randomGen = function() {
@@ -27,7 +22,6 @@ function questionGen() {
   randomGen();
 
 //Reruns random number generators if difference is between 0 and 3
-
   var reRunRandom = function(){
     while((random1 - random2 < 3 &&  random1 - random2 >= 0) || (random2 - random1 < 3 && random2 - random1 >= 0)){
     randomGen();
@@ -59,36 +53,25 @@ function questionGen() {
 
   }
 
-//HTML section
+  //Shows which operator has been selected in HTML
 
-//Shows which operator has been selected in HTML
+  document.getElementById("operation").innerHTML = this.userOperation;
 
-document.getElementById("operation").innerHTML = this.userOperation;
-
-//Switched HTML numbers depending on which is bigger
+  //Switched HTML numbers depending on which is bigger
 
   if (random1 > random2 || game.userOperation == "/"){
     document.getElementById("random1").innerHTML = random1;
     document.getElementById("random2").innerHTML = random2;
-  } else if (random2 < random1) {
+  } else if (random2 > random1) {
     document.getElementById("random1").innerHTML = random2;
     document.getElementById("random2").innerHTML = random1;
   }
 }
 
 
-//function to run new game, gets run within checkAnswer(), which is run when user submits answer;
-
-function newGame() {
-  game.newQuestion();
-  document.getElementById("answer").value = "";
-  document.getElementById("answer").style.borderColor = "inherit";
-}
-
 //function to check if correct answer - runs new game function if answer is correct
 
 function isCorrectAnswer(userAnswer) {
-  console.log(userAnswer,answer);
   if (userAnswer == answer) {
     console.log("You are correct sir.");
     newGame();
@@ -101,9 +84,10 @@ function isCorrectAnswer(userAnswer) {
 
 }
 
-//code to check user answer - run when user submit button is pressed
+//function to run new game, gets run within checkAnswer(), which is run when user submits answer;
 
-function checkAnswer() {
-  var userAnswer = document.getElementById('answer').value;
-  isCorrectAnswer(userAnswer);
+function newGame() {
+  game.newQuestion();
+  document.getElementById("answer").value = "";
+  document.getElementById("answer").style.borderColor = "inherit";
 }
