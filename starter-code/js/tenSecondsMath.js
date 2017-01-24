@@ -13,25 +13,24 @@ function TenSecondsMathGame(operation, topLimit) {
 
 var randomGen, answer;
 
+//Generates new game, run in function newGame();
+
 function questionGen() {
 
-  // Returns a random integer between [1..numberLimit]
-
+  //Generates random numbers for game
+  var random1, random2;
   randomGen = function() {
-    return Math.floor(Math.random() * (game.userTopLimit - 1)) +1;
+    random1 = Math.floor(Math.random() * (game.userTopLimit - 1)) +1;
+    random2 = Math.floor(Math.random() * (game.userTopLimit - 1)) +1;
   };
 
-  // Returns an object with {question, answer}
-
-  var random1 = randomGen();
-  var random2 = randomGen();
+  randomGen();
 
 //Reruns random number generators if difference is between 0 and 3
 
   var reRunRandom = function(){
     while((random1 - random2 < 3 &&  random1 - random2 >= 0) || (random2 - random1 < 3 && random2 - random1 >= 0)){
-    random1 = randomGen();
-    random2 = randomGen();
+    randomGen();
     }
   };
 
@@ -75,16 +74,12 @@ document.getElementById("operation").innerHTML = this.userOperation;
     document.getElementById("random1").innerHTML = random2;
     document.getElementById("random2").innerHTML = random1;
   }
-
-
 }
 
 
-//function to run new game
+//function to run new game, gets run within checkAnswer(), which is run when user submits answer;
 
 function newGame() {
-  random1 = randomGen();
-  random2 = randomGen();
   game.newQuestion();
   document.getElementById("answer").value = "";
   document.getElementById("answer").style.borderColor = "inherit";
