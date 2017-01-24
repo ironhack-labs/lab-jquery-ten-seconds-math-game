@@ -1,4 +1,4 @@
-var userOperator, game;
+var userOperator, userTopLimit = 10, game;
 
 function startGame(){
   var numberOfCheckboxes = document.getElementsByClassName("userOperator").length;
@@ -29,12 +29,12 @@ function startGame(){
 
 //Generate new game based on user operator and limit selected
 
-game = new TenSecondsMathGame(userOperator,10);
+game = new TenSecondsMathGame(userOperator,userTopLimit);
 //Function to start first game, HTML not shown until start game button is clicked
 game.newQuestion();
 }
 
-//USER CLICK SECTION
+//USER ACTION SECTION
 
 //When start button is clicked
 document.getElementById("start").onclick = function go(){
@@ -43,6 +43,13 @@ document.getElementById("start").onclick = function go(){
   document.getElementById("game-started").setAttribute("class", "display");
   document.getElementById("start-screen").setAttribute("class", "display-none");
 };
+
+//When slider is moved
+
+document.getElementById("slider").oninput = function updateLimitHtml(){
+  userTopLimit = this.value;
+  document.getElementById("limit").innerHTML = this.value;
+}
 
 //When submit button is clicked
 
