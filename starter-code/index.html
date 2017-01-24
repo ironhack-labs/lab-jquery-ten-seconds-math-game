@@ -5,12 +5,36 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <script src="js/tenSecondsMath.js" async></script>
     <!--  Added Libraries -->
 
     <!-- Custon CSS -->
+    <link rel="stylesheet" href="css/custom.css">
   </head>
   <body>
+    <div>
+      <div class="checkboxes__wrapper">
+        <div class="checkbox__wrapper"><input type="checkbox" id="checkbox-addition"> + </div>
+        <div class="checkbox__wrapper"><input type="checkbox" id="checkbox-subtract"> - </div>
+        <div class="checkbox__wrapper"><input type="checkbox" id="checkbox-multiply"> x </div>
+        <div class="checkbox__wrapper"><input type="checkbox" id="checkbox-divide"> % </div>
+        <button class="btn-start" id="btn-start">Start Game</button>
+      </div>
+    </div>
+
+    <div class="math-equation">
+      <span id="number-first"></span>
+      <span id="operator">?</span>
+      <span id="number-second"></span>
+      <span>=</span>
+      <input type="text" id="input1" class="input--number">
+    </div>
+
+    <div class="countdown-clock">Time Remaining: <span id="countdown"></span></div>
+    <!--<button id="submit-button">Submit</button>-->
+
+
+
 
 
     <!-- Custon JavaScript -->

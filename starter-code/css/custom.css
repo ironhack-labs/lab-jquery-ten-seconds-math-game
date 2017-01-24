@@ -1,1 +1,59 @@
 /*Use this file to add your styles -there are some cool img in the images path*/
+
+body {
+  font-size: 36px;
+  font-family: 'Helvetica';
+}
+
+.btn-start {
+  padding: 15px;
+  border: none;
+  background: red;
+  border-radius: none;
+  color: white;
+  font-size: 36px;
+}
+
+.math-equation {
+  font-size: 72px;
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.math-equation span {
+  margin-right: 10px;
+}
+
+.checkboxes__wrapper {
+  display: flex;
+}
+
+.checkbox__wrapper {
+  background: grey;
+  color: white;
+  display: flex;
+  -ms-align-items: center;
+  align-items: center;
+  margin-right: 15px;
+  padding: 15px;
+}
+
+.input--number {
+  width: 150px;
+  height: 100px;
+  font-size: 72px;
+  border: 5px solid black;}
+
+.countdown-clock {
+  font-size: 36px;
+  color: grey;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 10px;
+}
+
+#countdown {
+  color: red;
+}
