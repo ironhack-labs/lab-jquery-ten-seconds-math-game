@@ -15,11 +15,13 @@ var createFirstNumberSpan;
 var createSecondNumberSpan;
 var createInputBox;
 
+//Get the input from the Range Input Bar.
 function assignNumberInput () {
   rangeInput = document.getElementById("rangeBarInput").value * 10;
   document.getElementById("number").innerHTML = rangeInput;
 }
 
+//Returns an Array of the check boxes that are selected.
 function selectorSelection() {
   var checksInput = document.getElementsByClassName("checks");
   checksInputArray = [];
@@ -31,44 +33,51 @@ function selectorSelection() {
   return checksInputArray;
 }
 
-function randomNumGenerator1 () {
-  randomNum1 = Math.floor(Math.random() * rangeInput) + 1;
-  return randomNum1;
-}
-
-function randomNumGenerator2 () {
-  randomNum2 = Math.floor(Math.random() * rangeInput) + 1;
-  return randomNum2;
-}
-
-function hideIt(){
-  document.getElementById("hideMe").style.display = 'none';
-}
-
-function showIt(event){
-
-  document.getElementById("box1").remove();
-  document.getElementById("box2").remove();
-  document.getElementById("hideMe").style.display = 'block';
-
-}
-
-var deleteItem = function (event) {
-  event.preventDefault();
-  event.currentTarget.parentElement.parentNode.remove();
+/*
+Calls the range bar function on load to get the correct input at sart.
+*/
+window.onload = function(){
+  assignNumberInput();
 };
 
-function answerReaction () {
-  inputAnswer = document.getElementById("inputBox");
-  answerChecking();
-  if (answerCheck === true) {
-    inputAnswer.className = "greenBorder";
-  } else if (answerCheck === false) {
-    inputAnswer.className = "redBorder";
+/*
+Launches the check of inputs and returns the value of one of them.
+*/
+function startGameInput () {
+  selectorSelection();
+  finalChecksInput = "";
+  if (checksInputArray.length === 0) {
+    finalChecksInput = "none";
+    alert("Please Select One of the Operators");
+  } else if (checksInputArray.length > 1) {
+    finalChecksInput = checksInputArray[Math.floor((Math.random())*checksInputArray.length)];
+  } else {
+    finalChecksInput = checksInputArray[0];
   }
-  return answerCheck;
+  return finalChecksInput;
 }
 
+/*
+Checks which symbol is being requested and returns a string with it to be used in the creation.
+*/
+function checkSymbol () {
+  startGameInput();
+  calculationSymbol = "";
+  if (finalChecksInput === "sum") {
+    calculationSymbol = " + ";
+  } else if (finalChecksInput === "minus"){
+    calculationSymbol = " - ";
+  } else if (finalChecksInput === "product") {
+    calculationSymbol = " * ";
+  } else if (finalChecksInput === "division") {
+    calculationSymbol = " / ";
+  }
+  return calculationSymbol;
+}
+
+/*
+Two Functions that check the answers and return wether is correct or wrong
+*/
 function answerChecking () {
   inputAnswer = document.getElementById("inputBox");
   correctAnswer = eval(randomNum1 + calculationSymbol + randomNum2);
@@ -86,6 +95,36 @@ function answerChecking () {
   return answerCheck;
 }
 
+function answerReaction () {
+  inputAnswer = document.getElementById("inputBox");
+  answerChecking();
+  if (answerCheck === true) {
+    inputAnswer.className = "greenBorder";
+  } else if (answerCheck === false) {
+    inputAnswer.className = "redBorder";
+  }
+  return answerCheck;
+}
+
+/*
+Two options that generate the random numbers that wil be
+used later on based on the input of the Range Bar
+*/
+function randomNumGenerator1 () {
+  randomNum1 = Math.floor(Math.random() * rangeInput) + 1;
+  return randomNum1;
+}
+
+function randomNumGenerator2 () {
+  randomNum2 = Math.floor(Math.random() * rangeInput) + 1;
+  return randomNum2;
+}
+
+/*
+The function that creates new levels.
+Launches the random number functions and the checking of the symbol input.
+Also sets the timer and and reacts if it runs out.
+*/
 function levelCreation () {
   randomNumGenerator1();
   randomNumGenerator2();
@@ -159,6 +198,24 @@ function levelCreation () {
   parent.appendChild(createSecondDiv);
 }
 
+/*
+Two functions that first hide the main screen and the delete the game screen
+created and shows the main screen again
+*/
+function hideIt(){
+  document.getElementById("hideMe").style.display = 'none';
+}
+
+function showIt(event){
+  document.getElementById("box1").remove();
+  document.getElementById("box2").remove();
+  document.getElementById("hideMe").style.display = 'block';
+}
+
+/*
+This function gets executed on the Start Button click and kickstarts the level
+creation if there is a correct input.
+*/
 function mathQuestionGenerator () {
   startGameInput();
   if (finalChecksInput === "none") {
@@ -168,36 +225,3 @@ function mathQuestionGenerator () {
     levelCreation();
   }
 }
-
-function startGameInput () {
-  selectorSelection();
-  finalChecksInput = "";
-  if (checksInputArray.length === 0) {
-    finalChecksInput = "none";
-    alert("Please Select One of the Operators");
-  } else if (checksInputArray.length > 1) {
-    finalChecksInput = checksInputArray[Math.floor((Math.random())*checksInputArray.length)];
-  } else {
-    finalChecksInput = checksInputArray[0];
-  }
-  return finalChecksInput;
-}
-
-function checkSymbol () {
-  startGameInput();
-  calculationSymbol = "";
-  if (finalChecksInput === "sum") {
-    calculationSymbol = " + ";
-  } else if (finalChecksInput === "minus"){
-    calculationSymbol = " - ";
-  } else if (finalChecksInput === "product") {
-    calculationSymbol = " x ";
-  } else if (finalChecksInput === "division") {
-    calculationSymbol = " % ";
-  }
-  return calculationSymbol;
-}
-
-window.onload = function(){
-  assignNumberInput();
-};
