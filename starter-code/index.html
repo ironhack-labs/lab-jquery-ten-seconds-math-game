@@ -5,15 +5,60 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/Users/tahirafarid/Codecamp/WK2/Day1/forked/lab-jquery-ten-seconds-math-game/starter-code/css/custom.css">
 
-    <!--  Added Libraries -->
-
-    <!-- Custon CSS -->
-  </head>
+</head>
   <body>
+  <div class="container">
+    <div class="innerBox">
+      <h1>Ten Seconds Math Game</h1>
+      <div class="mathGame">
+        <h3>Game Options</h3>
+        <div class="numSelect">
+          Number Limit:<br/>
+          <input type"number" id="choseTime">
+        </div>
+        <span>Operators</span>
+        <div class="row">
+  <div class="col-s-6">
+    <div class="input-group">
+      <span class="input-group-addon">
+        <input type="checkbox" aria-label="add"> +
+      </span>
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
+  <div class="col-s-6">
+    <div class="input-group">
+      <span class="input-group-addon">
+        <input type="checkbox" aria-label="subtract"> -
+      </span>
+    </div>
+  </div><!-- /input-group --><!-- /.col-lg-6 -->
+  <div class="col-s-6">
+    <div class="input-group">
+      <span class="input-group-addon">
+        <input type="checkbox" aria-label="multiply"> *
+      </span>
+    </div>
+  </div><!-- /input-group -->
+  <div class="col-s-6">
+    <div class="input-group">
+      <span class="input-group-addon">
+        <input type="checkbox" aria-label="divide"> /
+      </span>
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
+</div><!-- /.row -->
 
-
+        <button id="playGame"> Start Game</button>
+      </div>
+    </div>
+</div>
     <!-- Custon JavaScript -->
-
+<script src="/Users/tahirafarid/Codecamp/WK2/Day1/forked/lab-jquery-ten-seconds-math-game/starter-code/js/tenSecondsMath.js"> </script>
+<script src="/Users/tahirafarid/Codecamp/WK2/Day1/forked/lab-jquery-ten-seconds-math-game/starter-code/js/application.js"></script>
   </body>
 </html>

@@ -1,1 +1,39 @@
 /*Use this file to add your styles -there are some cool img in the images path*/
+*{
+  text-align: center;
+  padding: 10px;
+}
+
+.container {
+  background-image: url(/Users/tahirafarid/Codecamp/WK2/Day1/forked/lab-jquery-ten-seconds-math-game/starter-code/images/board.jpg);
+  width: 700px;
+  /*height: 750px;*/
+  position: absolute;
+}
+
+.innerBox {
+  background-color: rgb(193, 207, 212);
+  padding: 40px;
+  margin: 10%;
+  position: relative;
+}
+
+
+
+.mathGame {
+  background-color: white;
+}
+
+.operators {
+  float: right;
+}
+
+input.add {
+  background-image: url(/Users/tahirafarid/Codecamp/WK2/Day1/forked/lab-jquery-ten-seconds-math-game/starter-code/images/add.jpg);
+
+}
+
+#playGame {
+  background-color: #075E78;
+  color: white;  
+}
