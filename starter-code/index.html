@@ -1,19 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+ <head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" href="css/custom.css">
+ <script type="text/javascript" src="js/tenSecondsMath.js"></script>
+   <!--  Added Libraries -->
 
-    <!--  Added Libraries -->
+   <!-- Custon CSS -->
+ </head>
+ <body>
+ <h1> Ten Seconds Math Game </h1>
+ <h2> Game Options </h2>
+ <h3> Number Limit: </h3> <div id="limit">Limit</div><br>
+ <div id="countdownOutput">output</div>
+ <p> Operators </p>
+<div class="form">
+ <input type="checkbox" name="add"><img src="images/add.jpg" height="30" width="30"/><br>
+</div>
+<div class="form">
+ <input type="checkbox" name="substract"><img src="images/substract.jpg" height="30" width="30"/><br>
+</div>
+<div class="form">
+ <input type="checkbox" name="multiply"><img src="images/multiply.jpg" height="30" width="30"/><br>
+</div>
+<div class="form">
+ <input type="checkbox" name="divide"><img src="images/divide.jpg" height="30" width="30"/><br>
+</div>
 
-    <!-- Custon CSS -->
-  </head>
-  <body>
+<span id="num1"></span> <span id="ranFun"></span><span id="num2"></span>
 
+<!-- <INPUT TYPE=TEXT NAME="ACCOUNT" ID="ACCOUNT" VALUE="" MAXLENGTH=16 SIZE=16 readonly> -->
 
-    <!-- Custon JavaScript -->
+<button id="startGame" onclick="countdown()" >Start Game</button>
+   <!-- Custon JavaScript -->
 
-  </body>
+ </body>
 </html>
