@@ -6,7 +6,7 @@
 
 After this learning unit, you will be able to:
 
-- Build your own Ten Seconds Math game, using HTML, CSS, JavaScript and jQuery
+- Build your own Ten Seconds Math game, using HTML, CSS and JavaScript.
 - Create the logic of the game using JavaScript classes
 - Separate the logic of the game from the JavaScript DOM operations
 - Original idea: http://www.mental-math-trainer.com/
@@ -15,11 +15,11 @@ After this learning unit, you will be able to:
 
 Ten Seconds Math is a game created by *Michael Jakob* to challenge a person's mathematical skills against the clock.
 
-- At the beginning, the user has 10 seconds to answer the math dare
-- The user chooses what type/s of math operations  will face: addition, substraction, multiplication or division
-- The clock will start running once the first question is correctly answer
-- The time left when the user answers a question will be added to further dares
-- Every correct answer will add 10 seconds more to the clock
+- At the beginning, the user has 10 seconds to answer the math problem.
+- The user chooses what type/s of math operations they will face: addition, substraction, multiplication or division.
+- The clock will start running once the first question is correctly answered.
+- The time left when the user answers a question will be added to the next problem.
+- Every correct answer will add 10 seconds more to the clock.
 - The user loses the game when the time is up! Don't let the clock run out!
 
 ### Requirements
@@ -33,9 +33,9 @@ Ten Seconds Math is a game created by *Michael Jakob* to challenge a person's ma
 
 ![Ten Seconds Math](https://i.imgur.com/Hh56ycO.png)
 
-Remember to separate the game logic from the DOM operations and user interactions in your JavaScript code. In this project, you'll find two JavaScript files: `tenSecondsMath.js`, which holds the game logic and `application.js`,which will contain the DOM manipulation.
+Remember to separate the game logic from the DOM operations and user interactions in your JavaScript code. In this project, you'll find two JavaScript files: `tenSecondsMath.js`, which holds the game logic and `application.js`, which will contain the DOM manipulation.
 
-The goal is to be able to play the game without the interface, using the browser's console. So the first code we will build is the `tenSecondsMathGame` class.
+The goal is to be able to play the game without the interface, using only the browser's console. So the first code we will build is the `TenSecondsMathGame` class.
 
 :::info
 We will provide a possible solution but feel free to find a better one on your own and share it with the class :)
@@ -49,17 +49,17 @@ The HTML and CSS code are created and the JavaScript file is already linked in t
 
 ## First iteration: Can I ask you a question?
 
-We will create the constructor of `tenSecondsMathGame`. This function will:
+We will create the constructor function for `TenSecondsMathGame`. This function will:
 
-- Receive the operation selected by the user and the top limit of the operation's numbers.
+- Receive the operation selected by the user and the upper limit of the numbers to be used in the problems as parameters.
 - Set the operation the user selected to play with.
-- Set the top limit number for the operations.
+- Set the upper limit of the numbers to be used in the problems.
 
-We also need a function that generates a random number between 1 and the limit number the user indicated. This will be usefull every time we start a new question.
+We also need a function that generates a random number between 1 and the limit number the user indicated. This will be useful every time we start a new question.
 
 ### Building a question generator
 
-We will create a function to generate the questions itself. It will get two random numbers and will operate with them, depending of the kind of operation the user selected before. If the user selected more than one kind of operation, choose one randomly.
+We will create a function to generate the questions themselves. It will get two random numbers and will operate with them, depending of the kind of operation the user selected before. If the user selected more than one kind of operation, choose one randomly.
 
 The function will be in charge of:
 
@@ -68,11 +68,11 @@ The function will be in charge of:
 - Print the Math question in the console.
 
 :::danger
-:warning: **There are some logic rules you must be aware of:**
+:warning: **There are some logic rules we must be aware of:**
 
-- The result will never be negative
+- The result should never be negative
 - The difference between the generated operators can't be less than 3 (except for the *division*)
-- The generated numbers will never be equal (except for the *division*)
+- The generated numbers should never be equal (except for the *division*)
 :::
 
 Finally, we will create a function that receives the user answer and compares it with the solution, returning if the answer was right or not.
@@ -93,7 +93,7 @@ In `application.js` create a click event for the **start button**.
 
 When you click the button, the application should hide the section `game-options` and show the section `game-board`. Also, it will show a new question.
 
-On the other hand, when pressing the **start button** we will generate a new `tenSecondsMathGame`. This new object will receive the options chosen by the user and create a new question.
+On the other hand, when pressing the **start button** we will generate a new `TenSecondsMathGame` object. This new object will receive the options chosen by the user and create a new question.
 
 After the question is created, we have to show the question in the DOM for the user.
 
@@ -113,18 +113,18 @@ We will start the game setting 10 seconds.
 
 ### Controlling the time
 
-We are going to create the function `_startTimer` inside the `tenSecondsMathGame` object. This function will call another function to check recurrently if the time is over.
+We are going to create the function `_startTimer` inside the `TenSecondsMathGame` object. This function will call another function to check recurrently if the time is over.
 
 ### Checking the time
 
-Create a function `_checkTimer` in the `tenSecondsMathGame` object to check the time left in the clock. If it's greater than 0, the game continue and substract a second. When the clock reaches 0, we will stop the execution of the clock.
+Create a function `_checkTimer` in the `TenSecondsMathGame` object to check the time left in the clock. If it's greater than 0, the game continues and substracts a second. When the clock reaches 0, we will stop the execution of the clock.
 
-First, try to print in the console this timer once application starts. It will be shown in the console every second. Lastly, it will print "Time is over!" when zero is reached.
+First, try to print timer in the console once the application starts. It will be shown in the console every second. Lastly, it will print "Time is over!" when zero is reached.
 
 ![Timer pic](https://i.imgur.com/m4W8PRi.png)
 
 :::success
-The clock will start when the user answers correctly the first question.
+The clock will start when the user answers the first question correctly.
 :::
 
 ### That is correct!
@@ -133,7 +133,7 @@ We will create a function to add 10 seconds when the user gets a correct answer.
 
 ### Add the clock into the DOM
 
-Once we start a new game, we will print the clock in the DOM. This clock will be updated every second so the user can see how many seconds he has to answer the questions.
+Once we start a new game, we will print the clock in the DOM. This clock will be updated every second so the user can see how many seconds they have to answer the questions.
 
 ![Math pic](https://i.imgur.com/XJI7lTT.png)
 
@@ -147,7 +147,7 @@ Now we have our game almost complete, but what happens if the clock reaches to z
 
 When the clock reaches zero, we need to indicate that the game is over and the user can't play anymore. We need to build three actions in order to finish the game:
 
-- Disable the posibility to write anything in the input filed
+- Disable the posibility to write anything in the input field
 - Hide the clock
 - Show an image to indicate the game is over
 
@@ -164,9 +164,9 @@ We will implement a button to restart the game from the beginning. This button w
 
 ## Fourth Iteration: Spicing up the game
 
-The app shows the user when the answer is wrong but what about congrat him when the answer is right?
+The app shows the user when the answer is wrong but what about congratulating them when the answer is right?
 
-We are going to create a function that will pop up a coin image and play a sound when the answer is right
+We are going to create a function that will show a pop up with a coin image and play a sound when the answer is right.
 
 ### Popping up the coin
 
@@ -174,7 +174,7 @@ We are going to create a function that will pop up a coin image and play a sound
 Since you have the coin image already downloaded, we just need to use it.
 :::
 
-We already have the coin image hided in the HTML inside the `img` tag with id `#btc-reward`.
+We already have the coin image hidden in the HTML inside the `img` tag with id `#btc-reward`.
 
 We will create a function that will show the image in a random position inside the `#game-container` element. A second later, it will hide the image again.
 
