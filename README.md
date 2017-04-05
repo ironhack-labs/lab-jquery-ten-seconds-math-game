@@ -37,15 +37,11 @@ Remember to separate the game logic from the DOM operations and user interaction
 
 The goal is to be able to play the game without the interface, using only the browser's console. So the first code we will build is the `TenSecondsMathGame` class.
 
-:::info
-We will provide a possible solution but feel free to find a better one on your own and share it with the class :)
+*We will provide a possible solution but feel free to find a better one on your own and share it with the class :)*
 
 **// Happy coding**
-:::
 
-:::success
-The HTML and CSS code are created and the JavaScript file is already linked in the HTML.
-:::
+**Success** The HTML and CSS code are created and the JavaScript file is already linked in the HTML.
 
 ## First iteration: Can I ask you a question?
 
@@ -67,13 +63,11 @@ The function will be in charge of:
 - Generate the solution.
 - Print the Math question in the console.
 
-:::danger
 :warning: **There are some logic rules we must be aware of:**
 
 - The result should never be negative
 - The difference between the generated operators can't be less than 3 (except for the *division*)
 - The generated numbers should never be equal (except for the *division*)
-:::
 
 Finally, we will create a function that receives the user answer and compares it with the solution, returning if the answer was right or not.
 
@@ -123,9 +117,7 @@ First, try to print timer in the console once the application starts. It will be
 
 ![Timer pic](https://i.imgur.com/m4W8PRi.png)
 
-:::success
-The clock will start when the user answers the first question correctly.
-:::
+**Success** The clock will start when the user answers the first question correctly.
 
 ### That is correct!
 
@@ -170,9 +162,7 @@ We are going to create a function that will show a pop up with a coin image and 
 
 ### Popping up the coin
 
-:::success
-Since you have the coin image already downloaded, we just need to use it.
-:::
+**Success** Since you have the coin image already downloaded, we just need to use it.
 
 We already have the coin image hidden in the HTML inside the `img` tag with id `#btc-reward`.
 
