@@ -1,1 +1,67 @@
 /*Use this file to add your styles -there are some cool img in the images path*/
+body {
+ /*background-image: url("../images/board.jpg");*/
+ font-size: 20px;
+}
+
+.col-centered{
+    float: none;
+}
+.border-round {
+  border: 3px solid black;
+  border-radius: 6px;
+}
+
+.main {
+  margin-top:2%;
+}
+/*.row div {
+  border: 1px solid black;
+}*/
+.container {
+  margin-top:2%; 
+  background-color: white;
+}
+h3, h1 {
+  display:inline;
+}
+
+body::after {
+  content: "";
+  background: url("../images/board.jpg");
+  opacity: 0.2;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;   
+}
+.row {
+  margin: 10px;
+}
+
+#ex1Slider .slider-selection {
+	background: #BABABA;
+}
+.operations {
+  margin: 10px auto;
+  padding:5px;
+}
+.operations img {
+  width: 25px;
+}
+
+#question-div {
+  position: absolute;
+  visibility: hidden;
+  width: 300px;
+}
+#game-over-div {
+  position: absolute;
+  visibility: hidden;
+  width: 300px;
+}
+#game-over-div img {
+  width:300px;
+}
