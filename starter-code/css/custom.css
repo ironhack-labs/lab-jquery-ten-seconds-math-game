@@ -1,1 +1,62 @@
 /*Use this file to add your styles -there are some cool img in the images path*/
+body {
+  background-image: url("../images/board.jpg");
+  background-size: cover;
+}
+
+.container {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  margin-top: 75px;
+  justify-content:center;
+
+}
+
+.main {
+  border: 1px solid gray;
+  border-radius: 10px;
+  background-color: rgba(255,255,255,0.7);
+  text-align: center;
+  color: black;
+  font-size: 24px;
+  min-width: 700px;
+  min-height: 600px;
+  max-width: 700px;
+  padding-top: 15px;
+}
+
+.game {
+  height: 500px;
+  width: 400px;
+  background-color: white;
+  margin: auto;
+  padding: 15px;
+  text-align: center;
+  align-content: center;
+}
+
+#rangeInputID {
+  width: 250px;
+  margin: auto;
+}
+
+#rangeOutputID {
+  font-size: 24px;
+}
+
+.btn-primary {
+  font-size: 28px;
+  width: 150px;
+  height:35px;
+}
+
+.timer {
+  margin-top: 15px;
+  font-weight: lighter;
+}
+
+.imageSize {
+  width: 10%;
+  padding:5px;
+}

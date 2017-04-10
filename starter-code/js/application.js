@@ -4,5 +4,7 @@
 
 
 window.onload = function(){
+  var startGameButton = document.getElementById('btnStart');
+  startGameButton.onclick = TenSecondsMathGame;
 
 };
