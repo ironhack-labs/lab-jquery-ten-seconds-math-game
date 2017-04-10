@@ -185,6 +185,7 @@ TenSecondsMathGame.prototype.newQuestion = function(){
   }
 
   console.log(this.resultObject.question);
+  return this.resultObject;
   // console.log("operationSelected",operationSelected);
   // console.log("numberLimitSelected",numberLimitSelected);
   // console.log("num1 ",num1);
