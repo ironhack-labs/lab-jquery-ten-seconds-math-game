@@ -3,7 +3,7 @@ var TenSecondsMathGame = function(operationsArray, limit) {
   this.limit = limit;
   this.operationsArray = operationsArray;
   this.result = 0;
-  this.timerId;
+  this.actualTime = 30;
 };
 
 TenSecondsMathGame.prototype.newQuestion = function() {
@@ -21,8 +21,8 @@ TenSecondsMathGame.prototype.newQuestion = function() {
 
 TenSecondsMathGame.prototype.isCorrectAnswer = function(answer) {
     if (answer === this.result) {
+      this.actualTime += 10;
       console.log("You Win !!!");
-      clearTimeout(timerId);
     } else {
       console.log("Try Again!");
     }
@@ -60,14 +60,14 @@ TenSecondsMathGame.prototype.randomNumber =function (max) {
 };
 
 TenSecondsMathGame.prototype.timer = function(){
-  var counter = 10;
-  var callbackFunction = function () {
-    console.log(counter);
-    timeoutId = setTimeout(callbackFunction, 1000);
-    this.timerId = timeoutId;
-    counter -= 1;
+  var that = this;
 
-    if (counter <= 0) {
+  var callbackFunction = function () {
+    console.log(that.actualTime);
+    timeoutId = setTimeout(callbackFunction, 1000);
+    that.actualTime -= 1;
+
+    if (that.actualTime <= 0) {
       clearTimeout(timeoutId);
       console.log("Time Out, Game Over!!");
     }
