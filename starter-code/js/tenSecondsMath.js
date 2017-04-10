@@ -7,7 +7,10 @@ var TenSecondsMathGame = function(options) {
 
   this.inputObject = options;
 
-  this.resultObject = options;
+  this.resultObject = {
+    answer: "",
+    question: ""
+  };
 
   var operationSelected = "";
   var operationSelectedSign = "";
@@ -138,7 +141,7 @@ TenSecondsMathGame.prototype.newQuestion = function(){
 
         this.resultObject.question = numArray[0].toString() + operationSelectedSign + numArray[1].toString();
 
-        result = substractFunction(numArray[0],numArray[1]);
+        result = this.substractFunction(numArray[0],numArray[1]);
 
         this.resultObject.answer = result;
       }
