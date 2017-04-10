@@ -1,5 +1,6 @@
 window.onload = function () {
     var answer = "",
+        interval,
         audio = document.createElement("audio");
 
     function sound() {
@@ -17,15 +18,15 @@ window.onload = function () {
                 $('#problem-text').html("+");
                 quest();
             }
-            if (this.id === "sub") {
+            else if (this.id === "sub") {
                 $('#problem-text').html("-");
                 quest();
             }
-            if (this.id === "multi") {
+            else if (this.id === "multi") {
                 $('#problem-text').html("*");
                 quest();
             }
-            if (this.id === "div") {
+            else if (this.id === "div") {
                 $('#problem-text').html("/");
                 quest();
             }
@@ -33,8 +34,7 @@ window.onload = function () {
     });
 
     function result(num1, num2) {
-        var answer = eval(num1 + $('#problem-text').html() + num2);
-        correctAnswer = answer;
+        correctAnswer = eval(num1 + $('#problem-text').html() + num2);
     }
 
     function quest() {
@@ -47,28 +47,34 @@ window.onload = function () {
     }
 
     //hide the first screen and start the game
-    $(".btn").on("click", function () {
+    $(".start").on("click", function () {
         $(".setting-panel").hide();
         $(".game").css("visibility", "visible");
         startgame();
     });
 
+    $(".restart").on("click", function () {
+        clearInterval(interval);
+        $('#countdown').html(10);
+        $('.gameover').css("visibility", "hidden");
+        $('.gameover').css("position", "absolute");
+        quest();
+        startgame();
+    });
+
     $("#userAnswer").on("input", function () {
         var answer = $('#userAnswer').val();
-        console.log(correctAnswer);
         if (correctAnswer == answer) {
             sound();
             quest();
             $('#userAnswer').val("");
-            $('#countdown').html( parseInt($('#countdown').html()) +1 );
+            $('#countdown').html(parseInt($('#countdown').html()) + 1);
         }
     });
 
     function startgame() {
-        var interval = setInterval(function () {
+        interval = setInterval(function () {
             var counter = parseInt($('#countdown').html());
-            $('#countdown').html(counter + " seconds left");
-            console.log(counter);
             counter -= 1;
             $('#countdown').html(counter + " seconds left");
             if (counter === 0) {
