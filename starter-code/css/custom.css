@@ -63,10 +63,15 @@
 
 .game-board .question{
   float: left;
-  width: 50%;
+  width: 33%;
 }
 
 .game-board input{
   float:left;
-  width: 50%;
+  width: 34%;
+}
+
+.game-board .result-ok{
+  float:left;
+  width: 33%;
 }

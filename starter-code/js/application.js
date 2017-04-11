@@ -3,30 +3,37 @@
 //Initialize ion library
 
 
-function startGame(operationOptions, numberLimitSelected){
-
-  var game = TenSecondsMathGame({ops:operationOptions , numberLimit: numberLimitSelected});
-
-  document.getElementsByClassName("game-options-number-limit")[0].style.display = "none";
-
-  document.getElementsByClassName("game-options-operation")[0].style.display = "none";
-
-  document.getElementsByClassName("game-start")[0].style.display = "none";
-
-  document.getElementsByClassName("game-board")[0].style.display = "block";
-
-  game.newQuestion();
-
-}
+// function StartGame(operationOptions, numberLimitSelected){
+//
+//   var game = new TenSecondsMathGame({ops:operationOptions , numberLimit: numberLimitSelected});
+//
+//   document.getElementsByClassName("game-options-number-limit")[0].style.display = "none";
+//
+//   document.getElementsByClassName("game-options-operation")[0].style.display = "none";
+//
+//   document.getElementsByClassName("game-start")[0].style.display = "none";
+//
+//   document.getElementsByClassName("game-board")[0].style.display = "block";
+//
+//   game.newQuestion();
+//
+// }
 
 
 window.onload = function(){
+  var game;
+  var optionsNewQuestion;
+
   var startGameButton = document.getElementById('btn-start');
   var addCheckBox = document.getElementById('add');
   var substractCheckBox = document.getElementById('substract');
   var multiplyCheckBox = document.getElementById('multiply');
   var divideCheckBox = document.getElementById('divide');
   var operationOptions = [];
+  var newQuestion = document.getElementById('question');
+  var answer = document.getElementById('answer');
+  var resultOK = document.getElementById('result-ok');
+
 
   addCheckBox = document.getElementById('add').onclick = function() {
     if ( this.checked ) {
@@ -98,7 +105,28 @@ window.onload = function(){
     numberLimitDisplay.innerHTML = numberLimit.value;
   }, false);
 
-  startGameButton.onclick = startGame(operationOptions, numberLimit.value);
+  // startGameButton.onclick = StartGame(operationOptions, numberLimit.value);
+  startGameButton.addEventListener('click',function(){
+
+    game = new TenSecondsMathGame({ops:operationOptions , numberLimit: parseInt(numberLimit.value)});
+
+    document.getElementsByClassName("game-options-number-limit")[0].style.display = "none";
+
+    document.getElementsByClassName("game-options-operation")[0].style.display = "none";
+
+    document.getElementsByClassName("game-start")[0].style.display = "none";
+
+    document.getElementsByClassName("game-board")[0].style.display = "block";
+
+    optionsNewQuestion = game.newQuestion();
+
+    newQuestion.innerHTML = optionsNewQuestion.question;
+
+    answer.addEventListener('input',function(){
+      resultOK.innerHTML = game.isCorrectAnswer(parseInt(answer.value));
+    }, false);
+
+  });
 
 
 

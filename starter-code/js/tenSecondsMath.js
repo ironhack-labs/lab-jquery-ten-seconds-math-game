@@ -200,11 +200,9 @@ TenSecondsMathGame.prototype.isCorrectAnswer = function(answer){
 
     if(answer === this.resultObject.answer)
     {
-      console.log("Great");
+      return "Great";
     }
     else {
-      console.log("Wrong");
+      return "Wrong";
     }
 };
-
-var game = new TenSecondsMathGame({ops: ["divide", "add"], numberLimit: 10});
