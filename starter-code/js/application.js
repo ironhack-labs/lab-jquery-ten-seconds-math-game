@@ -29,6 +29,7 @@ window.onload = function(){
   var multiplyCheckBox = document.getElementById('multiply');
   var divideCheckBox = document.getElementById('divide');
   var operationOptions = [];
+  var timeLeft = document.getElementById('time-left');
   var newQuestion = document.getElementById('question');
   var answer = document.getElementById('answer');
   var resultOK = document.getElementById('result-ok');
@@ -119,6 +120,8 @@ window.onload = function(){
 
     CheckAndRepeat(resultOK, answer, newQuestion, game);
 
+    DisplayTime(timeLeft, game);
+
   });
 };
 
@@ -141,4 +144,15 @@ function CheckAndRepeat(resultOK, answer, newQuestion, game){
     }
   }, false);
 
+}
+
+function DisplayTime(timeLeft, game){
+
+  var intervalID = setInterval(function(){
+    timeLeft.innerHTML = game.timeRemaining.toString();
+    if(game.finished)
+    {
+      clearInterval(intervalID);
+    }
+  },1000);
 }

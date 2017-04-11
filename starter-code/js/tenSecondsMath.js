@@ -1,9 +1,18 @@
 // Use this file to write the logic of your game, the needed attrs and functions
 
+var defaultOptions = {ops: ['add'], numberLimit: 10};
 
 //var TenSecondsMathGame = function(options) {
 var TenSecondsMathGame = function(options) {
 
+  this.timeSum = 10;
+  this.timeRemaining = 10;
+  this.gameStarted = false;
+
+  this.timer ="";
+
+  this.start = false;
+  this.finished = false;
 
   this.inputObject = options;
 
@@ -17,6 +26,37 @@ var TenSecondsMathGame = function(options) {
   var numberLimitSelected = 0;
   var numArray = [];
   var result;
+
+};
+
+TenSecondsMathGame.prototype._correctAnswer = function(){
+  this.timeRemaining  += this.timeSum;
+};
+
+TenSecondsMathGame.prototype._startTimer = function(){
+
+  var self = this;
+
+  this.timer = setInterval(function(){
+    self._checkTimer();
+  },1000);
+};
+
+TenSecondsMathGame.prototype._checkTimer = function(){
+
+  if(this.timeRemaining<=0)
+  {
+      console.log('finished');
+      clearInterval(this.timer);
+      this.finished = true;
+      return this.timeRemaining;
+  }
+  else
+  {
+    this.timeRemaining--;
+    console.log(this.timeRemaining);
+    return this.timeRemaining;
+  }
 
 };
 
@@ -200,6 +240,14 @@ TenSecondsMathGame.prototype.isCorrectAnswer = function(answer){
 
     if(answer === this.resultObject.answer)
     {
+      this._correctAnswer();
+      if(!this.gameStarted)
+      {
+        this._startTimer();
+        this.gameStarted = true;
+        this.finished = false;
+      }
+
       return true;
     }
     else {

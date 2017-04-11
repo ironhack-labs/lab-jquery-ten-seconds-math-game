@@ -61,6 +61,11 @@
   margin-top: 40%;
 }
 
+.game-board .time-left{
+  display: block;
+  width: 100%;
+}
+
 .game-board .question{
   float: left;
   width: 33%;
