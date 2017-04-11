@@ -80,3 +80,14 @@
   float:left;
   width: 33%;
 }
+
+.game-restart{
+  display: none;
+  margin-top: 5%;
+}
+
+.game-restart .col-md-4{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -8,11 +8,11 @@ var TenSecondsMathGame = function(options) {
   this.timeSum = 10;
   this.timeRemaining = 10;
   this.gameStarted = false;
+  this.finished = false;
 
   this.timer ="";
 
-  this.start = false;
-  this.finished = false;
+
 
   this.inputObject = options;
 

@@ -33,6 +33,7 @@ window.onload = function(){
   var newQuestion = document.getElementById('question');
   var answer = document.getElementById('answer');
   var resultOK = document.getElementById('result-ok');
+  var restartGameButton = document.getElementById('btn-restart');
 
 
   addCheckBox = document.getElementById('add').onclick = function() {
@@ -110,6 +111,8 @@ window.onload = function(){
 
     game = new TenSecondsMathGame({ops:operationOptions , numberLimit: parseInt(numberLimit.value)});
 
+    console.log(game);
+
     document.getElementsByClassName("game-options-number-limit")[0].style.display = "none";
 
     document.getElementsByClassName("game-options-operation")[0].style.display = "none";
@@ -121,6 +124,28 @@ window.onload = function(){
     CheckAndRepeat(resultOK, answer, newQuestion, game);
 
     DisplayTime(timeLeft, game);
+
+  });
+
+  restartGameButton.addEventListener('click',function(){
+
+    game.timeRemaining = 10;
+
+    game.finished = false;
+
+    game.gameStarted = false;
+
+    document.getElementsByClassName("game-options-number-limit")[0].style.display = "block";
+
+    document.getElementsByClassName("game-options-operation")[0].style.display = "block";
+
+    document.getElementsByClassName("game-start")[0].style.display = "block";
+
+    document.getElementsByClassName("game-board")[0].style.display = "none";
+
+    document.getElementsByClassName("game-restart")[0].style.display = "none";
+
+    delete game.TenSecondsMathGame;
 
   });
 };
@@ -153,6 +178,15 @@ function DisplayTime(timeLeft, game){
     if(game.finished)
     {
       clearInterval(intervalID);
+      DisplayEnd(timeLeft);
     }
   },1000);
+}
+
+function DisplayEnd(timeLeft){
+
+  timeLeft.innerHTML = "Game Over";
+  document.getElementsByClassName("game-restart")[0].style.display = "block";
+
+
 }
