@@ -8,7 +8,10 @@ var TenSecondsMathGame = function(optionsArray, limitNumber) {
     this.question = "";
     this.answer = 0;
     this.intervalID = null;
-
+    //Game Over event
+    this.gameOverEvent = document.createEvent("Event");
+    this.gameOverEvent.initEvent("gameOver", true, false);
+    
     //Initialize Game
     this.newQuestion();
 };
@@ -80,5 +83,13 @@ TenSecondsMathGame.prototype.swapNumbers = function() {
 
 TenSecondsMathGame.prototype.startTimeCount = function(fnArg){
     this.intervalID = setInterval(fnArg, 1000);
+};
+
+TenSecondsMathGame.prototype.gameOver = function(){
+    document.dispatchEvent(this.gameOverEvent);
+};
+
+TenSecondsMathGame.prototype.onGameOver = function(fnArg){
+    document.addEventListener("gameOver", fnArg);
 };
 

@@ -22,9 +22,23 @@ function startGame(){
         updateTimeText(game.seconds);
         
         if (game.seconds == 0) {
+            game.gameOver();
             clearInterval(game.intervalID);
         }
     });
+    
+    game.onGameOver(onGameOverListener);
+}
+
+function onGameOverListener() {
+    console.log("Time is 0, GAME OVER");
+    var img = document.createElement("img");
+    img.setAttribute("src", "images/gameover.jpg");
+    img.setAttribute("class", "img-responsive");
+    
+    var parent = document.getElementById("content");
+    parent.innerHTML = "";
+    parent.appendChild(img);
 }
 
 function updateTimeText(value){

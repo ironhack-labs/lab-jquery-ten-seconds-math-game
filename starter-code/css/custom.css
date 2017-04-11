@@ -44,8 +44,10 @@ body {
     margin: 10px 10px;
     font-size: 30px;
     font-weight: bold;
+    float: left;
 }
 
 #answer {
-    margin: 10px 10px;
+    margin: 18px 10px;
+    float: left;
 }
