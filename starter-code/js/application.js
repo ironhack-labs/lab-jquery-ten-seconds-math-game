@@ -3,7 +3,12 @@
 //Initialize ion library
 var game;
 
+var savedHtmlBlock = "";
+
+var slider;
+
 window.onload = function(){
+    savedHtmlBlock = document.getElementById("content").innerHTML;
     createSlider();
 };
 
@@ -31,23 +36,8 @@ function startGame(){
 }
 
 function restartGame(){
-    createGameDialogContent();
-    
-    game.newQuestion();
-    
-    setQuestion(game.question);
-    
-    game.startTimeCount(function(){
-        game.decreaseTime();
-        updateTimeText(game.seconds);
-        
-        if (game.seconds == 0) {
-            game.gameOver();
-            clearInterval(game.intervalID);
-        }
-    });
-    
-    game.onGameOver(onGameOverListener);
+    document.getElementById("content").innerHTML = savedHtmlBlock;
+    createSlider();
 }
 
 function onGameOverListener() {
@@ -123,7 +113,7 @@ function onEnterKey(e){
 }
 
 function createSlider(){
-    var slider = document.getElementById('slider1');
+    slider = document.getElementById('slider1');
 
     noUiSlider.create(slider, {
         start: [10],
