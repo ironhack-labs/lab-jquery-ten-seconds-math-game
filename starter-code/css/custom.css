@@ -20,9 +20,13 @@ body {
 }*/
 .container {
   margin-top:2%; 
+  width:50%;
   background-color: white;
 }
-h3, h1 {
+.container-table {
+    display: table;
+}
+h3,h2, h1 {
   display:inline;
 }
 
@@ -57,11 +61,16 @@ body::after {
   visibility: hidden;
   width: 300px;
 }
+#time-limit {
+  width: 50px;
+}
 #game-over-div {
   position: absolute;
   visibility: hidden;
   width: 300px;
+
 }
 #game-over-div img {
   width:300px;
+  margin-bottom: 40px;
 }
