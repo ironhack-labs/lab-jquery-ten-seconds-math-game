@@ -30,8 +30,30 @@ function startGame(){
     game.onGameOver(onGameOverListener);
 }
 
+function restartGame(){
+    createGameDialogContent();
+    
+    game.newQuestion();
+    
+    setQuestion(game.question);
+    
+    game.startTimeCount(function(){
+        game.decreaseTime();
+        updateTimeText(game.seconds);
+        
+        if (game.seconds == 0) {
+            game.gameOver();
+            clearInterval(game.intervalID);
+        }
+    });
+    
+    game.onGameOver(onGameOverListener);
+}
+
 function onGameOverListener() {
     console.log("Time is 0, GAME OVER");
+    var button = '<button class="btn btn-primary" onclick="restartGame()">Restart</button>';
+    
     var img = document.createElement("img");
     img.setAttribute("src", "images/gameover.jpg");
     img.setAttribute("class", "img-responsive");
@@ -39,6 +61,8 @@ function onGameOverListener() {
     var parent = document.getElementById("content");
     parent.innerHTML = "";
     parent.appendChild(img);
+    parent.innerHTML += button;
+    
 }
 
 function updateTimeText(value){
