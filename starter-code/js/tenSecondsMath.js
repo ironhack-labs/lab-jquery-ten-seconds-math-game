@@ -200,9 +200,9 @@ TenSecondsMathGame.prototype.isCorrectAnswer = function(answer){
 
     if(answer === this.resultObject.answer)
     {
-      return "Great";
+      return true;
     }
     else {
-      return "Wrong";
+      return false;
     }
 };

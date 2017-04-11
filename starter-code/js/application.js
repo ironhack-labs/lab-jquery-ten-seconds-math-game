@@ -22,7 +22,6 @@
 
 window.onload = function(){
   var game;
-  var optionsNewQuestion;
 
   var startGameButton = document.getElementById('btn-start');
   var addCheckBox = document.getElementById('add');
@@ -118,16 +117,28 @@ window.onload = function(){
 
     document.getElementsByClassName("game-board")[0].style.display = "block";
 
-    optionsNewQuestion = game.newQuestion();
-
-    newQuestion.innerHTML = optionsNewQuestion.question;
-
-    answer.addEventListener('input',function(){
-      resultOK.innerHTML = game.isCorrectAnswer(parseInt(answer.value));
-    }, false);
+    CheckAndRepeat(resultOK, answer, newQuestion, game);
 
   });
-
-
-
 };
+
+function CheckAndRepeat(resultOK, answer, newQuestion, game){
+
+  var optionsNewQuestion;
+
+  optionsNewQuestion = game.newQuestion();
+
+  newQuestion.innerHTML = optionsNewQuestion.question;
+
+  answer.addEventListener('input',function(){
+    if(game.isCorrectAnswer(parseInt(answer.value)))
+    {
+      resultOK.innerHTML = "Great";
+      CheckAndRepeat(resultOK, answer, newQuestion, game);
+    }
+    else {
+      resultOK.innerHTM = "Wrong";
+    }
+  }, false);
+
+}
