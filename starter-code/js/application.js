@@ -2,41 +2,46 @@ window.onload = function () {
     var answer = "",
         interval,
         audio = document.createElement("audio");
-
+    
+    //play sound
     function sound() {
         audio.setAttribute("src", "./audios/cash-register.mp3");
         audio.setAttribute("autoplay", "autoplay");
     }
 
+    //change the input number of the option Number Limit 
     $('#range-slider').on("change mousemove", function () {
         $('#number').html(this.value);
     });
 
+    //check for the user operator selection
     $("input").on("click", function () {
         if ($("#" + this.id).prop("checked")) {
             if (this.id === "add") {
-                $('#problem-text').html("+");
+                $('#operator').html("+");
                 quest();
             }
             else if (this.id === "sub") {
-                $('#problem-text').html("-");
+                $('#operator').html("-");
                 quest();
             }
             else if (this.id === "multi") {
-                $('#problem-text').html("*");
+                $('#operator').html("*");
                 quest();
             }
             else if (this.id === "div") {
-                $('#problem-text').html("/");
+                $('#operator').html("/");
                 quest();
             }
         }
     });
 
+    //set the correct answer to a global variable
     function result(num1, num2) {
-        correctAnswer = eval(num1 + $('#problem-text').html() + num2);
+        correctAnswer = eval(num1 + $('#operator').html() + num2);
     }
 
+    //random 2 numbers
     function quest() {
         var number = $('#number').html(),
             num1 = Math.floor(Math.random() * (number - 1) + 1),
@@ -53,6 +58,7 @@ window.onload = function () {
         startgame();
     });
 
+    //restart the game
     $(".restart").on("click", function () {
         clearInterval(interval);
         $('#countdown').html(10);
@@ -62,6 +68,7 @@ window.onload = function () {
         startgame();
     });
 
+    //check if the user answer is correct
     $("#userAnswer").on("input", function () {
         var answer = $('#userAnswer').val();
         if (correctAnswer == answer) {
@@ -72,6 +79,7 @@ window.onload = function () {
         }
     });
 
+    // set and execute the countdown
     function startgame() {
         interval = setInterval(function () {
             var counter = parseInt($('#countdown').html());
