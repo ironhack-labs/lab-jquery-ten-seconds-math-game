@@ -5,15 +5,68 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!--  Added Libraries -->
-
+    <link rel="stylesheet" href="css/custom.css">
     <!-- Custom CSS -->
   </head>
   <body>
-
+    <div class="container">
+      <div class="row game-options-number-limit">
+        <div class="col-md-4 col-md-offset-4">
+          <p class="title">Game Options</p>
+          <p class="number-limit">Number Limit:</p>
+          <p class="number-value" name="outputName" id="number-limit-display">1</p>
+          <input type="range" name="inputName" id="input-number-limit" min="1" value="1" max="100">
+        </div>
+      </div>
+      <div class="row game-options-operation">
+        <div class="col-md-4 col-md-offset-4">
+          <div class="add">
+            <input type="checkbox" id="add"></input> <label>Add</label>
+          </div>
+          <div class="substract">
+            <input type="checkbox" id="substract" ></input> <label>Substract</label>
+          </div>
+          <div class="multiply">
+            <input type="checkbox" id="multiply"></input> <label>Multiply</label>
+          </div>
+          <div class="divide">
+            <input type="checkbox" id="divide"></input><label>Divide</label>
+          </div>
+        </div>
+      </div>
+      <div class="row game-start">
+        <div class="col-md-4 col-md-offset-4">
+          <button class="btn" id="btn-start">
+            <p>START</p>
+          </button>
+        </div>
+      </div>
+      <div class="row game-board">
+        <div class="col-md-4 col-md-offset-4">
+          <p class="time-left" id="time-left">Game Timer</p>
+          <p class="question" id="question">Game question</p>
+          <input class="answer" id="answer" value=""></input>
+          <p class="result-ok" id="result-ok"></p>
+        </div>
+      </div>
+      <div class="row game-restart">
+        <div class="col-md-4 col-md-offset-4">
+          <button class="btn" id="btn-restart">
+            <p>RESTART</p>
+          </button>
+        </div>
+      </div>
+    </div>
 
     <!-- Custom JavaScript -->
-
+    <script
+    src="http://code.jquery.com/jquery-3.2.1.js"
+    integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+    crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="js/tenSecondsMath.js"></script>
+    <script src="js/application.js"></script>
   </body>
 </html>
