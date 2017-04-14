@@ -6,33 +6,103 @@ Generate the solution.
 Print the Math question in the console.
 */
 
+var upperLimit
+
+
 var TenSecondsMathGame = function(options) {
-	$("#input-number-limit").change(function() {
-		$('#number-limit-display').html($("#input-number-limit").val());
+
+var answer1;
+
+
+function setUpperLimit(upperLimit) {
+		$("#input-number-limit").change(function() {
+		upperLimit = this.value;
+		$('#number-limit-display').html('&nbsp;' + $("#input-number-limit").val());
+		makeQuestion(upperLimit);
 	});
-	var upperLimit = $("#input-number-limit").val(); // this doesn't work
+   }
 
-var num1 = Math.floor(Math.random()*90) + 1;
-var num2 = Math.floor(Math.random()*80) + 1;
+var randomNumber = function (upperLimit) {
+ 	return Math.floor((Math.random()* upperLimit ) + 1)
+	};
+	
+	
+function makeQuestion(upperLimit){
 
-var questionAndAnswer = function() {
+		var num1 = randomNumber(upperLimit);
+		var num2 = randomNumber(upperLimit);
 
-	for (i=0; i<this.upperLimit; i++) {
-		var answer = $(".answer").val();
-	if ($(".add:checkbox:checked").length > 0 && $("#btn-start").data('clicked')) {
-	$('.game-board').css('display', 'block');
-	$('.question').html(num1 + ' + ' + num2 + ' = ' );
-		if (answer != ParseInt(num1+num2)) {
-			$(".answer").css('border-color', 'red');
-			return false;
-		}
+		if(num1 < num2) {
+			upperLimit = $("#input-number-limit").val()
+			makeQuestion(upperLimit)
 
-		else {
-			$(".answer").val('');
-			return true;
-		}
-	} 
+		} else {
+			if ($("#add:checkbox:checked").length > 0) {
 
+				$('#question').text(num1 + ' + ' + num2 + ' = ' );
+				answer1 = num1 + num2
+				checkAnswer()
+				return answer1
+			} 
+
+
+			else if ($("#multiply:checkbox:checked").length > 0) {
+				$('#question').text(num1 + ' * ' + num2 + ' = ' );
+
+				answer1 = num1 * num2
+			    checkAnswer()
+			    return answer1
+			} 
+
+			else if ($("#substract:checkbox:checked").length > 0) { //gets stuck after first answer
+  
+
+					$('#question').text(num1 + ' - ' + num2 + ' = ' );
+					answer1 = num1 - num2
+					checkAnswer()
+			        return answer1
+				}
+
+			 
+
+			else {
+					$('#question').text(num1 + ' / ' + num2 + ' = ' );
+					answer1 = Math.round(num1 / num2)
+			        checkAnswer()
+			        return answer1
+				}
+			
+	
+
+		}	
+	
+}
+
+function checkAnswer (answer){
+	var answer = $("#answer").change(function(){
+		//console.log("right answer", answer1)
+		//console.log("answer", this.value)
+    var answerValue = parseInt(this.value);
+ //console.log("bla",answerValue)
+
+   if (answerValue === answer1) {
+   	//console.log("answer checked")
+ 	 upperLimit = $("#input-number-limit").val()
+    	makeQuestion(upperLimit)
+    }
+    else {
+    	$(".answer").css('border-color', 'red');
+    }
+  });
+}
+setUpperLimit();
+
+};
+
+TenSecondsMathGame();
+
+
+/*
 	if ($(".substract:checkbox:checked").length > 0 && $("#btn-start").data('clicked')) {
 	$('.game-board').css('display', 'block');
 	$('.question').html(num1 + ' - ' + num2 + ' = ' );
@@ -70,19 +140,4 @@ var questionAndAnswer = function() {
 			$(".answer").val('');
 			return true;
 		}
- 	} 
-
-   }
-}
-
-};
-
-TenSecondsMathGame();
-
-// Returns a random integer between [1..numberLimit]
-
-
-// Returns an object with {question, answer}
-
-
-// Checks a user answer
+ 	} */

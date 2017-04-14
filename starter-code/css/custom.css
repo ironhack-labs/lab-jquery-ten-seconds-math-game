@@ -2,11 +2,12 @@
 
 
 .game-options-number-limit{
-  margin-top: 40%;
+  margin-top: 10%;
 }
 
 .game-options-number-limit .title{
   display: block;
+  font-weight: 600;
 }
 
 .game-options-number-limit .number-limit{
@@ -47,7 +48,7 @@
 }
 
 .game-start{
-  margin-top: 5%;
+ visibility: hidden;
 }
 
 .game-start .col-md-4{
@@ -57,15 +58,16 @@
 }
 
 .game-board{
-  display: none;
-  margin-top: 40%;
+  margin-top: 1%;
 }
 
 .game-board .time-left{
   display: block;
   width: 100%;
 }
-
+#time-left {
+  display: none;
+}
 .game-board .question{
   float: left;
   width: 33%;
