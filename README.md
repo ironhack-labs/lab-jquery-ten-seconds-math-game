@@ -37,11 +37,9 @@ Remember to separate the game logic from the DOM operations and user interaction
 
 The goal is to be able to play the game without the interface, using only the browser's console. So the first code we will build is the `TenSecondsMathGame` class.
 
-*We will provide a possible solution but feel free to find a better one on your own and share it with the class :)*
+The HTML and CSS code are created and the JavaScript file is already linked in the HTML.
 
 **// Happy coding**
-
-**Success** The HTML and CSS code are created and the JavaScript file is already linked in the HTML.
 
 ## First iteration: Can I ask you a question?
 
@@ -63,11 +61,12 @@ The function will be in charge of:
 - Generate the solution.
 - Print the Math question in the console.
 
-:warning: **There are some logic rules we must be aware of:**
+:warning: **There are some rules we must be aware of:**
 
 - The result should never be negative
 - The difference between the generated operators can't be less than 3 (except for the *division*)
 - The generated numbers should never be equal (except for the *division*)
+
 
 Finally, we will create a function that receives the user answer and compares it with the solution, returning if the answer was right or not.
 
@@ -117,7 +116,7 @@ First, try to print timer in the console once the application starts. It will be
 
 ![Timer pic](https://i.imgur.com/m4W8PRi.png)
 
-**Success** The clock will start when the user answers the first question correctly.
+**The clock will start when the user answers the first question correctly.**
 
 ### That is correct!
 
@@ -162,11 +161,11 @@ We are going to create a function that will show a pop up with a coin image and 
 
 ### Popping up the coin
 
-**Success** Since you have the coin image already downloaded, we just need to use it.
+:exclamation: The "coin image" should already be downloaded.
 
 We already have the coin image hidden in the HTML inside the `img` tag with id `#btc-reward`.
 
-We will create a function that will show the image in a random position inside the `#game-container` element. A second later, it will hide the image again.
+We will create a function that will show the image in a random position inside the `#game-container` element. 1 second later, it will hide the image again.
 
 ### Adding the sound
 
