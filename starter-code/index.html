@@ -1,19 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <title> The 10 Second Game!</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="./css/custom.css">
+    <script type="text/javascript" src="./js/application.js"></script>
+    <script type="text/javascript" src="./js/tenSecondsMath.js"></script>
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <!--  Added Libraries -->
 
     <!-- Custom CSS -->
+
   </head>
   <body>
 
 
-    <!-- Custom JavaScript -->
 
+<div class="container-fluid">
+  <div class="card container">
+    <div class="card main" id="parentOfCard">
+    <strong>Ten Seconds Math Game</strong>
+      <div class="card game" id="gamecard">
+        <strong> Game Options </strong><br>
+
+<label for="rangeOutputID"> Number Limit: <output id="rangeOutputID">10</output>
+<input type="range" id="rangeInputID" value="10" min="10" max="1000" step="10" oninput="rangeOutputID.value = rangeInputID.value"></input>
+<br>
+Operators:
+<br>
+<input type="radio" name="operation" value="add" checked> <img class="imageSize" src="./images/add.jpg" alt="">
+<input type="radio" name="operation" value="subtract"> <img class="imageSize" src="./images/substract.jpg" alt=""> <br>
+<input type="radio" name="operation" value="divide"> <img class="imageSize" src="./images/divide.jpg" alt="">
+<input type="radio" name="operation" value="multiply"> <img class="imageSize" src="./images/multiply.jpg" alt=""> <br>
+
+<div class="card" id="displayNumbers"></div><br>
+
+  <button type="button" class="btn btn-primary" id="btnStart">Start Game</button>
+
+<!-- <div class="timer" id="theTimer">  </div> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+    <!-- Custom JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   </body>
 </html>
