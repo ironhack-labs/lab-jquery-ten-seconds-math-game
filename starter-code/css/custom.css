@@ -1,1 +1,95 @@
 /*Use this file to add your styles -there are some cool img in the images path*/
+
+
+.game-options-number-limit{
+  margin-top: 10%;
+}
+
+.game-options-number-limit .title{
+  display: block;
+  font-weight: 600;
+}
+
+.game-options-number-limit .number-limit{
+  float: left;
+}
+
+.game-options-number-limit .number-value{
+  float: left;
+}
+
+.game-options-number-limit input{
+  clear: left;
+}
+
+.game-options-operation{
+  margin-top: 5%;
+}
+
+.game-options-operation .col-md-4{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.game-options-operation .add{
+  width: 50%;
+}
+
+.game-options-operation .substract{
+  width: 50%;
+}
+
+.game-options-operation .multiply{
+  width: 50%;
+}
+
+.game-options-operation .divide{
+  width: 50%;
+}
+
+.game-start{
+ visibility: hidden;
+}
+
+.game-start .col-md-4{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.game-board{
+  margin-top: 1%;
+}
+
+.game-board .time-left{
+  display: block;
+  width: 100%;
+}
+#time-left {
+  display: none;
+}
+.game-board .question{
+  float: left;
+  width: 33%;
+}
+
+.game-board input{
+  float:left;
+  width: 34%;
+}
+
+.game-board .result-ok{
+  float:left;
+  width: 33%;
+}
+
+.game-restart{
+  display: none;
+  margin-top: 5%;
+}
+
+.game-restart .col-md-4{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
