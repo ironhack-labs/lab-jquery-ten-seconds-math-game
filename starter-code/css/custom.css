@@ -1,1 +1,61 @@
-/*Use this file to add your styles -there are some cool img in the images path*/
+body{
+   background-image: url("../images/board.jpg");
+}
+
+.transparent{
+    width: 75%;
+    height: 70vh;
+    margin: 10%; 
+    background-color: rgba(255, 255, 255, 0.5);
+    font-style: bold;
+}
+
+.setting-panel{
+    background-color: whitesmoke;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.game{
+    visibility: hidden;
+    background-color: whitesmoke;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.gameover{
+    width: 20em;
+    height: auto;
+    visibility: hidden;
+    position: absolute;
+}
+
+#countdown{
+    font-size: 2em;
+}
+
+.number-limit{
+    font-size: 1.5em;
+}
+
+.box-operators{
+    border-radius: 0.5vw;
+    border-style: solid;
+    width: 13%;
+    height: 10%;
+}
+
+.add-img{
+    margin: 5%;
+    width: 50%;
+    height: 50%;
+}
+
+.operators-title{
+    margin-top: 0.4em;
+    margin-bottom: 0.8em;
+}
+
+button{
+     margin-top: 0.8em;
+}

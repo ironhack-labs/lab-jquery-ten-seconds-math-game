@@ -1,19 +1,74 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!--  Added Libraries -->
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Title</title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+            crossorigin="anonymous">
+      <link rel="stylesheet" type="text/css" href="css/custom.css">
+</head>
 
-    <!-- Custom CSS -->
-  </head>
-  <body>
+<body>
+      <div class="card transparent">
+            <div class="card-block text-center">
+                  <h1>Ten Seconds Math Game</h1>
+                  <div class="card-block text-center setting-panel">
+                        <h2>Game Options</h2>
+                        <div>
+                              <p class="number-limit">Number limit:<span id="number">10</span></p>
+                              <input type="range" id="range-slider" name="" value="0" min="10" max="100">
+                        </div>
+                        <h3 class="operators-title">Operators</h3>
+                        <div>
+                              <label class="custom-control custom-checkbox box-operators">
+                              <input id="add" type="checkbox" class="custom-control-input">
+                              <span class="custom-control-indicator"></span>
+                              <img src="./images/add.jpg" alt="" class="add-img">
+                              </label>
+                              <label class="custom-control custom-checkbox box-operators">
+                              <input id="sub" type="checkbox" class="custom-control-input">
+                              <span class="custom-control-indicator"></span>
+                              <img src="./images/substract.jpg" class="add-img">
+                              </label>
+                        </div>
+                        <div>
+                              <label class="custom-control custom-checkbox box-operators">
+                              <input id="multi" type="checkbox" class="custom-control-input">
+                              <span class="custom-control-indicator"></span>
+                              <img src="./images/multiply.jpg" alt="" class="add-img">
+                              </label>
+                              <label class="custom-control custom-checkbox box-operators">
+                              <input id="div" type="checkbox" class="custom-control-input">
+                              <span class="custom-control-indicator"></span>
+                              <img src="./images/divide.jpg" class="add-img">
+                              </label>
+                        </div>
+                        <button type="button" class="btn btn-primary start">Start Game</button>
+                  </div>
+                  <div>
+                        <div class="card-block text-center game">
+                              <p id="countdown">10</p>
+                              <img src="images/gameover.jpg" alt="" class="gameover">
+                              <div>
+                                    <span id="number1"></span>
+                                    <span id="operator"></span>
+                                    <span id="number2"></span>
+                                    <input id="userAnswer" name="Answer" value="" placeholder="Answer">
+                              </div>
+                              <button type="button" class="btn btn-primary restart">Restart</button>
+                        </div>
+                  </div>
+            </div>
+      </div>
 
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+            crossorigin="anonymous"></script>
+      <script type="text/javascript" src="js/application.js"></script>
+</body>
 
-    <!-- Custom JavaScript -->
-
-  </body>
 </html>
