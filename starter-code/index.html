@@ -6,12 +6,51 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!--  Added Libraries -->
 
+    <!--  Added Libraries -->
+    <link rel="stylesheet" href="css/custom.css">
     <!-- Custom CSS -->
   </head>
   <body>
+    <main>
+      <div class="container">
+        <h1>Ten Seconds Math Game</h1>
+        <div class="box">
+          <h3>Game Options</h3>
+          <div class="numLimit">
+            <p>Number Limit: </p><span>10</span>
+          </div>
+          <div class="range">
+            <p><input type="range" value="10" min="10" max="40"/></p>
+          </div>
+          <h2>Operators</h2>
+          <div class="buttonsBox">
+            <form>
+              <label>
+                <input type="checkbox" name="sum" value="+">
+                +
+              </label>
+              <label>
+                <input type="checkbox" name="substract" value="-">
+                -
+              </label>
+              <label>
+                <input type="checkbox" name="mult" value="*">
+                x
+              </label>
+              <label>
+                <input type="checkbox" name="division" value="/">
+                /
+              </label>
+            </form>
 
+          </div>
+          <div class="button">
+            <button>Start Game</button>
+          </div>
+        </div>
+      </div>
+    </main>
 
     <!-- Custom JavaScript -->
 
