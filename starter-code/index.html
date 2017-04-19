@@ -6,14 +6,98 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!--  Added Libraries -->
-
+   <!--  Added Libraries -->
+  <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.7.3/css/bootstrap-slider.css" />
+  
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.7.3/bootstrap-slider.js"></script>
+    <script src="js/ion.sound.min.js"></script>
     <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/custom.css">
   </head>
   <body>
 
+    <div class="center-block main text-center">
+      <h1>Ten Seconds Math Game</h1>
+     
+      <div class="container container-table">
+        <div class="row vertical-center-row">
+       <div id="options-div">
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3"><h2>Game Options</h2></div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+            <h3>Number Limit </h3><h1><span id="number-limit">10</span></h1>
+            <input id="number-limit-input" type="text" data-slider-min="10" data-slider-max="100" data-slider-step="1" data-slider-value="10"/>
+          </div>
+        </div>
+        <div class="row">
+          <div id="position-hook" class="col-md-6 col-md-offset-3"><h2>Operations</h2></div>
+        </div>
+        <div class="row">
+          <div class="col-md-2 col-md-offset-4">
+            <div class="border-round operations">
+              <input type="checkbox" id="check-add"> 
+              <img src="images/add.jpg">
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="border-round operations">
+              <input type="checkbox" id="check-sub"> 
+              <img src="images/substract.jpg">
+            </div>
+          </div>
+        </div>        
+        <div class="row">
+          <div class="col-md-2 col-md-offset-4">
+            <div class="border-round operations">
+              <input type="checkbox" id="check-mul"> 
+              <img src="images/multiply.jpg">
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="border-round operations">
+              <input type="checkbox" id="check-div"> 
+              <img src="images/divide.jpg">
+            </div>
+          </div>
+        </div>  
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+            Time limit <input id="time-limit">
+            </div>
+        </div>          
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+            <button id="start-button" type="button" class="btn btn-primary">Start game</button>
+            </div>
+        </div>  
+        <div id="question-div" >
+            <h2 id="time-left"></h2> seconds left
+            <p><h2><span id="question">question</span> <input size=4 type="input" id="user-answer" /></h2>
+            <p><h2 id="answer-result"></h2>
+            
+        </div>  
+        <div id="game-over-div"> 
+          <img src="images/gameover.jpg">
+          
+          <button id="options-button" type="button" class="btn btn-primary">Restart</button>
+        </div>
+        </div>
+      </div>  
+     </div>
+     <footer>
+    </footer>
+    </div>
 
     <!-- Custom JavaScript -->
-
+    <script src="js/application.js"></script>
+    <script src="js/tenSecondsMath.js"></script>
   </body>
 </html>
