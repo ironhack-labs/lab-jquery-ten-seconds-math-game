@@ -5,15 +5,42 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <!--  Added Libraries -->
-
+    <link href="lib/bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet"/>
+    <link href="lib/noUiSlider.9.2.0/nouislider.css" rel="stylesheet">
     <!-- Custom CSS -->
+    <link href="css/custom.css" rel="stylesheet"/>
+    <!-- JavaScript -->
   </head>
   <body>
-
-
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <div class="panel panel-default panel1">
+                    <div class="panel-body">
+                         <h2>Ten Seconds Math Game</h2>
+                        <div class="col-md-8 col-md-offset-2" id="content">
+                            <h3>Number Limit: <span id="numberLimit" value="10">10</span></h3>
+                            <div id="slider1"> </div>
+                            <h3>Operators</h3>
+                            <div class="btn-row">
+                                <button class="btn btn-default"><input name="operation" type="checkbox" value="+"/> SUM</button>
+                                 <button class="btn btn-default"><input name="operation" type="checkbox" value="-"/> SUB</button>
+                            </div>
+                            <div class="btn-row">
+                                <button class="btn btn-default"><input name="operation" type="checkbox" value="*"/> MUL</button>
+                                 <button class="btn btn-default"><input name="operation" type="checkbox" value="/"/> DIV</button>
+                            </div>
+                            <a href="#" class="btn btn-primary" onclick="startGame()">Start Game</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Custom JavaScript -->
-
+    <script src="lib/noUiSlider.9.2.0/nouislider.js"></script>
+    <script src="js/tenSecondsMath.js"></script>
+    <script src="js/application.js"></script>
   </body>
 </html>
