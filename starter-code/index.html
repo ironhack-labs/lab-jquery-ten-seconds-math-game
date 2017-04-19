@@ -5,15 +5,47 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/main.css">
     <!--  Added Libraries -->
 
     <!-- Custom CSS -->
   </head>
   <body>
+    <div class="container">
+      <h1>Ten Seconds Math Game</h1>
+      <div class="container__options">
+        <h2>Game Options</h2>
+        <div class="selector">
+          <div class="button-slider">
+            <form id="paso1" action="">
+              <label for="number_limit">Number Limit</label>
+              <input id="number_limit" type="text">
+              <label for="operators">Operators</label>
+              <fieldset>
+                <input class="operator" type="checkbox" name="+" value="+">+<br>
+                <input class="operator" type="checkbox" name="-" value="-">-<br>
+                <input class="operator" type="checkbox" name="x" value="x">x<br>
+                <input class="operator" type="checkbox" name="/" value="/">/<br>
+              </fieldset>
+              <buttton id="begin">Start Game</buttton>
+            </form>
+            <div id="paso2" style="display: none" action="">
+              <p><span id="seconds">10</span>seconds left</p>
+              <label id="formula" for="result">9 - 8</label>
+              <input id="result" type="text">
+            </div>
+        </div>
+      </div>
+    </div>
 
 
     <!-- Custom JavaScript -->
+<script src="./js/application.js" charset="utf-8"></script>
+<script src="./js/tenSecondsMath.js" charset="utf-8"></script>
+
+<script type="text/javascript">
+</script>
 
   </body>
 </html>
