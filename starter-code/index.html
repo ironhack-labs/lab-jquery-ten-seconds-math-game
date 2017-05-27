@@ -7,13 +7,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!--  Added Libraries -->
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ion-sound/3.0.7/js/ion.sound.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300i,400,500,700" rel="stylesheet">
     <!-- Custom CSS -->
+    <link rel="stylesheet" href="./css/custom.css">
   </head>
   <body>
 
+  <div class="container">
+  <img src="./images/Coin.png" alt="" id="coin">
 
-    <!-- Custom JavaScript -->
+    <h3>Ten Seconds Math Game <span id="rounds"></span></h3>
+    <div class="whiteBox">
+      <h4>Game Options</h4>
+      <div class="typeOp">
+        <div class="rangeSelector">
+          <span class="label">Number Limit: <span class="valueRange">50</span></span>
+          <input type="range"  min="10" max="250" value="50" />
+        </div>
+        <span>Operators</span>
+        <div class="inputBorder">
+          <input type="checkbox" name="operation" value="add" checked>
+          <img src="./images/add.jpg" alt="add">
+        </div>
+        <div class="inputBorder">
+          <input type="checkbox" name="operation" value="substract">
+          <img src="./images/substract.jpg" alt="substract">
+        </div>
+        <div class="inputBorder">
+          <input type="checkbox" name="operation" value="multiply">
+          <img src="./images/multiply.jpg" alt="multiply">
+        </div>
+        <div class="inputBorder">
+          <input type="checkbox" name="operation" value="divide">
+          <img src="./images/divide.jpg" alt="divide">
+        </div>
+
+        <button type="button" name="startGame" id="startGame">Start Game</button>
+
+      </div>
+      <div class="answer">
+        <span id="timer"></span>
+        <span class="label"></span>
+        <input type="text" name="" value="" id="answerInput">
+        <button type="button" name="restart" id="restart">Restart</button>
+      </div>
+
+    </div>
+  </div>
+
+  <script type="text/javascript" src="js/tenSecondsMath.js"></script>
+  <script type="text/javascript" src="js/application.js"></script>
 
   </body>
 </html>
