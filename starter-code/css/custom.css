@@ -1,1 +1,65 @@
-/*Use this file to add your styles -there are some cool img in the images path*/
+body {
+  background-image: url("../images/board.jpg");
+  background-size: cover;
+  background-position: center;
+  font-family: Verdana, "sans-serif";
+  height: 100vh;
+}
+.container {
+  width: 70%;
+  background-color: rgba(255,255,255,0.8);
+  margin:100px auto;
+  border-radius: 6px;
+  padding: 20px 80px;
+  text-align: center;
+
+}
+#startGame {
+  padding: 10px;
+  background-color: #155177;
+  border:0px;
+  color: #fff;
+  margin: 10px;
+  font-size: 16px;
+}
+.add, .sub, .mult, .div {
+  border:1px solid #000;
+  height: 90px;
+  width: 100px;
+  display: inline-block;
+}
+input {
+  width: 20px;
+  height: 20px;
+}
+.add img, .sub img, .mult img, .div img {
+  width: 50px;
+  padding: 10px;
+}
+button {
+  cursor: pointer;
+}
+.game-board {
+  display: none;
+}
+#solution {
+  width: 200px;
+  height: 34px;
+}
+.clock span {
+  font-weight: bold;
+  font-size: 25px;
+}
+.over {
+  display: none;
+}
+.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+.restart {
+  display: none;
+}
+#btc-reward {
+  display: none;
+}
