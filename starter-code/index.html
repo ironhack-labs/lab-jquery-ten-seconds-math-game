@@ -5,12 +5,55 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/tenSecondsMath.js"></script>
+    <script src="js/application.js"></script>
+    <script src="js/ion.sound.min.js"></script>
+
 
     <!--  Added Libraries -->
-
+<script src="js/ion-rangeSlider/ion.rangeSlider.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/ion.rangeSlider.css">
+<link rel="stylesheet" type="text/css" href="css/ion.rangeSlider.skinHTML5.css">
     <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="css/custom.css">
   </head>
   <body>
+      <div class="container">
+          <h1>Ten seconds Math Game</h1>
+          <div class="options">
+            <h2>Game Options</h2>
+            <p class="numberLimit">Number Limit <span>10</span></p>
+              <div id="range"></div>
+            <p>Operator</p>
+              <div class="operators">
+                <span class="add">
+                  <input id="add" type="checkbox" name="addition" value="addition"> <img src="images/add.jpg"/>
+                </span>
+                <span class="sub">
+                  <input id="sub" type="checkbox" name="substarction" value="substraction"> <img src="images/substract.jpg"/>
+                </span>
+                <span class="mult">
+                  <input id="mult" type="checkbox" name="multiplication" value="multiplication"> <img src="images/multiply.jpg"/>
+                </span>
+                <span class="div">
+                  <input id="div" type="checkbox" name="division" value="division"> <img src="images/divide.jpg"/>
+                </span>
+              </div>
+
+              <button class="startGame disabled" id="startGame">Start Game</button>
+            </label>
+          </div>
+          <div class="game-board">
+            <div class="clock"><span>10</span> Seconds Left</div>
+            <div class="over"><img src="images/gameover.jpg"/></div>
+            <h2 id="question"></h2>
+            <input id="solution" type=text placeholder="Answer">
+              <button class="restart" id="restart">Restart</button>
+          </div>
+          <img id="btc-reward" src="images/coin.png"/>
+
+      </div>
 
 
     <!-- Custom JavaScript -->
