@@ -2,7 +2,25 @@
 
 //Initialize ion library
 
-
 window.onload = function(){
+
+  $(".start-game").on("click", function(event){
+    $(".the-game").addClass("hidden");
+    $(".questions").removeClass("hidden");
+  });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 };

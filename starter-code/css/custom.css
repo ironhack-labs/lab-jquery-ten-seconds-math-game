@@ -1,1 +1,82 @@
-/*Use this file to add your styles -there are some cool img in the images path*/
+@charset "UTF-8";
+
+body {
+   background-image: url("../images/board.jpg");
+}
+
+.game-wrapper{
+  margin: 2em auto;
+  background:rgba(255,255,255, 0.9);
+  width: 80%;
+  padding: 2.3em;
+  border-radius: 15px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.the-game, .the-questions {
+  opacity: 1;
+  width: 80%;
+  background-color:rgba(255,255,255, 1);
+  text-align: center;
+  margin: 2em auto;
+  font-weight: bold;
+  border-radius: 10px;
+  padding: 2em;
+  font-weight: bold;
+}
+
+.the-limit {
+  font-size: 2em;
+}
+
+.operators-menu{
+  font-weight: bold;
+  margin-top:40px;
+}
+
+.custom-control {
+  border: solid black 3px;
+  margin:10px;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.custom-control-description img{
+  height: 45px;
+  width: 45px;
+  padding: 10px;
+}
+
+.btn-primary{
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.the-questions{
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**/

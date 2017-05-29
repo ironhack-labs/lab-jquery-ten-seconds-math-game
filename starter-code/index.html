@@ -1,19 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!--  Added Libraries -->
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Javascript Math game</title>
+  <!--  Added Libraries -->
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-    <!-- Custom CSS -->
-  </head>
-  <body>
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/custom.css">
+</head>
 
 
-    <!-- Custom JavaScript -->
+<!-- Visible  -->
 
-  </body>
+<body>
+  <div class="container-fluid">
+    <div class="game-wrapper ">
+      <h2>Ten Seconds Math Game</h2>
+      <div class="the-game">
+        <h3>Game Options</h3>
+        <p>NUmber limit: <span class="the-limit">10</span></p>
+        <p>aqui el slider</p>
+
+        <p class="operators-menu">
+          <h3>Operators</h3>
+
+          <label class="suma custom-control custom-checkbox">
+  <input type="checkbox" class="custom-control-input">
+  <span class="custom-control-indicator"></span>
+  <span class="custom-control-description"><img src="images/add.jpg" alt=""></span>
+            </label>
+
+          <label class="subs custom-control custom-checkbox">
+  <input type="checkbox" class="custom-control-input">
+  <span class="custom-control-indicator"></span>
+  <span class="custom-control-description"><img src="images/substract.jpg" alt=""></span>
+            </label>
+
+          <label class="mult custom-control custom-checkbox">
+  <input type="checkbox" class="custom-control-input">
+  <span class="custom-control-indicator"></span>
+  <span class="custom-control-description"><img src="images/multiply.jpg" alt=""></span>
+            </label>
+
+          <label class="divi custom-control custom-checkbox">
+  <input type="checkbox" class="custom-control-input">
+  <span class="custom-control-indicator"></span>
+  <span class="custom-control-description"><img src="images/divide.jpg" alt=""></span>
+            </label>
+        </p>
+
+        <input class=" start-game btn btn-primary" type="button" value="Start Game">
+      </div>
+      <!-- Not Visible  -->
+
+      <div class="questions hidden">
+        <div class="the-questions">
+            <span> here they come </span><input type="number" name="" value="">
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+
+
+  <!-- Custom Javascript -->
+
+  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="js/tenSecondsMath.js"></script>
+  <script type="text/javascript" src="js/application.js"></script>
+
+</body>
+
 </html>
