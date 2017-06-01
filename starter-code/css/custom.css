@@ -1,1 +1,75 @@
-/*Use this file to add your styles -there are some cool img in the images path*/
+body{
+  float:left;
+  height:710px;
+  width:100%;
+  padding: 0;
+  margin:0;
+}
+
+.main-body{
+  display:block;
+  width:100%;
+  height:100%;
+  position:relative;
+  background: url(../images/board.jpg) center center no-repeat;
+  background-size: cover;
+}
+
+.gameboard {
+  width:500px;
+  height:400px;
+  position:absolute;
+  left:50%;
+  top:50%;
+  margin-top:-200px !important;
+  margin-left: -250px !important;
+  background:#fff;
+  border-radius:10px;
+  border:5px solid #999;
+}
+
+
+.gameboard .counter {
+  width:400px;
+  height:40px;
+  position:absolute;
+  top:-30px;
+  left:50%;
+  margin-left:-200px;
+  border:5px solid #999;
+  text-align: center;
+  font-size:24px;
+  border-radius: 3px;
+  color:#333;
+}
+
+
+.gameform, .board, .gameover {
+  max-width: 80%;
+  margin:80px auto;
+  text-align: center;
+}
+
+.gameform button{
+  margin:40px auto;
+  width:80px;
+  height:auto;
+  background:#fff;
+  border:2px solid #999;
+}
+
+
+.gameform button:hover{
+  border: 2px solid #333
+}
+
+.gameform button img{
+  width:100%
+}
+
+
+.gameover > img {
+  max-width:100% !important;
+}
+
+.error {border:1px solid red !important;}
