@@ -19,7 +19,9 @@
 </head>
 
 
-<!-- Visible  -->
+
+
+  <!-- Visible  -->
 
 <body>
   <div class="container-fluid">
@@ -28,31 +30,31 @@
       <div class="the-game">
         <h3>Game Options</h3>
         <p>NUmber limit: <span class="the-limit">10</span></p>
-        <p>aqui el slider</p>
+        <input class="ranger" type="range" min="0" max="50" value="10" step="5" />
 
         <p class="operators-menu">
           <h3>Operators</h3>
 
-          <label class="suma custom-control custom-checkbox">
-  <input type="checkbox" class="custom-control-input">
+          <label class="custom-control custom-checkbox">
+  <input type="checkbox" class="suma custom-control-input" name="operation" value="addition">
   <span class="custom-control-indicator"></span>
   <span class="custom-control-description"><img src="images/add.jpg" alt=""></span>
             </label>
 
-          <label class="subs custom-control custom-checkbox">
-  <input type="checkbox" class="custom-control-input">
+          <label class="custom-control custom-checkbox">
+  <input type="checkbox" class="subs custom-control-input" name="operation" value="substraction">
   <span class="custom-control-indicator"></span>
   <span class="custom-control-description"><img src="images/substract.jpg" alt=""></span>
             </label>
 
-          <label class="mult custom-control custom-checkbox">
-  <input type="checkbox" class="custom-control-input">
+          <label class="custom-control custom-checkbox">
+  <input type="checkbox" class="mult custom-control-input" name="operation" value="multiplication">
   <span class="custom-control-indicator"></span>
   <span class="custom-control-description"><img src="images/multiply.jpg" alt=""></span>
             </label>
 
-          <label class="divi custom-control custom-checkbox">
-  <input type="checkbox" class="custom-control-input">
+          <label class="custom-control custom-checkbox">
+  <input type="checkbox" class="divi custom-control-input" name="operation" value="division">
   <span class="custom-control-indicator"></span>
   <span class="custom-control-description"><img src="images/divide.jpg" alt=""></span>
             </label>
@@ -60,16 +62,24 @@
 
         <input class=" start-game btn btn-primary" type="button" value="Start Game">
       </div>
-      <!-- Not Visible  -->
+
+      <!-- Hidden Content  -->
 
       <div class="questions hidden">
+
         <div class="the-questions">
-            <span> here they come </span><input type="number" name="" value="">
+          <div class="timer-show">
+            <span>Time left: </span> <span id="timer"></span>
+          </div>
+            <span class="display-operation"></span><input id ="userAnswer" type="text" name="userinputt" value="">
         </div>
       </div>
     </div>
 
   </div>
+
+
+
 
 
 

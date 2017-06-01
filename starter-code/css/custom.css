@@ -54,14 +54,21 @@ body {
 }
 
 .the-questions{
-  
+
 }
 
+.ranger{
+  width: auto;
+}
 
+.display-operation{
+  margin-right: 10px;
+  font-size: 16px;
+}
 
-
-
-
+.timer-show{
+  padding: 10px;
+}
 
 
 

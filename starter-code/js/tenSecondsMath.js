@@ -1,23 +1,29 @@
 // Use this file to write the logic of your game, the needed attrs and functions
 
 
-var TenSecondsMathGame = function(operation,numberLimit) {
+var TenSecondsMathGame = function(operation, numberLimit) {
 
-  this.operation = operation;
+  this.operations = operation;
   this.numberLimit = numberLimit;
   this.correctResult = "";
+  this.theQuestion = "";
+  //
+
+  this.getOperation = function() {
+    return this.operations[Math.floor(Math.random() * this.operations.length)];
+  };
 
  // Returns a random integer between [1..numberLimit]
-  this.generateRandomNum = function(){
-     return Math.floor(Math.random() * this.numberLimit);
-  };
+  // this.generateRandomNum = function(){
+  //    return Math.floor(Math.random() * this.numberLimit);
+  // };
 
  // Returns an object with {question, answer}
 
 
   this.newQuestion = function(){
-    var firstNum = this.generateRandomNum();
-    var secondNum = this.generateRandomNum();
+     var firstNum = Math.floor(Math.random() * this.numberLimit);
+     var secondNum = Math.floor(Math.random() * this.numberLimit);
 
   //
     // Conditional de *** 3 *** Pendiente
@@ -33,39 +39,46 @@ var TenSecondsMathGame = function(operation,numberLimit) {
 
     //variations for every kind of operation
 
-    if (this.operation === "addition") {
+    if (this.getOperation() === "addition") {
       if (firstNum === secondNum) {
         secondNum += 1;
-        if (secondNum === 10)
+        if (secondNum === 10){
         secondNum -=1;
+        }
       }
-      console.log(firstNum + " + " + secondNum);
+        this.theQuestion = firstNum + " + " + secondNum;
         this.correctResult  = firstNum + secondNum;
     }
 
-    if (this.operation  === "substraction") {
+     if (this.getOperation() === "substraction") {
       if (firstNum === secondNum) {
         secondNum += 1;
-        if (secondNum === 10)
+        if (secondNum === 10){
         secondNum -=1;
+        }
       }
-      console.log(firstNum + " - " + secondNum);
+        this.theQuestion = firstNum + " - " + secondNum;
         this.correctResult  = firstNum - secondNum;
     }
 
-    if (this.operation  === "multiplication") {
+     if (this.getOperation() === "multiplication") {
       if (firstNum === secondNum) {
         secondNum += 1;
-        if (secondNum === 10)
+        if (secondNum === 10){
         secondNum -=1;
+        }
       }
-      console.log(firstNum + " * " + secondNum);
-        this.correctResult  = firstNum * secondNum;
+      this.theQuestion = firstNum + " * " + secondNum;
+      this.correctResult  = firstNum * secondNum;
     }
 
-    if (this.operation  === "division") {
-      console.log(firstNum + " / " + secondNum);
-        this.correctResult  = Math.floor(firstNum / secondNum);
+     if (this.getOperation() === "division") {
+      if(firstNum || secondNum === 0){
+        firstNum += 1;
+        secondNum +=1;
+      }
+      this.theQuestion = firstNum + " / " + secondNum;
+      this.correctResult  = Math.floor(firstNum / secondNum);
     }
 
   //Conditionals for the result
@@ -80,12 +93,10 @@ var TenSecondsMathGame = function(operation,numberLimit) {
     this.isCorrectAnswer = function(userAnswer) {
       if (userAnswer ===  this.correctResult){
         console.log("Nice!");
+        return true ;
       } else{
         console.log("Wrooooong!!!!!");
+        return false;
       }
     };
 };
-
-
-
-var game = new TenSecondsMathGame("multiplication",10);
