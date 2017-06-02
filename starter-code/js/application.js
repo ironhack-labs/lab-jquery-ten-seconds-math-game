@@ -77,14 +77,4 @@ window.onload = function() {
     }
   });
 
-
-  $(".restart-game-btn").on("click", function(event) {
-    $(".the-game").show();
-    $(".questions").addClass("hidden");
-  });
-
-
-
-
-
 };

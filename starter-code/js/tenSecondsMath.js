@@ -133,11 +133,19 @@ var TenSecondsMathGame = function(operation, numberLimit) {
         if (counter === 0) {
           clearInterval(self.interval);
           $(".timer-show").hide();
-          $(".game-over").prepend("<img src='./images/gameover.jpg' alt='Game over'>");
+          $(".game-over").removeClass('hidden');
           $("#userAnswer").prop("disabled", true);
-          console.log("You've lost");
+          // console.log("You've lost");
           $(".restart-game").prepend("<input class='restart-game-btn btn btn-primary' type='button' value='Play Again!'>");
-
+          $(".restart-game-btn").on("click", function(event) {
+            $(".restart-game-btn").remove();
+            $(".the-game").show();
+            $(".game-over").addClass('hidden');
+            $(".timer-show").show();
+            $(".questions").addClass("hidden");
+            $("#userAnswer").prop("disabled", false);
+            userChoiceOps = [];
+          });
 
         } else {
           counter--;
