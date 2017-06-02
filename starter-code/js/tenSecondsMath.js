@@ -8,7 +8,18 @@ var TenSecondsMathGame = function(operation, numberLimit) {
   this.correctResult = "";
   this.theQuestion = "";
   this.interval = 0;
+  var counter = toBeAdded + 10;
+  var stored;
+  this.storedTime = 0;
   //
+
+  this.getTimeCarried = function(){
+    this.storedTime += stored;
+  };
+
+  if (this.storedTime > 0) {
+    console.log(this.storedTime);
+  }
 
   this.getOperation = function() {
     return this.operations[Math.floor(Math.random() * this.operations.length)];
@@ -116,17 +127,24 @@ var TenSecondsMathGame = function(operation, numberLimit) {
 
 
   this._startTimer = function () {
-      var counter = 10;
       var self = this;
-
 
         this.interval = setInterval(function() {
         if (counter === 0) {
           clearInterval(self.interval);
+          $(".timer-show").hide();
+          $(".game-over").prepend("<img src='./images/gameover.jpg' alt='Game over'>");
+          $("#userAnswer").prop("disabled", true);
           console.log("You've lost");
+          $(".restart-game").prepend("<input class='restart-game-btn btn btn-primary' type='button' value='Play Again!'>");
+
+
         } else {
           counter--;
           $(".show-time").text(counter);
+          stored = counter;
+          // console.log(counter);
+          // console.log(stored);
         }
       }, 1000);
     };
@@ -135,13 +153,8 @@ var TenSecondsMathGame = function(operation, numberLimit) {
     clearInterval(this.interval);
   };
 
-
-  this.giveExtraTime = function() {
-    this.interval += 10;
-  };
-
-
 };
+
 
 
 //
