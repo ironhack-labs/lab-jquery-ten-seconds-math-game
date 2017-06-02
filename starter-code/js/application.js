@@ -50,8 +50,11 @@ window.onload = function() {
         newGame = new TenSecondsMathGame(userChoiceOps, userChoiceLimit);
 
         console.log(newGame.newQuestion());
+        console.log(newGame._startTimer());
+
 
         $(".display-operation").text(newGame.theQuestion);
+
 
         console.log(newGame);
 
@@ -64,12 +67,16 @@ window.onload = function() {
 
     $("#userAnswer").on("keyup", function(){
       if( $("#userAnswer").val() == newGame.correctResult){
+        console.log(newGame.clearTimer());
         newGame = new TenSecondsMathGame(userChoiceOps, userChoiceLimit);
-        console.log(newGame.newQuestion());
+        newGame.newQuestion();
+        newGame._startTimer();
         console.log(newGame);
         $(".display-operation").text(newGame.theQuestion);
         $('#userAnswer').val("");
       }
+
+
 });
 
 

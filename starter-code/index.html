@@ -29,10 +29,10 @@
       <h2>Ten Seconds Math Game</h2>
       <div class="the-game">
         <h3>Game Options</h3>
-        <p>NUmber limit: <span class="the-limit">10</span></p>
+        <p>Number limit: <span class="the-limit">10</span></p>
         <input class="ranger" type="range" min="0" max="50" value="10" step="5" />
 
-        <p class="operators-menu">
+        <div class="operators-menu">
           <h3>Operators</h3>
 
           <label class="custom-control custom-checkbox">
@@ -58,7 +58,7 @@
   <span class="custom-control-indicator"></span>
   <span class="custom-control-description"><img src="images/divide.jpg" alt=""></span>
             </label>
-        </p>
+        </div>
 
         <input class=" start-game btn btn-primary" type="button" value="Start Game">
       </div>
@@ -69,7 +69,7 @@
 
         <div class="the-questions">
           <div class="timer-show">
-            <span>Time left: </span> <span id="timer"></span>
+            <span>Time left: </span> <span class = "show-time">10</span>
           </div>
             <span class="display-operation"></span><input id ="userAnswer" type="text" name="userinputt" value="">
         </div>
