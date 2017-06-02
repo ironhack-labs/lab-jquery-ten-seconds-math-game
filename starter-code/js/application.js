@@ -49,8 +49,8 @@ window.onload = function() {
 
       newGame = new TenSecondsMathGame(userChoiceOps, userChoiceLimit);
 
-      console.log(newGame.newQuestion());
-      console.log(newGame._startTimer());
+      newGame.newQuestion();
+      newGame._startTimer();
 
       $(".display-operation").text(newGame.theQuestion);
 
@@ -65,7 +65,7 @@ window.onload = function() {
 
   $("#userAnswer").on("keyup", function() {
     if ($("#userAnswer").val() == newGame.correctResult) {
-      console.log(newGame.getTimeCarried());
+      newGame.getTimeCarried();
       toBeAdded = newGame.storedTime;
       newGame.clearTimer();
       newGame = new TenSecondsMathGame(userChoiceOps, userChoiceLimit);

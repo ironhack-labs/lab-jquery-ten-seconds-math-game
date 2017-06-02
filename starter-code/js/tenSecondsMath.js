@@ -13,7 +13,7 @@ var TenSecondsMathGame = function(operation, numberLimit) {
   this.storedTime = 0;
   //
 
-  this.getTimeCarried = function(){
+  this.getTimeCarried = function() {
     this.storedTime += stored;
   };
 
@@ -38,19 +38,6 @@ var TenSecondsMathGame = function(operation, numberLimit) {
     var secondNum = Math.floor(Math.random() * this.numberLimit);
 
 
-
-
-    //
-    // Conditional de *** 3 *** Pendiente
-    // -------- Pendienter ---------- //
-
-    // if (firstNum % secondNum <= 3 ) {
-    //   secondNum = firstNum - 3;
-    // }
-    //
-    // if (secondNum % firstNum <= 3) {
-    //   firstNum = 3;
-    // }
 
     //variations for every kind of operation
 
@@ -97,7 +84,7 @@ var TenSecondsMathGame = function(operation, numberLimit) {
         secondNum += 1;
       }
 
-      if( firstNum < secondNum ){
+      if (firstNum < secondNum) {
         firstNum = secondNum;
         secondNum = firstNum;
       }
@@ -126,50 +113,39 @@ var TenSecondsMathGame = function(operation, numberLimit) {
 
 
 
-  this._startTimer = function () {
-      var self = this;
+  this._startTimer = function() {
+    var self = this;
 
-        this.interval = setInterval(function() {
-        if (counter === 0) {
-          clearInterval(self.interval);
-          $(".timer-show").hide();
-          $(".game-over").removeClass('hidden');
-          $("#userAnswer").prop("disabled", true);
-          // console.log("You've lost");
-          $(".restart-game").prepend("<input class='restart-game-btn btn btn-primary' type='button' value='Play Again!'>");
-          $(".restart-game-btn").on("click", function(event) {
-            $(".restart-game-btn").remove();
-            $(".the-game").show();
-            $(".game-over").addClass('hidden');
-            $(".timer-show").show();
-            $(".questions").addClass("hidden");
-            $("#userAnswer").prop("disabled", false);
-            userChoiceOps = [];
-          });
+    this.interval = setInterval(function() {
+      if (counter === 0) {
+        clearInterval(self.interval);
+        $(".timer-show").hide();
+        $(".game-over").removeClass('hidden');
+        $("#userAnswer").prop("disabled", true);
+        // console.log("You've lost");
+        $(".restart-game").prepend("<input class='restart-game-btn btn btn-primary' type='button' value='Play Again!'>");
+        $(".restart-game-btn").on("click", function(event) {
+          $(".restart-game-btn").remove();
+          $(".the-game").show();
+          $(".game-over").addClass('hidden');
+          $(".timer-show").show();
+          $(".questions").addClass("hidden");
+          $("#userAnswer").prop("disabled", false);
+          userChoiceOps = [];
+        });
 
-        } else {
-          counter--;
-          $(".show-time").text(counter);
-          stored = counter;
-          // console.log(counter);
-          // console.log(stored);
-        }
-      }, 1000);
-    };
+      } else {
+        counter--;
+        $(".show-time").text(counter);
+        stored = counter;
+        // console.log(counter);
+        // console.log(stored);
+      }
+    }, 1000);
+  };
 
-  this.clearTimer = function(){
+  this.clearTimer = function() {
     clearInterval(this.interval);
   };
 
 };
-
-
-
-//
-// var tryOut = new TenSecondsMathGame("addition", 10)
-//
-//
-//
-//
-//
-// tryOut._startTimer();
