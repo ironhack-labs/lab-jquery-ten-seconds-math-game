@@ -5,15 +5,61 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/custom.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/ion.sound.min.js"></script>
+    <script type="text/javascript" src="js/application.js"></script>
+    <script type="text/javascript" src="js/tenSecondsMath.js"></script>
 
-    <!--  Added Libraries -->
 
-    <!-- Custom CSS -->
   </head>
-  <body>
+  <BODY>
+
+    <div id="OUTERWRAPPER">
+      <h1 id="gametitle">Ten Seconds Math Game</h1>
+        <div id="gamesettings">
+          <div id="INSTR-WRAPPER">
+            <h2>Game Options</h2>
+            <p id="numberlimit">Number limit: <span id="current-range-value"></span></p>
+            <input type="range" min="0" max="10" value="1" id="range-value" step=".05">
+            <p>Operators</p>
+            <div>
+              <input type="checkbox" id="addition" name="addition" value="addition">
+              <label for="addition">+</label>
+
+              <input type="checkbox" id="substraction" name="substraction" value="substraction">
+              <label for="substraction">-</label>
+            </div>
+            <div>
+              <input type="checkbox" id="multiplication" name="multiplication" value="multiplication">
+              <label for="multiplication">*</label>
+              <input type="checkbox" id="division" name="division" value="division">
+              <label for="division">%</label>
+            </div>
+
+
+            <div><button id="startgame">Startgame</button></div>
+          </div>
+
+        </div>
+        <div id="gogame">
+          <div id="timerwrapper"><span id="timer"></span></div>
+          <div id="gameover-img"><img src="images/gameover.jpg" alt="gameover" width=200>
+          </div>
+          <div id="gamecontainer"><img id="coin-img" src="images/coin.jpg" alt="coin" width=50>
+          </div>
+          <div>
+            <span id="math-task"></span><input type="text" value=" " id="userinput">
+          </div>
+          <div id="restartwrapper">
+            <button id="restart">Restart Game</button>
+          </div>
+        </div>
+      </div>
+
 
 
     <!-- Custom JavaScript -->
 
-  </body>
+  </BODY>
 </html>
