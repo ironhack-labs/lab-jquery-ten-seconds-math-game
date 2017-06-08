@@ -1,19 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!--  Added Libraries -->
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Javascript Math game</title>
+  <!--  Added Libraries -->
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-    <!-- Custom CSS -->
-  </head>
-  <body>
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/custom.css">
+</head>
 
 
-    <!-- Custom JavaScript -->
 
-  </body>
+
+<!-- Visible  -->
+
+<body>
+  <div class="container-fluid">
+    <div class="game-wrapper ">
+      <h2>Ten Seconds Math Game</h2>
+      <div class="the-game">
+        <h3>Game Options</h3>
+        <p>Number limit: <span class="the-limit">10</span></p>
+        <input class="ranger" type="range" min="0" max="50" value="10" step="5" />
+
+        <div class="operators-menu">
+          <h3>Operators</h3>
+
+          <label class="custom-control custom-checkbox">
+  <input type="checkbox" class="suma custom-control-input" name="operation" value="addition">
+  <span class="custom-control-indicator"></span>
+  <span class="custom-control-description"><img src="images/add.jpg" alt=""></span>
+            </label>
+
+          <label class="custom-control custom-checkbox">
+  <input type="checkbox" class="subs custom-control-input" name="operation" value="substraction">
+  <span class="custom-control-indicator"></span>
+  <span class="custom-control-description"><img src="images/substract.jpg" alt=""></span>
+            </label>
+
+          <label class="custom-control custom-checkbox">
+  <input type="checkbox" class="mult custom-control-input" name="operation" value="multiplication">
+  <span class="custom-control-indicator"></span>
+  <span class="custom-control-description"><img src="images/multiply.jpg" alt=""></span>
+            </label>
+
+          <label class="custom-control custom-checkbox">
+  <input type="checkbox" class="divi custom-control-input" name="operation" value="division">
+  <span class="custom-control-indicator"></span>
+  <span class="custom-control-description"><img src="images/divide.jpg" alt=""></span>
+            </label>
+        </div>
+
+        <input class=" start-game btn btn-primary" type="button" value="Start Game">
+      </div>
+
+      <!-- Hidden Content  -->
+
+      <div class="questions hidden">
+        <div class="the-questions">
+          <div class="game-over hidden">
+            <img src="./images/gameover.jpg" alt="Game over image">
+          </div>
+          <div class="timer-show">
+            <span>Time left: </span> <span class="show-time">10</span>
+          </div>
+          <span class="display-operation"></span><input id="userAnswer" type="text" name="userinputt" value="">
+          <div class="restart-game">
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+
+  </div>
+
+
+  <!-- Custom Javascript -->
+
+  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="js/tenSecondsMath.js"></script>
+  <script type="text/javascript" src="js/application.js"></script>
+
+</body>
+
 </html>
