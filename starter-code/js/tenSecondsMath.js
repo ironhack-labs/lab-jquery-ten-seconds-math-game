@@ -125,6 +125,7 @@ var TenSecondsMathGame = function(operation, numberLimit) {
         // console.log("You've lost");
         $(".restart-game").prepend("<input class='restart-game-btn btn btn-primary' type='button' value='Play Again!'>");
         $(".restart-game-btn").on("click", function(event) {
+          $(".show-time").text("10");
           $(".restart-game-btn").remove();
           $(".the-game").show();
           $(".game-over").addClass('hidden');
@@ -132,6 +133,7 @@ var TenSecondsMathGame = function(operation, numberLimit) {
           $(".questions").addClass("hidden");
           $("#userAnswer").prop("disabled", false);
           userChoiceOps = [];
+          toBeAdded = 0;
         });
 
       } else {
