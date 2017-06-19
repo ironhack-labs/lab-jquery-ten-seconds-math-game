@@ -1,21 +1,11 @@
 // Use this file to write the logic of your game, the needed attrs and functions
 
-var TenSecondsMathGame = function( params /*limit, operation*/) {
-  this.limit = params.numberLimit;
-  this.operation = params.ops;
-
-  this.newQuestion = function(){
-    console.log(this.question.op1.toString(), this.question.operation, this.question.op2.toString());
-  };
-
-  this.isCorrectAnswer = function(param){
-    console.log((param === this.question.solution) ? 'Great!' : 'Wrooong!');
-  };
-
+var TenSecondsMathGame = function( limit, operation) {
+  this.limit = limit;
+  this.operation = operation;
   this.randomNumber = function(limit){
     return Math.floor(Math.random()*limit);
   };
-
   this.solve = function(opr, op1, op2){
     switch (opr) {
       case '+': return op1 + op2;
@@ -23,8 +13,7 @@ var TenSecondsMathGame = function( params /*limit, operation*/) {
       case '*': return op1 * op2;
       case '/': return op1 / op2;
     }
-  };
-
+  },
   this.generateQuestion = function(){
     var newOp1, newOp2, newOperation, result;
     var valid = true;
@@ -54,9 +43,7 @@ var TenSecondsMathGame = function( params /*limit, operation*/) {
       operation: newOperation,
       solution: result
     };
-  };
-
-  this.question = this.generateQuestion();
+  }
 };
 
 
