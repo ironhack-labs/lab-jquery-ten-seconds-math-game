@@ -5,6 +5,7 @@ var TenSecondsMathGame = function(limit, operation) {
       this.limit = limit;
       this.firstNumber = this.randomNumber(limit);
       this.secondNumber = this.randomNumber(limit);
+      this.result = 0;
 };
 
 TenSecondsMathGame.prototype.randomNumber = function (limit) {
@@ -17,8 +18,13 @@ var game = new TenSecondsMathGame(8, "sum");
 // console.log(game.__proto__.randomNumber(10));
 
 TenSecondsMathGame.prototype.generateQuestion = function () {
-
-    return this.firstNumber + this.secondNumber;
+    switch (this.operation) {
+      case "sum":
+      console.log(this.firstNumber + " + " + this.secondNumber);
+      this.result = this.firstNumber + this.secondNumber;
+      break;
+    }
+    return this.result;
   };
 
   console.log(game.generateQuestion());
