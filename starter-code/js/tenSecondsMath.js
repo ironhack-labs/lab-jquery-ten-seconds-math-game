@@ -32,9 +32,12 @@ TenSecondsMathGame.prototype.chooseOperator = function() {
 
 
   }
+TenSecondsMathGame.prototype.generetQuestion = function functionName() {
+
+};
 
 TenSecondsMathGame.prototype.checkResult = function(result){
-  if(this.result === this.n1 + this.n2){
+  if(this.result === this.n1 +this.operator+ this.n2){
     prompt(this.n1 + this.n2);
 
   }
