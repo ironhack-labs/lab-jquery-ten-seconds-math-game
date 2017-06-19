@@ -1,1 +1,10 @@
 /*Use this file to add your styles -there are some cool img in the images path*/
+.background{
+   width: 1000px;
+   height: 500px;
+}
+.container{
+    background-color: #fff;
+    width: 300px;
+    height: 300px;
+}
