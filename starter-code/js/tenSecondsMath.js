@@ -15,10 +15,8 @@ var TenSecondsMathGame = function(options) {
     this.operations = options.operations;
     this.upperLimit = options.upperLimit;
     this.questionObj = {};
-    this.timerCounter = 10;
+    this.timerCounter = 0;
     this.questionTimeOutId;
-    console.log(this.operations);
-    console.log(this.upperLimit);
     // Returns a random integer between [1..numberLimit]
     this.generateRandomNumber = function() {
         return Math.floor(Math.random() * this.upperLimit) + 1;
@@ -65,7 +63,7 @@ var TenSecondsMathGame = function(options) {
         }
         
         this.questionObj = obj;
-        console.log(this.questionObj);
+        
     };
     this.checkAnswer = function(userAnswer) {
         if (userAnswer === this.questionObj.answer) {
@@ -74,28 +72,21 @@ var TenSecondsMathGame = function(options) {
         return false;
     };
     this._startTimer = function () {
-      this.timerCounter = 10;
       var self = this;
       var callbackFunction = function () {
-        console.log('hello ' + self.timerCounter);
         self.questionTimeOutId = setTimeout(callbackFunction, 1000);
         self.timerCounter -= 1;
         document.getElementById('timer').innerText = self.timerCounter;
         if (self.timerCounter === 0) {
-            console.log('clearing');
             clearTimeout(self.questionTimeOutId);
-            document.getElementById('answer').disabled = true;
-            document.getElementById('secondsleft').style.visibility = 'hidden'; 
-            document.getElementById('timer').style.visibility = 'hidden'; 
-            document.getElementById('game-over').style.display = 'block'; 
-            document.getElementById('problem').removeAttribute("class");
-            document.getElementById('restart').style.display = 'block';  
+            updateAnswerBoxWhenError();
         }
       };
       
       self.timeoutId = setTimeout(callbackFunction, 1000);
     };
     this._clearTimer = function () {
+        console.log('timer counter ' + this.timerCounter);
         var id = window.setTimeout(function() {}, 0);
         while (id--) {
             window.clearTimeout(id);
