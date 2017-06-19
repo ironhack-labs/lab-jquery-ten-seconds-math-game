@@ -4,5 +4,7 @@
 
 
 window.onload = function(){
+  var mathGame = new TenSecondsMathGame(["sum", "sub","div","mult"], 10);
+
 
 };
