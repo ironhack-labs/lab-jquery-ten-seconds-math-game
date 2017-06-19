@@ -4,16 +4,28 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
     <!--  Added Libraries -->
 
     <!-- Custom CSS -->
   </head>
   <body>
 
+    <h1>Ten Seconds Math Game</h1>
+
+    <div>
+      <h2>Game Options</h2>
+      <p>Number Limit:</p><input type="text" id="limit" name="limit" value="10">
+      <input type="checkbox" id="addition"      name="addition"     value="addition">addition 
+      <input type="checkbox" id="substraction"  name="substraction" value="substraction">substraction
+      <input type="checkbox" id="multiply"      name="multiply"     value="multiply">multiply
+      <input type="checkbox" id="division"      name="division"     value="division">division 
+    </div>
+
+    <input type="button" onclick="getChecked()" value="Start Game"/>
 
     <!-- Custom JavaScript -->
-
+    <script src="./js/tenSecondsMath.js" type="text/javascript"></script>
+    <script src="./js/application.js" type="text/javascript"></script>
   </body>
 </html>
