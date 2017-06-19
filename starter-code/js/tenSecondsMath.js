@@ -53,19 +53,22 @@ var TenSecondsMathGame = function( params ) {
       solution: result
     };
   };
-
-  this.startTimer = function(){
+  
+  this.resetGame = function(){
     if (this.timerId){ clearInterval(this.timerId); }
     this.question = this.generateQuestion();
     this.newQuestion();
+  };
+
+  this.startTimer = function(){
+    this.resetGame();
     this.timerSecond = 10;
     this.timerId = setInterval(function(){
       this.timerSecond --;
       if(this.timerSecond == -1){
-        this.startTimer();
-
-      }
-      console.log(this.timerSecond);
+        console.log("Time is over!");
+        clearInterval(this.timerId);
+      }else console.log(this.timerSecond);
     }.bind(this), 1 * 1000);
   };
 
