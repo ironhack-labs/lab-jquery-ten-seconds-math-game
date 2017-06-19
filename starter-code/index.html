@@ -5,15 +5,61 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/custom.css">
+    <script src = "js/tenSecondsMath.js"></script>
+    <script src = "js/application.js"></script>
 
-    <!--  Added Libraries -->
 
-    <!-- Custom CSS -->
+   <!--  Added Libraries -->
+
+  <!-- Custom CSS -->
   </head>
   <body>
 
+  <div class = "content">
+      <div class = "big-box">
+        <div id = "to-hide">
+          <h1>Ten Seconds Math Game</h1>
+          <h2>Game Options</h2>
+          <a id = "number-limit">Number Limit: </a>
+          <output name="amount" id="amount" for="rangeInput">0</output>
+          <input type="range" id="rangeInput"
+         name="rangeInput" min="0" max="100" value="0"
+         oninput="amount.value=rangeInput.value">
+          <div class = "scroll-item">
+            <div class = "move-scroll">
+            </div>
+          </div>
+          <div class = "scroll-item">
+            <div class = "move-scroll">
+            </div>
+          </div>
+          <p id = "operators">Operators</p>
+          <div class="box">
+            <label for="addition" class="label"><input id = "addition" type = "checkbox" name = "operation">+</input></label>
+            <label for="substraction" class="label"><input id = "substraction" type = "checkbox" name = "operation">-</input></label>
+            <label for="multiplication" class="label"><input id = "multiplication" type = "checkbox" name = "operation">X</input></label>
+            <label for="division" class="label"><input id = "division" type = "checkbox" name = "operation">%</input></label>
+        </div>
+      </div>
+      <div id="init-game">
+        <img id="game-over" width=100 src="http://pre12.deviantart.net/0a82/th/pre/f/2011/303/4/0/game_over_by_don_amine-d4efypu.png" alt="">
+        <p><span id="seconds">10</span>seconds left</p>
+        <label id="result" for="result">5+7</label><input type="number" id = "answer" name="result" value="" placeholder="Answer">
+        </div>
+      </div>
 
+
+      <button id = "startButton">Start Game</button>
+      <button id = "restartButton">Restart Game</button>
+
+    </div>
+
+
+
+
+  </div>
     <!-- Custom JavaScript -->
 
-  </body>
+</body>
 </html>
