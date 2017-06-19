@@ -5,6 +5,7 @@ var TenSecondsMathGame = function(ops, numLimit) {
   this.limit = numLimit;
   this.operation = ops;
   this.response = 0;
+  this.timer = 10;
 };
 
 // Returns a random integer between [1..numberLimit]
@@ -12,8 +13,6 @@ TenSecondsMathGame.prototype.randomNum = function () {
   return Math.floor(Math.random() * this.limit);
 };
 
-
-// Returns an object with {question, answer}
 TenSecondsMathGame.prototype.generateBothNum = function () {
   this.n1 = this.randomNum();
   this.n2 = this.randomNum();
@@ -62,10 +61,30 @@ TenSecondsMathGame.prototype.resolution = function(){
 };
 
 TenSecondsMathGame.prototype.newQuestion = function() {
-  this.generateBothNum();
-  this.randomOp();
-  var question = this.options();
-  console.log(question);
+    do {
+        this.generateBothNum();
+    } while  ((this.n1 === this.n2) || this.checkNumbers());
+        if (this.n1 < this.n2) {
+        var aux = this.n1;
+        this.n1 = this.n2;
+        this.n2 = aux;
+    }
+    this.randomOp();
+    var question = this.options();
+    console.log(question);
+    console.log("remain time "+this.timer);
+    // setInterval(function(){
+    //   if(this.timer === 0){
+    //     console.log("Your times up!!");
+    //   } else {
+    //     console.log(this.timer);
+    //     this.timer--;
+    //   }
+    // }, 1 * 1000);
+};
+
+TenSecondsMathGame.prototype.checkNumbers = function(){
+  return Math.abs(this.n1 - this.n2) < 3;
 };
 
 TenSecondsMathGame.prototype.isCorrectAnswer = function(response){
@@ -73,11 +92,12 @@ TenSecondsMathGame.prototype.isCorrectAnswer = function(response){
   this.rightAnswer = this.resolution();
   if (this.response === this.rightAnswer) {
     console.log("You got it right");
+    this.timer += 10;
+    this.newQuestion();
   } else {
     console.log("Better luck next time");
   }
 };
 
 
-// Checks a user answer
-var mathGame = new TenSecondsMathGame();
+var mathGame = new TenSecondsMathGame(["sum","sub","div","mult"], 10);
