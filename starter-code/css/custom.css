@@ -1,1 +1,100 @@
 /*Use this file to add your styles -there are some cool img in the images path*/
+body {
+    background-image: url('../images/board.jpg');
+    background-size: cover;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+input:focus {
+    outline: none;
+}
+
+input.middle:focus {
+    outline-width: 0;
+}
+
+.game-options {
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -200px;
+    margin-left: -250px;
+    width: 500px;
+    height: 400px;
+    text-align: center;
+    font-size: 24px;
+    padding-top: 20px;
+}
+
+.game-options-upperlimit {
+    font-size: 18px;
+    padding-top: 30px;
+}
+
+.game-options-operators {
+    font-size: 21px;
+    padding-top: 20px;
+
+}
+
+.game-options-operator div {
+    display: inline-block;
+    margin: 9px;
+    border: 1px solid;
+    padding: 14px;
+    border-radius: 10px;
+}
+
+.operation-image {
+    width:20px;
+    
+}
+
+.game-board {
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -200px;
+    margin-left: -250px;
+    width: 500px;
+    height: 400px;
+    text-align: center;
+    font-size: 24px;
+    display: none;
+}
+
+.wrong-answer
+{
+ border:2px solid red;
+}
+
+.right-answer
+{
+ border:2px solid green;
+}
+
+.problem {
+    padding-top: 150px;
+}
+
+.timer {
+    padding-top:100px
+}
+
+.game-over {
+    width: 200px;
+    margin-left: 150px;
+    display: none;
+}
+
+.restart {
+    display: none;
+    padding-top: 20px;
+}
+
+.range {
+    width: 140px !important;
+    margin-left: 182px;
+}

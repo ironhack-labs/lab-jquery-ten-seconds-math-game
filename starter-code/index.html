@@ -9,11 +9,58 @@
     <!--  Added Libraries -->
 
     <!-- Custom CSS -->
+     <link rel = "stylesheet" type="text/css" href="css/custom.css" />
+      <link rel = "stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
   </head>
   <body>
-
-
+    <div id="gameOptions" class="game-options">
+      Game Options
+      <div class="game-options-upperlimit">
+        Number limit: <input type="range" class="range" id="numberLimit" min="0" max="20" onchange="updateRange(this.value);">
+      <span id="rangeValueInput">10</span>
+      </div>
+      <div class="game-options-operators">
+        Operators
+        <div class="game-options-operator">
+          <div>
+            <input type="checkbox" id="add">
+            <img class="operation-image"  src="images/add.jpg" alt="add" />
+          </div>
+          <div>
+            <input type="checkbox" id="substract">
+            <img class="operation-image" src="images/substract.jpg" alt="substract" />
+          </div>
+        </div>
+        <div class="game-options-operator">
+           <div>
+            <input type="checkbox" id="multiply">
+            <img class="operation-image" src="images/multiply.jpg" alt="multiply" />
+          </div>
+           <div>
+            <input type="checkbox" id="divide">
+            <img class="operation-image" src="images/divide.jpg" alt="divide" />
+          </div>
+        </div>
+      </div>
+      <div>
+        <input type="button" onclick="alert()" id="startGame" class="btn btn-primary" value="Start Game" />
+      </div>
+    </div>
+    <div id="gameBoard"  class="game-board">
+      <img class="game-over" id="game-over" src="images/gameover.jpg"/>
+      <div class="timer" id="timer">10</div>
+      
+      <span id="secondsleft"> seconds left</span>
+      <div id="problem" class="problem">
+      <span id="question"></span>
+      <input type="text" id="answer"/>
+      </div>
+      <div class="restart" id="restart">
+        <input type="submit" id="restartButton" value="Restart" class="btn btn-primary" id="restart"/>
+      </div>
+    </div>
     <!-- Custom JavaScript -->
-
+    <script type="text/javascript" src="js/application.js"></script>
+    <script type="text/javascript" src="js/tenSecondsMath.js"></script>
   </body>
 </html>
