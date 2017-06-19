@@ -3,6 +3,6 @@
 //Initialize ion library
 
 
-window.onload = function(){
-
+window.onload = function() {
+  var newGame = new TenSecondsMathGame("A", 10);
 };

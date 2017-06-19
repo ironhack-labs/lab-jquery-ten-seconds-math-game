@@ -2,74 +2,56 @@
 
 var TenSecondsMathGame = function(operations, limit) {
   this.operations = operations;
-  this.limit = operations;
+  this.limit = limit;
+  this.num1 = 0;
+  this.num2 = 0;
+  this.result = 0;
+  this.generatorNum();
+  this.operatorGenerator();
+};
 
-  this.operations = prompt("Introduce las operaciones,Suma -> s Resta -> r Multiplicación -> m División ->D").toUpperCase();
-  this.limit = prompt("Introduce el limite numerico");
-  console.log(operations);
+TenSecondsMathGame.prototype.generatorNum = function() {
+  this.num1 = Math.ceil(Math.random() * (this.limit));
+  this.num2 = Math.ceil(Math.random() * (this.limit));
+};
 
-
-
-  /*for (var i = 0; i < operations.length; i++) {
-    if (true) {
-
-    }
-    if (true) {
-
-    }
-    if (true) {
-
-    }
-    if (true) {
-
-    }
+TenSecondsMathGame.prototype.operatorGenerator = function() {
+  this.result = 0;
+  switch (this.operations) {
+    case 'A':
+      console.log(this.num1 + " + " + this.num2);
+      this.result = this.num1 + this.num2;
+      break;
+    case 'S':
+      while (this.num1 - this.num2 < 0) {
+        this.generatorNum();
+      }
+      console.log(this.num1 + " - " + this.num2);
+      this.result = this.num1 - this.num2;
+      break;
+    case 'M':
+      console.log(this.num1 + " * " + this.num2);
+      this.result = this.num1 * this.num2;
+      break;
+    case 'D':
+      while (this.num1 % this.num2 !== 0) {
+        this.generatorNum();
+      }
+      console.log(this.num1 + " / " + this.num2);
+      this.result = this.num1 / this.num2;
+      break;
+    default:
+      console.error("That's a wrong answer");
   }
-  */
 };
 
 
-function questionGenerator() {
 
 
-  switch (operations) {
-    case 'S':
-
-      addition();
-
-      break;
-    case 'R':
-      subtraction();
-
-      break;
-    case 'M':
-      multi();
-
-      break;
-    case 'D':
-      division();
-
-      break;
-    default:
 
 
-  }
-
-  function addition() {
-    var sum1 = 0;
-    var sum2 = 0;
-
-    sum1 = Math.floor(Math.random() * (limit.TenSecondsMathGame - min)) + limit.TenSecondsMathGame1;
-    sum2 = Math.floor(Math.random() * (limit.TenSecondsMathGame - min)) + limit.TenSecondsMathGame1;
-    return console.log(sum1 + " + " + sum2);
 
 
-  }
-
-  function subtraction() {
-
-  }
-
-}
 // Returns a random integer between [1..numberLimit]
 
 
