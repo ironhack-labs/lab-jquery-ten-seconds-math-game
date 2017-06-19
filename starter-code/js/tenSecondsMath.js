@@ -1,48 +1,73 @@
 
 
-var TenSecondsMathGame = function(options) {
+var TenSecondsMathGame = function() {
+  this.n1 = 3;
+  this.n2 = 1;
+  this.maxNumber = 20;
 
 };
 
-function add(n1,n2){
-  return n1+n2;
-}
-
-function substraction(n1,n2){
-  return n1-n2;
-}
-
-function multiply(n1,n2){
-  return n1*n2;
-}
-
-function division(n1,n2){
-  return n1/n2;
-}
-function randomNumber(maxNumber){
-  return Math.floor(Math.random()*maxNumber);
-}
-
-function generateOperation(n1,n2,operator){
-  if (operator==="+"){
-    console.log("El resultado de la suma " + n1 + " " + operator + " " + n2 + " es " + add(n1,n2));
+TenSecondsMathGame.prototype.add = function (){
+  if(this.comprobation() === true) {
+    this.generateTwoRandomNumbers();
+    return this.add();
   }
-}
-var maxNumber;
-function selectMaximum() {
-  maxNumber = parseInt(prompt("Select your maximum Number!"));
-  return maxNumber;
-}
+  else {
+    return this.n1+this.n2;
+  }
+};
+
+TenSecondsMathGame.prototype.substraction = function(){
+  if((this.n1<this.n2) || (this.comprobation() === true)) {
+    this.generateTwoRandomNumbers();
+    return this.substraction();
+  }
+  else {
+    return this.n1-this.n2;
+  }
+};
+
+TenSecondsMathGame.prototype.multiply = function(){
+  if(this.comprobation() === true) {
+    this.generateTwoRandomNumbers();
+    return this.multiply();
+  }
+  else {
+  return this.n1*this.n2;
+  }
+};
+
+TenSecondsMathGame.prototype.division = function(){
+  return this.n1/this.n2;
+};
+
+TenSecondsMathGame.prototype.randomNumber = function(){
+  return Math.floor(Math.random()*this.maxNumber);
+};
+
+TenSecondsMathGame.prototype.generateTwoRandomNumbers = function(){
+  this.n1 = this.randomNumber();
+  this.n2 = this.randomNumber();
+};
+
+TenSecondsMathGame.prototype.setMaxNumber = function(maxNumber){
+  this.maxNumber = maxNumber;
+};
+
+TenSecondsMathGame.prototype.comprobation = function () {
+  if((-4 < (this.n1-this.n2)) && ((this.n1-this.n2)<4)) {
+    return true;
+  } else {
+    return false;
+  }
+};
+
+
+
+
+
 // Hilo principal
 
-var operator = "+";
-
-selectMaximum();
-
-var n1 = randomNumber(maxNumber);
-var n2 = randomNumber(maxNumber);
-
-generateOperation(n1,n2,operator);
 // Returns a random integer between [1..numberLimit]
 
 
