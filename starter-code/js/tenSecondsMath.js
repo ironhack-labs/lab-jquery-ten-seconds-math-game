@@ -6,8 +6,6 @@ var TenSecondsMathGame = function(operation, upperNumber) {
   this.operation = operation;
   this.upperNumber = upperNumber;
   this.generateQuestion();
-
-
 };
 
 TenSecondsMathGame.prototype.random = function(upperNumber) {
@@ -34,16 +32,20 @@ TenSecondsMathGame.prototype.result = function(operation, n1, n2) {
 };
 
 TenSecondsMathGame.prototype.generateQuestion = function () {
-  this.n1 = this.random(this.upperNumber);
-  this.n2 = this.random(this.upperNumber);
+  do {
+    this.n1 = this.random(this.upperNumber);
+    this.n2 = this.random(this.upperNumber);
+  } while  ((this.n1 === this.n2) || this.checkNumbers());
   if (this.n1 < this.n2) {
     var aux = this.n1;
-this.n1 = this.n2;
+    this.n1 = this.n2;
     this.n2 = aux;
   }
   console.log( this.n1 + " " + this.operation + " " + this.n2);
-   
+};
 
+TenSecondsMathGame.prototype.checkNumbers = function(){
+  return Math.abs(this.n1 - this.n2) < 3;
 };
 
 TenSecondsMathGame.prototype.checkAnswer = function (userSay) {
