@@ -1,19 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!--  Added Libraries -->
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Custom CSS -->
-  </head>
-  <body>
+  <!--  Added Libraries -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
 
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/custom.css">
+</head>
 
-    <!-- Custom JavaScript -->
+<body>
 
-  </body>
+  <div class="container">
+    <div class="background"></div>
+    <h1 class="header text-center">Ten Seconds Math Game</h1>
+    <div class="frame">
+      <div class="game-options">
+        <h2>Game Options</h2>
+        <h3>Number Limit:<span class="number-limit">10</span></h3>
+        <input class="limit-range" type="range">
+        <div class="operators">
+          <h3>Operators</h3>
+          <div class="row">
+            <div class="col-md-1 col-md-offset-5">
+              <div class="operation-box">
+                <input type="checkbox">
+                <img src="images/add.jpg" alt="addition">
+              </div>
+            </div>
+            <div class="col-md-1">
+              <div class="operation-box">
+                <input type="checkbox">
+                <img src="images/substract.jpg" alt="addition">
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-1 col-md-offset-5">
+              <div class="operation-box">
+                <input type="checkbox">
+                <img src="images/multiply.jpg" alt="addition">
+              </div>
+            </div>
+            <div class="col-md-1">
+              <div class="operation-box">
+                <input type="checkbox">
+                <img src="images/divide.jpg" alt="addition">
+              </div>
+            </div>
+          </div>
+
+          <button class="btn btn-primary btn-lg start-game-btn">Start Game</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom JavaScript -->
+  <script src="js/application.js"></script>
+  <script src="js/tenSecondsMath.js"></script>
+
+</body>
+
 </html>

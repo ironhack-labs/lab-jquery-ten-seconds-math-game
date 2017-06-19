@@ -1,1 +1,59 @@
 /*Use this file to add your styles -there are some cool img in the images path*/
+.background {
+    background-image: url('../images/board.jpg');
+    height: 80vh;
+    width: 60%;
+    opacity: .4;
+    position: fixed;
+    z-index: -1;
+}
+
+.container {
+    text-align: center;
+}
+
+.header {
+    color: black;
+    font-size: 55px;
+    font-weight: bold;
+    margin-left: auto;
+    text-align: center;
+}
+
+
+.number-limit {
+    font-weight: bold;
+    font-size: 48px;
+}
+
+.frame {
+    height: 400px;
+    width: 100%;
+    background-color: white;
+    
+}
+
+.game-options > .limit-range {
+    width: 50%;
+    margin: 0 auto;
+}
+.operation-box {
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 15px;
+    width: 100px;
+}
+
+.operation-box img {
+    width: 50%;
+    margin: 10px 10px;
+}
+
+.start-game-btn {
+    margin-top: 20px;
+}
+
+.wrong {
+    border: 5px solid red;
+}
+
