@@ -5,15 +5,54 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!--  Added Libraries -->
-
-    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/custom.css">
   </head>
+
   <body>
 
+    <div id="box">
+      <h2>TEN SECONDS MATH</h2>
 
-    <!-- Custom JavaScript -->
+      <div id="box2">
+
+        <h3>Game options</h3>
+        <div id="limitBox">
+          <span id="numberrrLimit">Number limit</span>
+          <input type="number" id="numLimit">
+        </div>
+
+        <div id="limitBox">
+          <span id="op">Operators</span>
+          <input type="checkbox" name="plus" class="check" id="adding"><span>Adding</span>
+          <input type="checkbox" name="minus" class="check" id="substracting"><span>Substracting</span>
+        </div>
+        <!--
+        <input type="submit" id="opbutton" onclick="getOperator()" value="Operator?"/>
+
+        <button id="timebutton" onclick="getTime()">Time?</button>
+        <button id="opbutton" onclick="getOperator()">Operator?</button>
+        -->
+        <button id="start" onclick="start()">Start</button>
+
+
+      </div>
+
+      <div id="box3">
+        <div id="question">
+          <span id="questionText">questionText</span>
+        </div>
+        <input type="number" name="answer" id="answer" onkeyup="checkAnswer()">
+        <!--
+        <button onclick="question()">test</button>
+        -->
+      </div>
+
+    </div>
+
+    <!--
+    <script type="text/javascript" src="js/application.js"></script>
+    -->
+    <script type="text/javascript" src="js/tenSecondsMath.js"></script>
 
   </body>
 </html>

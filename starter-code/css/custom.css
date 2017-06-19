@@ -1,1 +1,8 @@
 /*Use this file to add your styles -there are some cool img in the images path*/
+#box3 {
+  display: none;
+}
+
+#box2 {
+  display: block;
+}
