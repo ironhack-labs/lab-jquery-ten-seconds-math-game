@@ -1,15 +1,3 @@
-ion.sound({
-  sounds: [
-    {
-      name: "cash-register"
-    }
-  ],
-  volume: 1,
-  path: "audios/",
-  preload: true
-});
-
-
 window.onload = function(){
 
   var generatedObject;
