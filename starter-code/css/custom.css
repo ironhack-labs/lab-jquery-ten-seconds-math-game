@@ -1,1 +1,95 @@
 /*Use this file to add your styles -there are some cool img in the images path*/
+body {
+  background-image: url("../images/board.jpg");
+  font-size: 10px;
+}
+h1, h2, h3 {
+  text-align: center;
+}
+.container {
+  background-color: rgba(240, 240, 240, 0.8);
+  border-radius: 8px;
+  margin: 5% auto;
+  width: 60%;
+  height: 600px;
+  padding-top: 2rem;
+}
+.game-container {
+  height: 400px;
+  margin: 5% 25%;
+  background-color: white;
+}
+.slider-div {
+  margin: 5% 25%;
+}
+.slider-div p, span {
+  display: inline-block;
+}
+.slider {
+  display: block;
+  text-align: center;
+}
+.operators-container {
+  text-align: center;
+  margin: 5% 25%;
+  height: 5rem;
+}
+.operator-button-img {
+  width: 20px;
+}
+.row-1-buttons,
+.row-2-buttons {
+  display: block;
+  margin: 6px;
+}
+.active {
+  background-color: rgba(0, 255, 0, 0.7) !important;
+}
+.btn {
+  display: inline-block;
+  width: 15%;
+  height: 1.3rem;
+  padding: 2%;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 10px;
+}
+.start-button-container {
+  text-align: center;
+}
+.hide {
+  display: none;
+}
+.make-visible {
+  display: block;
+}
+.game-board-container {
+  text-align: center;
+}
+.game-board {
+  background-color: white;
+  margin: 0 25%;
+}
+
+#timer-second {
+  font-size: 2rem;
+}
+
+#timer-description,
+#timer-second {
+  display: inline;
+}
+
+.timer {
+  text-align: center;
+}
+
+.gameover {
+  width: 10rem;
+  margin: 0 25%;
+}
+
+.restart {
+  display: none;
+  margin-top: 2rem;
+}

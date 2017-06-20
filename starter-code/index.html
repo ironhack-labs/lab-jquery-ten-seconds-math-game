@@ -5,15 +5,57 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!--  Added Libraries -->
-
-    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./css/custom.css">
   </head>
   <body>
-
-
-    <!-- Custom JavaScript -->
-
+    <div class="container">
+      <h1>Ten Second Math Game</h1>
+      <div id="game-board-container" class="game-board-container hide">
+        <div class="game-board">
+          <img class="gameover hide" src="./images/gameover.jpg" alt="Game over!">
+          <div class="timer">
+            <span id="timer-second"></span>
+            <p id="timer-description">seconds left</p>
+          </div>
+          <p id="game-question">Question</p>
+          <input class="answer" type="text" name="" value="">
+          <button class="restart" type="button" name="restart">Restart</button>
+        </div>
+      </div>
+      <div id="game-container" class="game-container">
+        <h2>Game Options</h3>
+        <div class="slider-div">
+          <p>Number Limit:</p>
+          <span id="number-limit">10</span>
+          <div class="slider">
+            slide!!
+          </div>
+        </div>
+        <h3>Operators</h3>
+        <div class="operators-container">
+          <div class="row-1-buttons">
+            <div id= "add" class="add-button btn">
+              <img class="operator-button-img" src="./images/add.jpg" alt="add-button">
+            </div>
+            <div id="subtract" class="subtract-button btn">
+              <img class="operator-button-img" src="./images/substract.jpg" alt="subtract button">
+            </div>
+          </div>
+          <div class="row-2-buttons">
+            <div id="multiply" class="multiply-button btn">
+              <img class="operator-button-img" src="./images/multiply.jpg" alt="multiply button">
+            </div>
+            <div id="divide" class="divide-button btn">
+              <img class="operator-button-img" src="./images/divide.jpg" alt="divide button">
+            </div>
+          </div>
+          </div>
+        <div class="start-button-container">
+          <button id="start-button" class="start-button" type="button" name="start-game-button">Start Game</button>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="./js/tenSecondsMath.js"></script>
+    <script type="text/javascript" src="./js/application.js"></script>
   </body>
 </html>
