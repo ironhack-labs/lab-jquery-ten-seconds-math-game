@@ -9,19 +9,30 @@ var TenSecondsMathGame = function (options) {
     }
 
     this.newQuestion = function () {
+        
         var randomNumber1 = this.randomNumber();
+        
         var randomNumber2 = this.randomNumber();
+        
         var randArrInd = Math.floor(Math.random() * this.ops.length);
+        
         var randomOp = this.ops[randArrInd];
-        console.log(randomOp, randomNumber1, randomNumber2);
+        
         var fixedNumbers = [randomNumber1, randomNumber2]
+        
         if (randomOp !== "division") {
+
             var orderedNumbers = orderNumbers(randomNumber1, randomNumber2);
+            
             fixedNumbers = fixCloseNumbers(orderedNumbers[0], orderedNumbers[1])
-            console.log(fixedNumbers);
+            
         }
+
+        console.log(this.numberLimit, fixedNumbers[0], fixedNumbers[1], randomOp);
+
         this.correctAnswer = this.doOp(fixedNumbers[0], fixedNumbers[1], randomOp);
-        console.log(this.correctAnswer);
+
+        console.log('correct answer', this.correctAnswer);
 
         var opSymbols = {
             'addition':'+',
@@ -29,6 +40,8 @@ var TenSecondsMathGame = function (options) {
             'multiplication':'*',
             'division': '/'
         };
+
+        console.log(randomOp, fixedNumbers[0], fixedNumbers[1], this.correctAnswer);
 
         return fixedNumbers[0] + ' ' + opSymbols[randomOp] + ' ' + fixedNumbers[1];
     }
@@ -38,7 +51,7 @@ var TenSecondsMathGame = function (options) {
             case "addition":
                 result = num1 + num2;
                 break;
-            case "substraction":
+            case "subtraction":
                 result = num1 - num2;
                 break;
             case "multiplication":
@@ -52,8 +65,9 @@ var TenSecondsMathGame = function (options) {
     }
 
 
+    // given 2 numbers return array with largest first
     function orderNumbers(num1, num2) {
-        // make sure we don't get negative number
+        
         if (num1 < num2) {
             var temp = num1;
             num1 = num2;

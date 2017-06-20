@@ -17,41 +17,42 @@
 
 <body>
 
-  <div class="container">
-    <div class="background"></div>
-    <h1 class="header text-center">Ten Seconds Math Game</h1>
+  <div class="container background">
+  
     <div class="frame">
+      <h1 class="header text-center">Ten Seconds Math Game</h1>
+      <div class="inner-box">
       <div class="game-options">
         <h2>Game Options</h2>
         <h3>Number Limit:<span class="number-limit">10</span></h3>
-        <input class="limit-range" type="range">
+        <input id="js-limit" class="limit-range" type="range">
         <div class="operators">
           <h3>Operators</h3>
           <div class="row">
-            <div class="col-md-1 col-md-offset-5">
+            <div class="col-md-3 col-md-offset-3">
               <div class="operation-box">
-                <input type="checkbox">
+                <input id="js-add-check-box" type="checkbox">
                 <img src="images/add.jpg" alt="addition">
               </div>
             </div>
-            <div class="col-md-1">
+            <div class="col-md-3">
               <div class="operation-box">
-                <input type="checkbox">
+                <input id="js-subtract-check-box" type="checkbox">
                 <img src="images/substract.jpg" alt="addition">
               </div>
             </div>
           </div>
 
           <div class="row">
-            <div class="col-md-1 col-md-offset-5">
+            <div class="col-md-3 col-md-offset-3">
               <div class="operation-box">
-                <input type="checkbox">
+                <input id="js-multiply-check-box" type="checkbox">
                 <img src="images/multiply.jpg" alt="addition">
               </div>
             </div>
-            <div class="col-md-1">
+            <div class="col-md-3">
               <div class="operation-box">
-                <input type="checkbox">
+                <input id="js-divide-check-box" type="checkbox">
                 <img src="images/divide.jpg" alt="addition">
               </div>
             </div>
@@ -60,10 +61,12 @@
           <button class="btn btn-primary btn-lg start-game-btn">Start Game</button>
         </div>
       </div>
+      </div>
     </div>
   </div>
 
   <!-- Custom JavaScript -->
+
   <script src="js/application.js"></script>
   <script src="js/tenSecondsMath.js"></script>
 
