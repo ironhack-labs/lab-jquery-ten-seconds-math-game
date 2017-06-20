@@ -1,1 +1,193 @@
-/*Use this file to add your styles -there are some cool img in the images path*/
+body, html {
+      margin: 0;
+      font-family: 'Helvetica', sans-serif;
+    }
+    *, *:before, *:after {
+      box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+    }
+    body{
+      background: url(http://www.matfis.uniroma3.it/userfiles/temi/5/1498772.jpg);
+      background-size:cover;
+    }
+
+   .content{
+      margin: auto;
+      background:rgba(255,255,255,0.7);
+      width:60%;
+      margin-top:10%;
+      padding:50px;
+      border-radius: 10px;
+    }
+
+   .big-box{
+      background:#fff;
+      width:60%;
+      margin:auto;
+      padding:40px;
+      text-align: center;
+    }
+
+   #amount{
+      font-size: 2rem;
+    }
+
+   #startButton{
+      background:#3071a9 ;
+      display: block;
+      border-radius: 4px;
+      color:#fff;
+      border:0;
+      padding:10px;
+      width: 30%;
+      top:30px;
+      position: relative;
+      left:35%;
+      text-align: center;
+    }
+    #restartButton{
+       background:#3071a9 ;
+       display: block;
+       border-radius: 4px;
+       color:#fff;
+       border:0;
+       padding:10px;
+       width: 30%;
+       top:30px;
+       position: relative;
+       left:35%;
+       text-align: center;
+       display: none;
+     }
+
+   .box{
+      width:150px;
+      margin: auto;
+    }
+
+   .label{
+      display: inline-block;
+      padding: 5px;
+      border: 2px solid black;
+      border-radius: 10px;
+      font-size: 1.5rem;
+      width: 40%;
+      margin:5px;
+    }
+
+   .label input{
+      margin-right:5px;
+    }
+
+   input[type=range] {
+      -webkit-appearance: none;
+      width: 40%;
+      display: block;
+      margin:20px auto;
+    }
+
+   input[type=range]:focus {
+      outline: none;
+    }
+
+   input[type=range]::-webkit-slider-runnable-track {
+      width: 100%;
+      height: 8.4px;
+      cursor: pointer;
+      box-shadow: 1px 1px 1px #000000 , 0px 0px 1px #0d0d0d ;
+      background: #3071a9 ;
+      border-radius: 1.3px;
+      border: 0.2px solid #010101 ;
+    }
+
+   input[type=range]::-webkit-slider-thumb {
+      box-shadow: 1px 1px 1px #000000 , 0px 0px 1px #0d0d0d ;
+      border: 1px solid #000000 ;
+      height: 36px;
+      width: 16px;
+      border-radius: 3px;
+      background: #fff;
+      cursor: pointer;
+      -webkit-appearance: none;
+      margin-top: -14px;
+    }
+
+   input[type=range]:focus::-webkit-slider-runnable-track {
+      background: #367ebd ;
+    }
+
+   input[type=range]::-moz-range-track {
+      width: 100%;
+      height: 8.4px;
+      cursor: pointer;
+      box-shadow: 1px 1px 1px #000000 , 0px 0px 1px #0d0d0d ;
+      background: #3071a9 ;
+      border-radius: 1.3px;
+      border: 0.2px solid #010101 ;
+    }
+
+   input[type=range]::-moz-range-thumb {
+      box-shadow: 1px 1px 1px #000000 , 0px 0px 1px #0d0d0d ;
+      border: 1px solid #000000 ;
+      height: 36px;
+      width: 16px;
+      border-radius: 3px;
+      background: #fff;
+      cursor: pointer;
+    }
+
+   input[type=range]::-ms-track {
+      width: 100%;
+      height: 8.4px;
+      cursor: pointer;
+      background: transparent;
+      border-color: transparent;
+      color: transparent;
+    }
+
+   input[type=range]::-ms-fill-lower {
+      background: #2a6495 ;
+      border: 0.2px solid #010101 ;
+      border-radius: 2.6px;
+      box-shadow: 1px 1px 1px #000000 , 0px 0px 1px #0d0d0d ;
+    }
+
+   input[type=range]::-ms-fill-upper {
+      background: #3071a9 ;
+      border: 0.2px solid #010101 ;
+      border-radius: 2.6px;
+      box-shadow: 1px 1px 1px #000000 , 0px 0px 1px #0d0d0d ;
+    }
+
+   input[type=range]::-ms-thumb {
+      box-shadow: 1px 1px 1px #000000 , 0px 0px 1px #0d0d0d ;
+      border: 1px solid #000000 ;
+      height: 36px;
+      width: 16px;
+      border-radius: 3px;
+      background: #fff;
+      cursor: pointer;
+      height: 8.4px;
+    }
+
+   input[type=range]:focus::-ms-fill-lower {
+      background: #3071a9 ;
+    }
+
+   input[type=range]:focus::-ms-fill-upper {
+      background: #367ebd ;
+    }
+    #init-game .result{
+          font-size: 1.7rem;
+        }
+        #init-game input{
+          margin-left:10px;
+        }
+        #init-game #seconds{
+          font-size: 2.2rem;
+          margin-right:10px;
+        }
+    #init-game{
+          display:none;
+        }
