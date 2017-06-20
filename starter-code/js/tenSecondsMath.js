@@ -31,6 +31,10 @@ TenSecondsMathGame.prototype.result = function(operation, n1, n2) {
   return operationResult;
 };
 
+TenSecondsMathGame.prototype.randomOperator=function(){
+  return Math.floor(Math.random(this.operation));
+};
+
 TenSecondsMathGame.prototype.generateQuestion = function () {
   do {
     this.n1 = this.random(this.upperNumber);
