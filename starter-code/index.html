@@ -5,15 +5,56 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <title>JS | Ten Seconds Math Game</title>
     <!--  Added Libraries -->
 
     <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="./css/custom.css">
   </head>
   <body>
+    <div class="game">
+      <h1>Ten Seconds Math Game</h1>
+      
+      <div class="game-options">
+        <h2>Game Options</h2>
+        <p>Number Limit: <span>10</span></p>
+        <h3>Operators</h3>
+        <div class="game-options__operators">
+          <div class="operator" >
+            <input type="checkbox" name="sum" id="sum" >
+            <img src="./images/add.jpg" />
+          </div>
+          <div class="operator" >
+            <input type="checkbox" name="substract" id="substract" />
+            <img src="./images/substract.jpg" />
+          </div>
+          <div class="operator" >
+            <input type="checkbox" name="multiply" id="multiply" />
+            <img src="./images/multiply.jpg" />
+          </div>
+          <div class="operator" >
+            <input type="checkbox" name="divide"  id="divide" />
+            <img src="./images/divide.jpg" />
+          </div>
+        </div>
+        <button class="btn btn-start">Start Game</button>
+      </div>
 
+      <div class="game-board game-board--hidden">
+        <div class="timer">
+          <p><span>10</span> seconds left</p> 
+        </div>
+        <div class="question-answer">
+          <div class="question">
+            <span></span>
+          </div>
+          <input type="text" name="answer" id="answer" placeholder="answer" />
+        </div>
+      </div>
+    </div>
 
     <!-- Custom JavaScript -->
-
+    <script src="./js/application.js"></script>
+    <script src="./js/tenSecondsMath.js"></script>
   </body>
 </html>
