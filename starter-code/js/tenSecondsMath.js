@@ -2,7 +2,8 @@
 var TenSecondsMathGame = function(operations, numberLimit) {
   this.operations = operations; // Array of 0..3 including the operator
   this.numberLimit = numberLimit;
-  this.timer; // Game timer
+  this.timer = 0; // Game timer
+  this.timeoutId = 0; // for cleaning timeouts
 };
 
 // Returns a random integer between [1..numberLimit]
@@ -100,6 +101,45 @@ function generateMathAnswer(op, num1, num2) {
 
  }
 
+// Function called when the game is over
+function gameOver() {
+  document.querySelectorAll('#answer')[0].disabled = true;
+
+  // update the timer on the page
+  var initialTimerHTML = document.querySelectorAll('.timer')[0].innerHTML;
+  document.querySelectorAll('.timer')[0].innerHTML = "<img src='./images/gameover.jpg' alt='Game Over' style='width: 100%;'/>";
+    
+  // Add the reset button
+  var resetButton = document.createElement('button');
+  var resetButtonContent = document.createTextNode('Reset');
+  resetButton.setAttribute('class', 'btn btn-start');
+  resetButton.setAttribute('id','reset');
+  resetButton.setAttribute('style', 'margin-top: 2rem;');
+  resetButton.appendChild(resetButtonContent);
+  document.querySelectorAll('.game-board')[0].appendChild(resetButton);
+
+  // Reset actions
+  document.querySelectorAll('#reset')[0].onclick = function() {
+    // Display the right board
+    document.querySelectorAll('.game-options')[0].classList.remove('game-options--hidden');
+    document.querySelectorAll('.game-board')[0].setAttribute('class','game-board game-board--hidden');
+    
+    // Reset the game-board
+    document.querySelectorAll('.timer')[0].innerHTML = initialTimerHTML;
+    
+    // Remove the reset button
+    document.querySelectorAll('.game-board')[0].removeChild(document.querySelectorAll('#reset')[0]);
+
+    // Enable the input
+    document.querySelectorAll('#answer')[0].disabled = false;
+
+    // reset the timer variable and value on the page
+    this.timer = 10;
+    document.querySelectorAll('.timer span')[0].innerText = '10';
+  };
+
+}
+
 // Returns an object with {question, answer}
 TenSecondsMathGame.prototype.newQuestion = function() {
 
@@ -133,16 +173,26 @@ TenSecondsMathGame.prototype._checkTimer = function () {
   console.log(this.timer);
   if (this.timer > 0) {
     this.timer -= 1;
-    var timeoutId = setTimeout(this._checkTimer, 1000);
-  } else {
+    
+    // update the timer on the page
+    document.querySelectorAll('.timer span')[0].innerText = this.timer;
+
+    // wait 1 second before next check
+    this.timeoutId = setTimeout(this._checkTimer.bind(this), 1000);
+ 
+ } else {
     console.log("Time is over!"); 
+    var boundGameOver = gameOver.bind(this);
+    boundGameOver();
   }
 }
 
 // Timer functions
 TenSecondsMathGame.prototype._startTimer = function () {
-  this.timer = 10;
-  var timeoutId = setTimeout(this._checkTimer, 1000);
+  if( this.timeoutId > 0) {
+    clearTimeout(this.timeoutId);
+  }
+  this.timeoutId = setTimeout(this._checkTimer.bind(this), 1000);
 };
 
 // Checks a user answer

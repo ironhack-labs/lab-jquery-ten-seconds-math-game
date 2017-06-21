@@ -85,6 +85,7 @@ body {
 }
 
 /* GAME BOARD SECTION */
+.game-option--hidden,
 .game-board--hidden { display: none; }
 .game-board { padding-top: 3rem; }
 .timer span { font-size: 3rem; }

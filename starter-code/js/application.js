@@ -91,7 +91,10 @@ window.onload = function(){
   userAnswer.addEventListener("keypress", function(e) {
     if (e.keyCode === 13) {
       var isUserAnswerCorrect = game.isCorrectAnswer(Number(userAnswer.value)); // The value needs to be converted to integer first 
+      
+      // If the answer is correct
       if (isUserAnswerCorrect) {
+        game.timer += 10;
         game._startTimer();
         game.newQuestion();
         document.querySelectorAll('.question span')[0].innerText = game.gameParameters.question;
