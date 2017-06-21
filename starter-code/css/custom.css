@@ -1,1 +1,111 @@
 /*Use this file to add your styles -there are some cool img in the images path*/
+
+html {
+  font-size: 16px;
+  font-family: sans-serif;
+}
+
+body {
+    background: url('../images/board.jpg') no-repeat 0 0;
+}
+
+.game { 
+  width: 70%;
+  padding: 2rem;
+  margin-top: 5%;
+  margin-left:13%;
+  background-color: rgba(255, 255, 255, .6);
+  border-radius:10px;
+}
+
+.game-options,
+.game-board {
+  background-color: #fff;
+  width: 20rem;
+  margin: 0 auto;
+  padding: 2rem 4rem 4rem 4rem;
+  text-align: center;
+}
+
+.game-options--hidden { display: none; }
+
+/* GAME OPTIONS SECTION */
+.game > h1 {
+  margin: 0 auto 1.4rem auto;
+  text-align: center;
+}
+
+.game-options__operators {
+  width: 10rem;
+  margin: 0 auto 2rem auto;
+}
+
+.operator {
+  display: inline-block; 
+  width: 4rem;
+  height: 3rem;
+  border: 2px solid #000;
+  border-radius: 1rem;
+  background-color: #fff;
+  margin: 0 auto .5rem auto;
+}
+
+.checkbox, .operator > img {  padding: .8rem 0.2rem .8rem 0rem; }
+
+.operator > img { width: 1.3rem; height: 1.3rem; vertical-align: middle; }
+
+.btn {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.btn-start {
+    color: #fff;
+    background-color: #1b70ab;
+    border-color: #1b70ab;
+    display: block;
+    margin: 0 auto;
+}
+
+/* GAME BOARD SECTION */
+.game-option--hidden,
+.game-board--hidden { display: none; }
+.game-board { padding-top: 3rem; }
+.timer span { font-size: 3rem; }
+
+.question-answer,
+.question,
+#answer { display: inline-block; }
+
+.question-answer {
+  margin-top: 1rem;
+  font-size: 2rem;
+  vertical-align: middle;
+}
+
+.question { vertical-align: middle; }
+
+#answer {
+  margin-left: 1.6rem;
+  font-size: 1rem;
+  padding: .1rem .2rem .2rem .2rem;
+}
+#answer::placeholder { color: #c7c7c7; }
+#answer { color: #000; }
