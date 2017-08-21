@@ -4,7 +4,9 @@
 
 
 window.onload = function(){
-  
+  var btn-start = document.getElementById("start").onclick = function(){
+    
+  }
 };
 
 // Use this file to write the logic of your game, the needed attrs and functions

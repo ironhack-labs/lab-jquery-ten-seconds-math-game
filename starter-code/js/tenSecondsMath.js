@@ -4,6 +4,7 @@ var TenSecondsMathGame = function(operation, numberLimit) {
   this.operation = operation;
   this.numberLimit = numberLimit;
   this.underLimit = 0;
+  this.timer = 10;
 };
 
 TenSecondsMathGame.prototype.calculator = function (num1, num2, operation) {
@@ -40,11 +41,26 @@ TenSecondsMathGame.prototype.userAnswer = function (){
   var answer = prompt("Indica el resultado");
   if (answer == resultado){
     this.userAnswer();
+    return true;
   }
   else {
     return false;
   }
 };
 
-var juego = new TenSecondsMathGame("sum", 100);
+TenSecondsMathGame.prototype._checkTimer = function (){
+    var that = this;
+    var intervalId = setInterval(function() {
+    if(that.timer > 0) {
+      console.log(that.timer);
+    }
+    else {
+      console.log("Time is over!");
+      clearInterval(intervalId);
+    }
+    that.timer--;
+  }, 1000);
+};
+
+var juego = new TenSecondsMathGame("sum", 20);
 juego.userAnswer();
