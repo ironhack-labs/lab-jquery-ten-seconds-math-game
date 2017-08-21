@@ -11,9 +11,13 @@ window.onload = function(){
 	var sliderValue = document.getElementById("number-limit-range").value;
 	var sliderLabel = document.getElementById("number-limit");
 
-	sliderValue.onchange = function() { sliderLabel.innerHTML = sliderValue }
-	
+	console.log(sliderValue)
 
+	slider.onchange = function() { 
+		sliderValue = document.getElementById("number-limit-range").value;
+		sliderLabel.innerHTML = sliderValue }
+	
+	setTimeout(function () { console.log(sliderValue)}, 5000)
 
 	startButton.addEventListener("click", function() {
 		var hideable = document.getElementById("game-options");
