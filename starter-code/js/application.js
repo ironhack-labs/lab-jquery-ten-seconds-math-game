@@ -2,7 +2,6 @@
 
 //Initialize ion library
 
+window.onload = function () {
 
-window.onload = function(){
-
-};
+}
