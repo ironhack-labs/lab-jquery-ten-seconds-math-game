@@ -61,10 +61,11 @@ TenSecondsMathGame.prototype.checkNumber = function(number) {
 };
 
 TenSecondsMathGame.prototype.checkTimer = function() {
+  var that = this;
   var interval = setInterval(function() {
-    console.log(game.time);
-    game.time -= 1;
-    if (game.time < 0 || game.counter === 0) {
+    console.log(this.time);
+    this.time -= 1;
+    if (this.time < 0 || this.counter === 0) {
       clearInterval(interval);
     }
   }, 1000);
