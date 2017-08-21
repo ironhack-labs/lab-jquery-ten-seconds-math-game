@@ -4,6 +4,6 @@
 
 
 window.onload = function(){
-  var game =new TenSecondsMathGame("add", 10);
-  game.answerReceive();
+  var game = new TenSecondsMathGame("div", 10);
+  game.getOperation()
 };
