@@ -2,7 +2,5 @@
 
 //Initialize ion library
 
-
-window.onload = function(){
-
-};
+var game = new TenSecondsMathGame("+", 10);
+game.question();
