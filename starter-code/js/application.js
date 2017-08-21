@@ -4,5 +4,6 @@
 
 
 window.onload = function(){
-
+  var game =new TenSecondsMathGame("add", 10);
+  game.answerReceive();
 };
