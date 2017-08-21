@@ -1,9 +1,9 @@
 // Use this file to write the logic of your game, the needed attrs and functions
 
-var TenSecondsMathGame = function(operationsArray, numberLimit) {
-	this.operationArray = operationsArray
-	if (numberLimit > 10) {
-		this.upperNumberLimit = numberLimit 
+var TenSecondsMathGame = function(arrayOperations, integer) {
+	this.operationArray = arrayOperations
+	if (integer > 10) {
+		this.upperNumberLimit = integer
 	} else {
 		this.upperNumberLimit = 10
 	};
@@ -20,11 +20,11 @@ TenSecondsMathGame.prototype.newQuestion = function() {
 		this.secondNumber = this.tempNumber;
 	}
 	this.operation = this.operationArray[Math.floor(Math.random() * this.operationArray.length)]
-	if (this.operation.includes("addition")) { 
+	if (this.operation === "+") { 
 		this.calculation = this.firstNumber + this.secondNumber;
-	} else if (this.operation.includes("substraction")) {
+	} else if (this.operation === "-") {
 		this.calculation = this.firstNumber - this.secondNumber;
-	} else if (this.operation.includes("multiplication")) {
+	} else if (this.operation === "x") {
 		this.calculation = this.firstNumber * this.secondNumber;
 	} else {
 		this.calculation = this.firstNumber / this.secondNumber;
@@ -43,8 +43,6 @@ TenSecondsMathGame.prototype.isCorrectAnswer = function(userAnswer) {
 }
 }
 
-
-var game = new TenSecondsMathGame(["+", "-", "x", "/"], 7)
 // debug(game.newQuestion()["answer"])
 
 

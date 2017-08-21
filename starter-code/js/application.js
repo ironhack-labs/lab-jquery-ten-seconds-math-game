@@ -7,6 +7,13 @@ window.onload = function(){
 	var startButton = document.getElementById("start");
 	var restartButton = document.getElementById("restart");
 	var questionArea = document.getElementById("question");
+	var slider = document.getElementById("number-limit-range");
+	var sliderValue = document.getElementById("number-limit-range").value;
+	var sliderLabel = document.getElementById("number-limit");
+
+	sliderValue.onchange = function() { sliderLabel.innerHTML = sliderValue }
+	
+
 
 	startButton.addEventListener("click", function() {
 		var hideable = document.getElementById("game-options");
@@ -19,18 +26,33 @@ window.onload = function(){
 		var filteredArray = operationsArray.filter(function(i) {
 			return i.checked === true;
 		})
-		console.log(addition)
 		if (filteredArray.length === 0) {
 			alert("Please Choose One Operator");
 			return undefined;
 		}
-		game = new TenSecondsMathGame(filteredArray, 10)
+		var finalOpsArray = []
+		filteredArray.forEach(function(i) {
+			if (i === addition) {
+				finalOpsArray.push("+")
+			} else if (i === subtraction) {
+				finalOpsArray.push("-")
+			} else if (i === multiplication) {
+				finalOpsArray.push("x") 
+			} else {
+				finalOpsArray.push("/")
+			}
+		})
+
+		var sliderValue = slider.value
+
+		var game = new TenSecondsMathGame(finalOpsArray, sliderValue)
 		questionArea.innerHTML = game.newQuestion();
 		hideable.style.display = "none";
 		hideable2.style.display = "none";
-		})
 
-	restartButton.addEventListener("click", function() {
+		
+
+		restartButton.addEventListener("click", function() {
 		var answerInput = document.getElementById("answer");
 		var answer = answerInput.value
 		if (game.isCorrectAnswer(answer)) {
@@ -43,5 +65,5 @@ window.onload = function(){
 	})
 
 
-	
+	})
  };
