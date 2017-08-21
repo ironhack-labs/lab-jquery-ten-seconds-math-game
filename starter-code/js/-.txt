@@ -1,0 +1,53 @@
+function TenSecondsMathGame(x) {
+  this.limit = x;
+}
+
+TenSecondsMathGame.prototype.randomNumber = function() {
+  return Math.floor(Math.random() * this.limit);
+};
+
+TenSecondsMathGame.prototype.operacion = function() {
+  var n1 = this.randomNumber();
+  var n2 = this.randomNumber();
+  var question = prompt(n1 + " + " + n2 + "\nTiempo restante: " + this.segundosRestantes);
+  this.result = n1 + n2;
+};
+
+TenSecondsMathGame.prototype.resultado = function() {
+  var total = this.result;
+  return total;
+};
+
+TenSecondsMathGame.prototype.isCorrectAnswer = function(a) {
+  return a;
+};
+
+TenSecondsMathGame.prototype.startgame = function() {
+  if (this.result === this.question) {
+    this.contador();
+    this.segundosRestantes += 1;
+    this.operacion();
+  }
+};
+
+TenSecondsMathGame.prototype.nextQuestion = function() {
+  if (this.resultado === this.isCorrectAnswer) {
+    this.segundosRestantes += 1;
+    this.operacion();
+  }
+};
+
+
+
+TenSecondsMathGame.prototype.contador = function() {
+  this.segundosRestantes = 10;
+  console.log(segundosRestantes);
+  if (segundosRestantes > 0) {
+    timeoutId = setTimeout(contador, 1000);
+    segundosRestantes -= 1;
+    this.contador();
+  } else {
+    clearTimeout(contador);
+    console.log("Tu tiempo se ha agotado. Play again?");
+  }
+};
