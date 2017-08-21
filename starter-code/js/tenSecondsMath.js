@@ -30,7 +30,7 @@ TenSecondsMathGame.prototype.newQuestion = function() {
       this.questionAnswer.question = randomNum1 + ' + ' + randomNum2
       this.questionAnswer.answer = randomNum1 + randomNum2
       break;
-    case 'subtract':
+    case 'substraction':
       randomNum2 = this._getAppropiateNumber(randomNum1, randomNum2)
         this.questionAnswer.question = randomNum1 + ' - ' + randomNum2,
         this.questionAnswer.answer = randomNum1 - randomNum2
