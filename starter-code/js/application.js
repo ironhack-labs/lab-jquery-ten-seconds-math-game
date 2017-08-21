@@ -4,5 +4,7 @@
 
 
 window.onload = function(){
-
+var game = new TenSecondsMathGame("suma", 100);
+game.operations();
+game.answer();
 };
