@@ -1,45 +1,50 @@
 // Use this file to write the logic of your game, the needed attrs and functions
 
 var TenSecondsMathGame = function(operation, numberLimit) {
-  this.operation = opeartion;
+  this.operation = operation;
   this.numberLimit = numberLimit;
-  this.underLimit = 1;
+  this.underLimit = 0;
+};
+
+TenSecondsMathGame.prototype.calculator = function (num1, num2, operation) {
+  if (this.operation == "sum"){
+    return  num1+num2;
+  }
 };
 
 // Returns a random integer between [1..numberLimit]
-randomInt = function (numberLimit){
-  return Math.floor(Math.random()*numberLimit + 1);
+TenSecondsMathGame.prototype.randomInt = function (){
+  return parseInt(Math.random()*this.numberLimit + 1);
 };
 
 // Returns an object with {question, answer}
-var QuestionGenerator = function (numberLimit, operation){
-  TenSecondsMathGame.call (this, operation, numberLimit);
-  var num1 = randomInt(numberLimit);
-  var num2 = randomInt(numberLimit);
-  while (num1-num2 < 3) {
-  num2 = randomInt(numberLimit);
-}
-
-  this.solution = calculator(operation, num1, num2);
-  console.log ("Cuanto es: " + num1 + " + " + num2);
-  return solution;
+TenSecondsMathGame.prototype.questionGenerator = function (){
+  var num1 = this.randomInt();
+  console.log(num1);
+  var num2 = this.randomInt();
+  console.log(num2);
+  while (Math.abs(num1-num2) < 3) {
+    num2 = this.randomInt();
+    }
+  var objeto = {
+    question: num1 + " + " + num2,
+    answer: this.calculator(num1, num2, this.operation)
+  };
+  console.log(objeto.question);
+  return objeto;
 };
 
-QuestionGenerator.prototype = Object.create(TenSecondsMathGame.prototype);
-QuestionGenerator.prototype.constructor = QuestionGenerator;
-
-var calculator = function (operation, num1, num2){
-  if (operation == "sum"){
-    return num1+num2;
-  }
-};
 // Checks a user answer
-var userAnswer = function (answer){
-  if (answer == questionGenerator(numberLimit, operation)){
-    return true;
+TenSecondsMathGame.prototype.userAnswer = function (){
+  var resultado = this.questionGenerator().answer;
+  var answer = prompt("Indica el resultado");
+  if (answer == resultado){
+    this.userAnswer();
   }
   else {
     return false;
   }
 };
-//questionGenerator(10, "sum");
+
+var juego = new TenSecondsMathGame("sum", 100);
+juego.userAnswer();
