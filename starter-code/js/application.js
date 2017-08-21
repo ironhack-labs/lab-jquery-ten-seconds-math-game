@@ -33,20 +33,23 @@ window.onload = function (){
 
     var answer = document.getElementById('answer').value
 
-    var i = 10
-    var intervalId = setInterval( function (){
-      console.log(i)
-      i--
+    var isFirstQuestion = true
 
+    var intervalId1 = setInterval( function (){
       answer = document.getElementById('answer').value
-      //
-      // if (i<0) clearInterval(intervalId)
-      // game.isCorrectAnswer(answer) == 'Great!!' ? clearInterval(intervalId) : console.log()
       if(game.isCorrectAnswer(answer) == 'Great!!'){
-        clearInterval(intervalId)
+
+        if(isFirtsQuestion) game._startTimer()
+        clearInterval(intervalId1)
         // answer.value = ''
         startGame(operationsChecked, numberLimit)
       }
     }, 1000)
+
+    if(game.isCorrectAnswer(answer) == 'Great!!' && isFirtsQuestion){
+        game._startTimer()
+        isFirstQuestion = false
+    }
+
   }
 }

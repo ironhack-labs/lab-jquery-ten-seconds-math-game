@@ -65,3 +65,21 @@ TenSecondsMathGame.prototype._getAppropiateNumber = function(a, b) {
 TenSecondsMathGame.prototype.isCorrectAnswer = function(userAnswer) {
   return this.questionAnswer.answer == userAnswer ? 'Great!!' : 'Wrooong!!'
 }
+
+TenSecondsMathGame.prototype._startTimer = function(){
+  var i = 10;
+  var intervalId = setInterval(function () {
+    console.log(i);
+    i--;
+
+    this._checkTimer(i)
+    if (i < 0) {
+      console.log('Time is over!');
+      clearInterval(intervalId);
+    }
+  }, 1000);
+}
+
+TenSecondsMathGame.prototype._checkTimer = function(){
+  
+}
