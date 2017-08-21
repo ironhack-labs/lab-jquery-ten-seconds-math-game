@@ -1,46 +1,53 @@
-function Game(option, numberLimit) {
-	this.option = option,
+// Use this file to write the logic of your game, the needed attrs and functions
+var TenSecondsMathGame = function (options, numberLimit) {
+	this.option = options,
 	this.numberLimit = numberLimit,
-	this.firstLimit = 0
+	this.firstLimit = 10
 }
 
-Game.prototype.newQuestion = function () {
-	var a = this.getRandomNumber()
-	var b = this.getRandomNumber()
-	while(Math.abs(a - b) <= 3) {
-		b = this.getRandomNumber()
+// Returns a random integer between [1..numberLimit]
+TenSecondsMathGame.prototype.getRandomNumber = function (num) {
+	return parseInt(Math.random() * num + 1)
+}
+
+// Returns an object with {question, answer}
+TenSecondsMathGame.prototype.newQuestion = function () {
+	var a = this.getRandomNumber(this.numberLimit)
+	var b = this.getRandomNumber(this.numberLimit)
+	while (Math.abs(a - b) <= 3) {
+		b = this.getRandomNumber(this.numberLimit)
 	}
 	console.log('Suma de ' + a + '+' + b)
 	this.result = a + b
 }
 
-Game.prototype.getRandomNumber = function () {
-	return parseInt(Math.random() * 10 + 1)
-}
+// Checks a user answer
 
-Game.prototype.isCorrectAnswer = function (a) {
+TenSecondsMathGame.prototype.isCorrectAnswer = function (a) {
 	if (a > 0) {
-		return (this.result == a) ? 'Correct' : 'Incorrect'
+		if (this.result == a) {
+			console.log('Correct')
+			return this.newQuestion()
+		} else {
+			return 'Incorrect'
+		}
 	} else {
 		return 'The number must be grater than 0'
 	}
 }
 
-window.onload = function () {
-	var game = new Game('addition', 100)
-	game.newQuestion()
+TenSecondsMathGame.prototype._startTimer = function () {
+	var i = this.firstLimit
+	var timerStatus = setInterval(function () {
+		console.log(i)
+		if(i >= 1) {
+			(i === 1 ) ? i='You Lose' : i -= 1
+		} else{
+			clearInterval(timerStatus)
+		}
+	},1000);
 }
 
-// Use this file to write the logic of your game, the needed attrs and functions
-
-var TenSecondsMathGame = function (options) {
-
-};
-
-// Returns a random integer between [1..numberLimit]
-
-
-// Returns an object with {question, answer}
-
-
-// Checks a user answer
+TenSecondsMathGame.prototype._checkTimer = function (a){
+	
+}

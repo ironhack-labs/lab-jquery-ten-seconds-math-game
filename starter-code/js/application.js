@@ -2,7 +2,7 @@
 
 //Initialize ion library
 
-
-window.onload = function(){
-
-};
+window.onload = function () {
+	// var game = new Game('addition', 100)
+	// game.newQuestion()
+}
