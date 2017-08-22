@@ -63,9 +63,9 @@ TenSecondsMathGame.prototype.checkNumber = function(number) {
 TenSecondsMathGame.prototype.checkTimer = function() {
   var that = this;
   var interval = setInterval(function() {
-    console.log(this.time);
-    this.time -= 1;
-    if (this.time < 0 || this.counter === 0) {
+    console.log(that.time);
+    that.time -= 1;
+    if (that.time < 0 || that.counter === 0) {
       clearInterval(interval);
     }
   }, 1000);
